@@ -1,0 +1,42 @@
+Functions, javascript procedure statements that perform task or calculates value
+
+-To use function define it somewhere in scope from which to call it
+-Function definition, or declaration, consists of
+1.function keyword
+2.name of function
+3.list of arguments(parameters)
+4.main body, statements defining function
+
+function square(number) {
+  return number*number;
+}
+console.log(square(4));
+return => 16
+
+-Scope refers to visibility of variables
+-Variables defined outside of function block have global scope, can be accessed inside functions
+var someVariable = 'Dog'
+function myFunction() {
+  console.log(someVariable);
+}
+myFunction() return => Dog
+
+-Variables defined within function have local scope, only accessible within that one function
+-Can have the same name, local variable will take precedence over global variable
+var someVariable = 'Dog'
+function myFunction() {
+  var someVariable = 'Caroga'
+  console.log(someVariable);
+}
+myFunction() return => Caroga
+
+-Nested Functions, function inside a function, the inner function is private to its containing function
+function addSquares(a, b) {
+  function square(x) {
+    return x*x;
+  }
+  return square(a) + square(b);
+}
+
+first = addSquares(2, 3) return => 13
+second = addSquares(3, 4) return => 25
