@@ -1,0 +1,31 @@
+-Variable is container for value, value can be many things
+
+1.Declare variable with var, const, let
+var myName;
+
+2.Initialize variable with =
+myName = 'Malind';
+
+3.Can declare & init all at once
+var state = 'Colorado';
+
+-Use variables all over the place in JS
+console.log("My name is " + myName)
+
+-Can update value by giving it a new value
+state = 'New York'
+
+-Naming rule and convention
+0-9, a-z, A-Z
+_ underscore at start has certain meaning, don't use it
+# number at start can cause errors
+camelCase should be used for naming variables
+var bestDogEver = 'Caroga'
+
+-Variable names should be intuitive and variables are case sensitive
+var italianMeals = 'Spaghetti, Carbonara, Lasagna'
+
+-Do not use JS reserve words
+var, function, if, else, for
+
+-Javascript is loosely typed language, doesn't need to specify data type such as number or string
