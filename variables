@@ -1,4 +1,4 @@
--Variable is container for value, value can be many things
+Variable is container for value, value can be many things
 
 1.Declare variable with var, const, let
 var myName;

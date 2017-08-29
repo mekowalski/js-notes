@@ -1,0 +1,40 @@
+Numbers
+
+-Can do standard mathematical operations
+-Can also be done with decimals
+-Numbers eventually rounded off, doesn't go on forever
+
+var number = 3;
+console.log(number);
+return => 3
+
++ 2 return => 5
+
+- 2 return => 1
+
+* 2 return => 6
+
+/ 2 return => 1.5
+
+% 2 (modulus operator gives remainder)
+return => 1
+2 goes into 3, 1 time with a remainder of 1
+
+var num = 12;
+console.log(num % 7)
+return => 5
+7 goes into 12, 1 time with a remainder of 5
+
+increment/decrement
+var num = 5;
+num++;
+return => 6
+
+num--;
+return => 4
+
+-in console, the increment/decrement/operative number is new value for variable but for this example i'm keeping `num = 5`
+num += 5 return => 10
+num -= 3 return => 2
+num *= 3 return => 15
+num /= 2 return => 2.5
