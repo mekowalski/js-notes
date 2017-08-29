@@ -1,0 +1,51 @@
+Seven data types in Javascript
+
+-Boolean = true or false
+var data = true;
+if (data) {
+  console.log('Booleans Rule');
+}
+else {
+  console.log('Booleans are lame');
+}
+return => Booleans Rule
+
+if var data = false;
+return => Booleans are lame
+
+-Null = no value
+var n = null;
+console.log(n * 3);
+return => 0
+
+-Undefined = variable hasn't been declared, or has been declared but not assigned a value
+var a;
+console.log(a + 2);
+return => Nan(not a number)
+
+-Number = any numerical character
+var num = 3.6;
+var ber = 6.4;
+console.log(num + ber);
+return => 10
+
+-String = anything a word in quotes
+var name = 'Malind';
+console.log('Howdy ' + name);
+return => Howdy Malind
+
+-Symbol = new in ES6, data type whose instances are unique & immutable
+var symbol1 = Symbol('foo');
+var symbol2 = Symbol('foo');
+console.log(symbol1 == symbol2);
+return => false
+
+console.log(String(symbol1) == String(symbol2));
+return => true
+
+-Object = collection of properties, property is an association between name/key and value
+var myCar = new Object();
+myCar.make = 'Land Rover';
+myCar.model = 'Defender 90';
+console.log(myCar.make);
+return => Land Rover
