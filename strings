@@ -1,0 +1,23 @@
+String, a string or string literal, is series of zero or more characters in single/double quotes
+
+var myName = 'Malind';
+
+-Backslash helps to use quotes
+var sentence = 'she repeated \'Can you hear me now?\''
+return => "she repeated 'Can you hear me now?'"
+
+-Concatenate, strings together, with plus operator
+-Watch for spaces, concatenation does not add space between strings
+var fullName = 'Malind ' + 'Kowalski';
+return => Malind Kowalski
+
+-Concatenate strings and variables
+var sentence2 = 'My name is ' + fullName;
+return => My name is Malind Kowalski
+
+-Concatenate also with += operator, start with variable then add string
+fullName += ' is my name';
+return => Malind Kowalski is my name
+
+-String values are immutable in Javascript
+-Can't be altered once created
