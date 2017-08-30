@@ -1,0 +1,34 @@
+== VS ===
+
+-Double = test for abstract equality
+-Attempt to resolve data types via type coercion before making comparison
+console.log(3 == '3');
+return => true
+string 3 is converted to number 3 before comparison made
+
+console.log(true == '1');
+return => true
+in Javascript true is 1 and false is 0
+
+console.log('This is a string' == new String('This is a string'));
+return => true
+
+
+-Triple = test for strict equality
+-Will return false if types are different
+console.log(3 === '3');
+return => false
+types are different, number and string, therefore false
+
+console.log(true === '1');
+return => false
+1 is not converted therefore false
+
+console.log('This is a string' === new String('This is a string'));
+return => false
+string literals are different from string objects
+
+-If need to compare values of different types, first do conversions yourself then compare
+-Makes code more explicit, always better
+-Triple = will test strict equality therefore provides clarity for code
+-Prevent any false positives caused by abstract equality comparison
