@@ -1,0 +1,44 @@
+Comparison Operators & If Else Statements
+
+-Test variable, set to true, if TRUE then do whatever is in bracket
+var isMyDogGreat = true;
+if(isMyDogGreat) {
+  console.log('Yes Caroga is the Greatest!')
+}
+return => Yes Caroga is the Greatest!
+
+-Since VAR is false, code in bracket will not execute
+var isMyDogGreat = false;
+if(isMyDogGreat) {
+  console.log('Yes Caroga is the Greatest!')
+}
+return => undefined
+
+var isMyDogGreat = true;
+if(isMyDogGreat) {
+  console.log('Yes Caroga is the Greatest!')
+}
+else {
+  console.log('Caroga is not a good girl')
+}
+return if true => Yes Caroga is the Greatest!
+return if false => Caroga is not a good girl
+
+Comparison Operators: > < <= >= == !=
+
+var age = 26;
+if(age >= 26) {
+  console.log('We\'\re both over a quarter century old!')
+}
+else if(age < 26) {
+  console.log('You\'\re a child')
+}
+return if age >= 26 => We're both over a quarter century old!
+return if age < 26 => You're a child
+
+-To check if 2 things are equal use ==, else = will assign that variable
+if(age == 18); {console.log('You are eighteen')}
+return => You are eighteen
+
+if(age != 18); {console.log('You are NOT eighteen')}
+return => you are NOT eighteen
