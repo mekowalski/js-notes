@@ -1,0 +1,29 @@
+Null VS Undefined
+
+-Both data types in Javascript
+-Javascript never sets a value to Null
+
+console.log(typeof null)
+return => object
+
+console.log(typeof undefined)
+return => undefined
+
+console.log(null === undefined)
+return => false
+null does not have same identity as undefined
+
+console.log(null == undefined)
+return => true
+Javascript considers null & undefined to be equal
+
+! changes to true
+!! changes to false
+
+console.log(1 + null)
+return => 1
+null is zero
+
+console.log(1 + undefined)
+return => Nan(not a number)
+can't add to undefined because it's not a number
