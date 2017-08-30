@@ -1,0 +1,28 @@
+Common Array Methods
+
+var dogs = ['Caroga', 'Titan']
+
+-Push, adds new element to an array
+dogs.push('Chief');
+console.log(dogs);
+return => ["Caroga", "Titan", "Chief"]
+
+-Pop, removes last element and returns that element
+console.log(dogs.pop());
+return => Chief
+console.log(dogs)
+return => ["Caroga", "Titan"]
+
+-Concat, combines two arrays
+-Doesn't affect original array
+var owners = ['Malind', 'Ryan']
+console.log(dogs.concat(owners));
+return => ["Caroga", "Titan", "Malind", "Ryan"]
+
+-Join, joins all elements in array to create string
+-Doesn't modify original array
+console.log(dogs.join('!'));
+return => Caroga!Titan
+
+-Reverse, reverses elements in array
+console.log(dogs.reverse());
