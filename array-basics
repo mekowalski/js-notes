@@ -1,0 +1,29 @@
+Array Basics
+
+-Array variables can store several pieces of data in one place
+-Can store any data type in array
+var dogs = ['Caroga', 'Titan', 'Chief'];
+
+-Multidimensional array
+var colors = [['yellow', 'marigold', 'gold'], ['blue', 'navy', 'cyan'], ['red', 'burgundy', 'ruby']];
+
+-Access elements with index beginning at zero
+console.log(dogs[1])
+return => Titan
+
+console.log(colors[0][2]);
+return => gold
+0: first collection of array
+2: is the '2nd' element from first collection
+
+console.log(colors[1][0]);
+return => blue
+
+-All arrays have forEach method
+dogs.forEach(function(element) {
+  console.log(element);
+})
+element is each item in array
+return => Caroga
+          Titan
+          Chief
