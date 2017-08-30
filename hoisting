@@ -1,0 +1,37 @@
+Hoisting, variable and function declarations processed before any code is executed
+-Functions and variables can appear to be used before they're declared
+
+console.log(notDeclared);
+return => Uncaught ReferenceError: notDeclared is not defined
+notDeclared is not used anywhere in program
+
+console.log(definedLater);
+var definedLater;
+definedLater = 'I am finally defined!'
+return => I am finally defined & undefined because variable is hoisted up before declaration
+
+-Variable is hoisted to the top but not the definition
+console.log(definedSimultaneously)
+var definedSimultaneously = 'I am defined'
+return => undefined
+
+var definedSimultaneously = 'I am defined'
+console.log(definedSimultaneously)
+return => I am defined
+
+-Functions are also hoisted to the top
+doSomethingElse();
+function doSomethingElse() {
+  console.log('I did it!')
+}
+return => I did it!
+
+-Variable declared but assigned to a function, variable declaration will be at the top but function assignment will be after the function call
+functionVar();
+var functionVar = function() {
+  console.log('I did it again!')
+}
+return => Uncaught TypeError: functionVar is not a function
+
+-Declare variables at top of function scope, clarity on which scope variables are coming from
+-Define functions are bottom of scope to keep them out of the way
