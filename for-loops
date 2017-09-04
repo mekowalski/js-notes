@@ -1,0 +1,59 @@
+For Loops
+
+-Run same code multiple times using loops
+-Most common in JS is for loops, runs for a specific number of times
+-Three items, all optional but in most for loops
+-Initialization run just once to set up loop variable
+-Condition statement is evaluated every time loop is run at the start & continues until condition is false
+-Final expression is evaluated at end of each loop iteration, usually used to increment/decrement loop counter
+for ([initialization]; [condition]; [final-expression]) {whatever to run in the for loop in curly braces}
+
+var myArray = [];
+for (var i = 0; i < 5; i++) {
+  myArray.push(i);
+}
+return => 5
+push numbers 0-4 onto array
+myArray return => (5) [0, 1, 2, 3, 4]
+
+-Break, use to break out of loop early
+var myArray = [];
+for (var i = 0; i < 5; i++) {
+if (i > 2) break;
+  myArray.push(i);
+}
+myArray reutrn => (3) [0, 1, 2]
+
+
+-Loops commonly can iterate through an array
+var array = [3, 6, 9, 12, 15];
+for (var i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+return => 3
+          6
+          9
+          12
+          15
+          undefined
+array return => (5) [3, 6, 9, 12, 15]
+
+-Nested for loops to iterate over multi-dimensional array, loop through array & sub-arrays
+var numbers= [[1, 2], [3, 4], [5, 6]];  //nested array
+for (var i = 0; i < numbers.length; i++) {  //first for loop
+  for (var j = 0; j < numbers[i].length; j++) {  //second(nested) for loop
+    console.log(numbers[i][j]);
+  }
+}
+return => 1
+          2
+          3
+          4
+          5
+          6
+          undefined
+numbers return => >(3) [Array(2), Array(2), Array(2)]
+                  >0: (2) [1, 2]
+                  >1: (2) [3, 4]
+                  >2: (2) [5, 6]
+                    length: 3
