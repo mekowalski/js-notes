@@ -1,0 +1,58 @@
+Objects Part 2
+
+-Use objects for lookups
+-Objects can be key value storage like a dictionary
+var alpha = {
+  1:'A',
+  2:'B',
+  3:'C',
+  4:'D'
+}
+alpha[2] return => 'B'
+
+-Remove object properties
+let dishes = {
+  plates: 6,
+  cups: 8,
+  forks: 14,
+  bowls: 4
+}
+delete dishes.cups; return => true
+dishes return => {plates: 6, forks: 14, bowls: 4}
+
+-Testing objects for properties
+-Useful to check if property of object exists or not
+-Use hasOwnProperty method on object
+dishes.hasOwnProperty('plates'); return => true
+dishes.hasOwnProperty('cups'); return => false
+
+-Accessing & modifying nested objects
+-Values can be any type of data supported by Javascript including arrays or other objects
+var myStorage = {
+  'shelf': {
+    'topShelf': 'handbags'
+  },
+  'middleShelves': {
+    'upper middle': 'heels',
+    'lower middle': 'flats'
+  },
+  'bottomShelf': 'boots'
+}
+
+myStorage.middleShelves['lower middle'];
+return => 'flats'
+
+myStorage.shelf['topShelf'];
+return => 'handbags'
+
+-Assign property with dot notation
+myStorage.middleShelves['lower middle'] = 'flats & block heels'
+myStorage.middleShelves['lower middle'];
+return => 'flats & block heels'
+
+-Generate an array of all object keys with KEYS method
+-Don't use the reference of object, put the word Object then dot notation
+-Then put object inside argument parentheses
+-Only provide keys on first level
+Object.keys(myStorage);
+return => (3) ["shelf", "middleShelves", "bottomShelf"]
