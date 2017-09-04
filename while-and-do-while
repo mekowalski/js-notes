@@ -1,0 +1,62 @@
+While & Do While
+
+-Both allow you to repeat code
+
+-While loop creates loop that executes specified statement as long as test condition to true and condition is evaluated before executing the statement
+-Does not automatically increment counter like for loop, make sure to do that inside the loop
+var n = 0;
+while (n < 5) { //while n is less than 5, while this is true
+  n++;  //this will run, add 1 to n
+  console.log('n = ' + n);  //this will run, log n = n
+}
+return => n = 1
+          n = 2
+          n = 3
+          n = 4
+          n = 5
+          undefined
+
+-Do While loop is similar EXCEPT is creates loop that executes until test condition evaluates to false
+-Condition statement evaluated after executing statement resulting in statements running at least once
+-Key difference is code in curly brace will always run at least once then see the while statement
+var i = 0;
+do {
+  i++;
+  console.log('i = ' + i);
+} while (i < 5);
+return => i = 1
+          i = 2
+          i = 3
+          i = 4
+          i = 5
+          undefined
+
+-Can use continue, means to not run any code after that command just go to next iteration of loop
+var n = 0;
+while (n < 5) { //while n is less than 5, while this is true
+  n++;  //this will run, add 1 to n
+
+  if (n == 3) continue;
+  console.log('n = ' + n);  //this will be skipped
+}
+return => n = 1
+          n = 2
+          n = 4
+          n = 5
+          // n = 3 did not return because the code after (n==3) was skipped
+
+-Can also use break, jump out of loop completely, won't run anymore iterations
+var n = 0;
+while (n < 5) { //while n is less than 5, while this is true
+  n++;  //this will run, add 1 to n
+
+  if (n == 3) break;
+  console.log('n = ' + n);  //this will only be run twice
+}
+return => n = 1
+          n = 2
+          undefined
+          // remaining loop has stopped once (n == 3)
+
+-If you made a loop that accidentally goes forever, it could freeze browser and could crash it
+-If using Chrome, go to Task Manager and end the process

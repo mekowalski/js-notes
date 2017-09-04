@@ -22,7 +22,7 @@ for (var i = 0; i < 5; i++) {
 if (i > 2) break;
   myArray.push(i);
 }
-myArray reutrn => (3) [0, 1, 2]
+myArray return => (3) [0, 1, 2]
 
 
 -Loops commonly can iterate through an array
@@ -42,7 +42,7 @@ array return => (5) [3, 6, 9, 12, 15]
 var numbers= [[1, 2], [3, 4], [5, 6]];  //nested array
 for (var i = 0; i < numbers.length; i++) {  //first for loop
   for (var j = 0; j < numbers[i].length; j++) {  //second(nested) for loop
-    console.log(numbers[i][j]);
+    console.log(numbers[i][j]); //index i will be first(outer) array, index j is second(inner) array
   }
 }
 return => 1
