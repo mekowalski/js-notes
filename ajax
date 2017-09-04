@@ -1,0 +1,36 @@
+AJAX = Asynchronous JavaScript And XML
+-In current programming, XML is now substituted with JSON (Javascript Object Notation) but AJAX kept the X in the acronym because AJAJ would just sound odd.
+-Allows update parts of website without reloading entire page
+-Recieve from and send data to a server behind the scenes
+
+//CSS file
+<h1>AJAX with Me!</h1>
+<p id='demo'>Let AJAX change this text</p>
+<button type='button' onclick='loadDoc()'>Change Content</button>
+
+//JS file
+function loadDoc() {
+  var xhttp = new XMLHttpRequest(); //step 2
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById('demo').innerHTML = this.responseText; //step 6(.responseText) & 7(.innerHTML)
+    }
+  }
+  xhttp.open('GET', 'https:this.is.a/URL-for-web-server', true); //step 3
+  xhttp.send(); //step 3
+}
+
+-1. An event occurs on a web page, so event would be when button is clicked on
+-2. Next an XML HTTP request object is made by JavaScript
+-3. XML HTTP request send a request to web server
+-4. Server processed request & that is the server we're making the request of
+-5. Server sends back a response to web page
+-6. At other server the response is read by JavaScript
+-7. Proper action, like page update, is performed by JavaScript
+
+readyState properties
+0 = request not initialized
+1 = server connection established
+2 = requests received
+3 = processing requests
+4 = requests finished and response is ready
