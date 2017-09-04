@@ -26,3 +26,32 @@ return => Caroga!Titan
 
 -Reverse, reverses elements in array
 console.log(dogs.reverse());
+return => ["Titan", "Caroga"]
+
+-Shift, remove first element in array and return element
+-Modifies array
+dogs.shift();
+return => "Titan" (using dog array after reverse method)
+
+-Unshift, adds element to start of array and returns length of modified array
+dogs.unshift('Chief');
+return => 2
+dogs => (2) ["Chief", "Caroga"]
+
+-Slice, select part of array and return that selection leaving original array unchanged
+-Accepts 2 arguments, start and end minus 1
+dogs.slice(1, 2);
+return => ["Caroga"]
+
+-Sort, sorts an array, numerically or alphabetically
+-Modifies original array
+dogs.sort();
+return => ["Caroga", "Chief"]
+
+-Splice, similar to slice but modifies original array
+-Arguments are start index, number of items to count from starting point to remove & any item to add in array
+after element push into array
+dogs = ["Caroga", "Chief", "Titan"]
+dogs.splice(1, 2, 'I am writing JS notes');
+return => ["Chief", "Titan"] (2 removed items)
+dogs => (2) ["Caroga", "I am writing JS notes"]
