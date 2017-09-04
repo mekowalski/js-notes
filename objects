@@ -1,0 +1,58 @@
+-Object is a standalone entity with properties and type
+-Property can be explained as a variable attached to object
+-Properties can be accessed with dot notation
+
+ var myCar = new Object();
+ myCar.make = 'Land Rover';
+ myCar.model = 'Defender 90';
+
+-Can make property and not assign value
+myCar.color;
+return => undefined
+
+-Can also accessed by bracket notation and log with bracket notation
+-Property name can be any string
+-If property name begins with number or hyphen, must be accessed with bracket notation
+myCar['year'] = 1972;
+
+-CREATION: Object initializer examples
+var myCar = new Object();  //initializer
+myCar.make = 'Land Rover';
+myCar.model = 'Defender 90';
+
+var myCar = {make: 'Land Rover', model: 'Defender 90', year: 1972};  //another example of initializer
+
+-CREATION: constructor function, define object type with constructor function
+-Then create instance of object with new
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+var carRR = new Car('Range Rover', 'Evoque', 2016);
+carRR return => Car {make: "Range Rover", model: "Evoque", year: 2016}
+
+var teslaS = new Car('Tesla', 'S', 2017);
+teslaS return => Car {make: "Tesla", model: "S", year: 2017}
+
+-Can add property to previously defined object
+carRR.color = 'Santorini Black'
+carRR return => Car {make: "Range Rover", model: "Evoque", year: 2016, color: "Santorini Black"}
+
+-CREATION: Object.create, allows you to choose prototype object for the object you want to create without using constructor function
+var Animal = {  //define prototype
+  type: 'Canine',  //default option, can be changed
+  displayType: function() {  //property that's a function, called a method, can do task not just a value
+    console.log(this.type);
+  }
+}
+
+var dog1 = Object.create(Dog);
+dog1.displayType();
+return => Canine
+
+-If new animal created that is not type: Canine, you can create type for that animal
+var cat1 = Object.create(Animal);
+cat1.type = 'Feline'
+cat1.displayType();
+return => Feline
