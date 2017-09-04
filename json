@@ -1,0 +1,26 @@
+JSON = JavaScript Object Notation
+-Syntax for storing data
+-Data is in name:value pairs
+-Curly braces hold objects
+-JSON valus can't be a function, a date or undefined
+-When exchanging data between broswer and server, data can only be text
+var myJSON = {
+  'name': {
+    'first': 'Malind',
+    'last': 'Kowalski'
+  },
+  'age': 26,
+  'skills': ['numchuck skills', 'bow hunting skills', 'computer hacking skills'],
+  'married': true,
+  'faveColor': 'yellow'
+}
+
+-Stringify method, if you call JSON.stringigy and pass in some JSON, it converts to a string
+-do this to JSON before sending to server
+var stringified = JSON.stringify(myJSON);
+stringified return => "{"name":{"first":"Malind","last":"Kowalski"},"age":26,"skills":["numchuck skills","bow hunting skills","computer hacking skills"],"married":true,"faveColor":"yellow"}"
+
+-Parse method, gives an object, converts to JavaScript object as well
+var stringJSON = '{"name": "Malind", "dogs": 2, "state": "Colorado"}'
+var myParse = JSON.parse(stringJSON);
+myParse return => {name: "Malind", dogs: 2, state: "Colorado"}
