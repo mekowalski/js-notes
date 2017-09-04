@@ -1,0 +1,42 @@
+-Closures, a combination of function & the environment in which that function was declared
+-Environment consists of any local variables that were in scope at time of closure creation
+-In JS all functions form closures
+-Function has access to any variable that's within scope or the  environment that it was created in
+
+function makeFunction() {
+  var name = 'Malind Kowalski';
+  function displayName() {
+    console.log(name);
+  }
+  return displayName();
+}
+
+var myFunction = makeFunction();
+return => Malind Kowalski
+
+-One way to use closure is to emulate private methods, which can only be called by other methods in same class but JS doesn't have native way of this
+-Can emulate private methods with closures
+-Because of JS lexical scoping, public functions can access private counter function
+var counter = (function() { //shared environment
+  var privateCounter = 0; //shared environment
+  function changeBy(value) {
+    privateCounter += value;
+  }
+  return { //can only access these functions from outside the counter
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };
+})(); //parenthesis is the function to execute and put execution of function into variable counter
+
+counter.value();
+return => 0
+
+counter.increment();
+SHOULD return 1 but my browser console is being difficult
