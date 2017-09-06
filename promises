@@ -1,0 +1,70 @@
+Promise, proxy or placeholder for value you may not know when the promise is created
+-Don't know when asynchronous method is going to finish in your program
+-Allows finishing of task as soon as asynchronous method/action finishes
+-Pending promise can be fulfilled with value or rejected with reason or error
+-Creating a promise with `new Promise`
+
+var p = new Promise(function(resolve, reject) {  //format or setup
+  //Do an async task then...
+
+  if(good_condition) {  //up to developer to manually call resolve/reject from within body of callback
+    resolve('Success!');
+  }
+  else {
+    reject('Failure!');
+  }
+})
+
+p.then(function() {  //this is the promise
+  //Do something with result, then function is whatever to do after the asynchronous task in promise completes
+}).catch(function() {
+  //error
+})
+
+var promiseCount = 0;  //create few different promises & keep track of promises had
+
+function testPromise() {
+  var thisPromiseCount = ++promiseCount;
+  console.log(thisPromiseCount + ': Started - Sync code started');
+  //this is first promise created
+
+  var p1 = new Promise(function(resolve, reject) {  //create new promise
+    console.log(thisPromiseCount + ': Promise started - Async code started');
+    //this is only an example to create asynchronism
+    window.setTimeout(
+      function() {
+        resolve(thisPromiseCount);
+      }, Math.random() * 2000 + 1000);
+      //send out what number promise this is
+  });
+
+  p1.then(function(value) {  //value = what number promise is on
+    console.log(value + ':Promise fulfilled - Async code terminated');
+  }).catch(function(reason) {
+    console.log('Handle rejected promise('+reason+') here.');
+  });
+
+  console.log(thisPromiseCount + ':Promise made - Sync code terminated');
+}
+
+//call a number of times to create different promises to see how they resolve
+//each promise created will have different number associated
+//first testPromise(); had spelling error
+testPromise();
+return => 2: Started - Sync code started
+          2: Promise started - Async code started
+          2:Promise made - Sync code terminated
+          undefined
+          2:Promise fulfilled - Async code terminated
+testPromise();
+return => 3: Started - Sync code started
+          3: Promise started - Async code started
+          3:Promise made - Sync code terminated
+          undefined
+          3:Promise fulfilled - Async code terminated
+testPromise();
+return => 4: Started - Sync code started
+          4: Promise started - Async code started
+          4:Promise made - Sync code terminated
+          undefined
+          4:Promise fulfilled - Async code terminated
