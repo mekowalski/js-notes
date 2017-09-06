@@ -1,3 +1,107 @@
 THIS = object that owns JavaScript code
 -Value of THIS when used in function is the object that owns the function
 -Value of THIS when used in object is object itself
+-When used outside function or object, THIS refers to global object
+
+this.document === document
+return => true (in the global object)
+
+this === window
+return => true (in browser)
+
+this.a = 30;
+window.a;
+return => 30
+
+-In function, if value of THIS is not set by the call THIS will default to global object
+function f1() {
+  return this;
+}
+f1() === window;
+return => true
+
+-In strict mode, value of THIS remains at whatever it was set to when entering execution text
+function f1() {
+  'use strict'
+  return this;
+}
+f1() === window;
+return => false (undefined, not equal to global object)
+
+-Call and apply methods
+-When function uses THIS keyword in its body, its value can be bound to particular object in the call using call or apply methods
+-First param of CALL is object to use as THIS, other params are passed as arguments in function call
+-APPLY similar to CALL, APPLY accepts only a single array of arguments unlike list in CALL method
+function add(c, d) {
+  return this.a + this.b + c+ d;
+}
+
+var o = {a:1, b:3};
+add.call(o, 5, 7);  //c & d become 5 & 7, and o becomes THIS
+return => 16  //1+3+5+7 = 16
+
+add.apply(o, [10, 20]);  //passing in one array instead of listed arguments
+return => 34  //1+3+10+20 = 34
+
+-Bind method, call on a function and pass in an object, it creates a new function with same body and scope as original function
+-Where THIS occurs in original function, in new function it is permanently bound to first argument of bind
+function f() {
+  return this.a;
+}
+
+var g = f.bind({a:'unicycle'});  //new variable g set = to function f() but bind context of THIS an pass in object a:'unicycle'
+g();
+return => 'unicycle'
+
+var h = g.bind({a:'cereal'});  //won't work, can't call bind again on something you've already created with bind
+h();
+return => 'unicycle' not 'cereal'
+
+var o = {a:8, f:f, g:g, h:h};  //create new variable o
+console.log(o.f(), o.g(), o.h());
+return => 8 'unicycle' 'unicycle'
+
+-Arrow functions, THIS bound to enclosing scope at creation time and can't be modified
+-New operater bind, call & applyy have no effect on THIS
+var o = {
+  tradFunction: function() {
+    console.log('tradFunction this === o?', this === o);
+  },
+  arrowFunc: () => {
+    console.log('arrowFunc this === o?', this === o);
+    console.log('arrowFunc this === window?', this === window);
+  }
+}
+
+o.tradFunction();
+return => tradFunction this === o? true
+
+o.arrowFunc();
+return => arrowFunc this === o? false
+          arrowFunc this === window? true
+
+-Arrow function attached to o was created in the scope of window and run in the scope of o
+
+-When function is called as a method of an object, THIS is set to the object the method is called on
+var o = {
+  prop: 30,  //set property
+  f: function() {  //f set to function just returning property
+    return this.prop;  //THIS is bound to o object, function is called as a method of that object
+  }
+}
+o.f();
+return => 30
+
+var o = {prop: 26};
+
+function independent() {  //function made unattached
+  return this.prop;
+}
+
+o.f = independent;  //variable o and f set to independent function
+return => ƒ independent() {
+            return this.prop;
+          }
+
+o.f();  //call function
+return => 26
