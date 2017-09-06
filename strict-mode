@@ -1,0 +1,38 @@
+Strict mode tightens rules for certain behavior
+-Sometimes can keep code safer & help JavaScript engines perform optimizations
+
+-Use Strict directive, two ways to use strict mode
+1. 'use strict'; as first line in your file
+2. apply strict mode to individual functions by putting 'use strict' at first line of function
+function myFunction() {
+  'use strict';
+  x = 730;
+}
+
+-Strict mode converts mistakes or bad syntax into real errors
+-In normal JS mistyping variable name created new global variable
+-In strict mode mistyping variable will throw an error, impossible to create global variable
+function myFunction() {
+  'use strict';
+  x = 730'  //this will create error in strict mode, must first declare variable with VAR, const or let before assigning value
+}
+
+-In SM, deleting variable is not allowed, only in normal JS mode
+-Normal JS, developer will not get error feedback assigning values to non writable properties
+-In SM, any assignment to non writable property, getter only prop, non existing prop, non existing variable or non existing object will result in error
+var x = 073091;
+delete x;
+return => false
+
+var object = {};
+Object.defineProperty(object, 'x', {value:0, writable:false});
+object.x = 730;
+//will return error
+
+var obj = {get x() {return 0}};  //should only be able to get
+obj.x = 730;  //not assign it a new value
+//will throw error
+
+delete Object.prototype
+//SM makes attempting to delete an non-deletable property error out
+//in normal it would not delete, just doesn't have effect
