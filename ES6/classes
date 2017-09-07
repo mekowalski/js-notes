@@ -1,0 +1,80 @@
+Classes, new in ES6 for JavaScript
+-Blueprint from which individual objects are created
+-Provides simpler and clearer syntax to create objects & deal with inheritance
+
+-Class declaration, one way to define class
+class Dog {  //class keyword with name of class
+  constructor(name, birth_year) {  //constructor func begins with constructor kw & variables passed in as arguments when creating class
+    this.name = name;  //class property
+    this.birth_year = birth_year;  //class property
+  }
+  get age() {  //when func begins with get, call the func a property not a func
+    return this.calcAge();
+  }
+  calcAge() {  //can run func and send is back as a property
+    return new Date().getFullYear() - this.birth_year;
+  }
+  what() {
+    console.log(this.name + ' is a good dog.');
+  }
+  static temper() {
+    return "Always happy!"
+  }
+}
+
+var caroga = new Dog('Caroga', 2013);
+return => Dog {name: "Caroga", birth_year: 2013}
+
+caroga.name + ' was born in ' + caroga.birth_year  //calling properties of class
+return => 'Caroga was born in 2013'
+
+caroga.what();
+return => Caroga is a good dog.
+
+caroga.name + ' is ' + Dog.temper()  //calling static func with class name not instance name
+return => 'Caroga is Always happy!'
+
+-Extends, used in class declarations/expressions to create a class as a child of another class
+-Can use all the functions of original class but also add more functions
+-Extends used in IS A relationship
+class Activity extends Dog {
+  what() {
+    console.log(this.name + ' likes to hike mountains!');
+  }
+}
+
+var titan = new Activity('Titan', 2013);
+return => {name: "Titan", birth_year: 2013}  //this is not a terrible example
+
+titan.what();
+return => Titan likes to hike mountains!
+
+-Super, if added, can call functions on an object's parent
+class Activity extends Dog {
+  what() {
+    super.what();
+    console.log(this.name + ' likes to hike mountains!');
+  }
+}
+
+titan.what();
+return => Titan is a good dog.
+          Titan likes to hike mountains!
+
+-Class expressions, can be unnamed or named
+-Named class expression is local to the class's body
+//unnamed
+var Dog2 = class {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+//named
+var Dog3 = class Dog {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
