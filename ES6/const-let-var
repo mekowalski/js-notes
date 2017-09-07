@@ -1,0 +1,38 @@
+const VS let VS var
+-Ways to define variables in JavaScript
+-const and let were introduced in ES6 but var has been around since beginning
+
+-Const, for values that never change
+const Pi = 3.14
+Pi return => 3.14
+
+Pi = 1
+return => Uncaught TypeError: Assignment to constant variable
+
+-Let, for clock level variables
+-When defining with let, it's only available within the block that's defined
+
+for (let i = 0; i < 3; i++) {
+  //for loops always in block, this is a block inside curly braces
+  console.log(i);
+}
+return => 0
+          1
+          2
+//locking that variable assigned with let
+
+console.log(i);  //if tried to run this before or after loop, it will error
+return => Uncaught ReferenceError: 1 is not defined
+
+-Var, variables available to entire function or if not within function then to the entire program
+-When defined with var, it will return undefined, not error out
+-Variable will be available even before assignment, knows existence but hasn't been assigned yet
+for (var j = 0; j < 3; j++) {
+  console.log(j);
+}
+return => 0
+          1
+          2
+
+console.log(j)  //even though this log is after the loop, it is still logged
+return => 3
