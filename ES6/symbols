@@ -1,0 +1,62 @@
+Symbols, new data type in ES6
+-Unique and immutable data type, tokens that may be used as unique IDs
+-Create via factory function symbol
+
+let sym1 = Symbol();
+let sym2 = Symbol('Symbol2');  //string to identity symbol
+
+-ALWAYS UNIQUE, never equal no matter what
+sym1 === sym2;
+return => false
+
+-Even if:
+let sym1 = Symbol('Symbol2');
+let sym2 = Symbol('Symbol2');
+return => false
+
+-Type is always symbol
+typeof sym1; return => 'symbol'
+
+-Converting symbol to string always throws exception
+'symbol: ' + sym1;
+return => Uncaught TypeError: Cannot convert a Symbol value to a string
+
+'symbol: ' + sym1.toString;
+return => "symbol: function toString() { [native code] }"  //will not error out
+
+-Symbols are mainly used as property keys because they never clash with other properties, symbol or string
+//use case 1: symbols as property keys
+const MY_KEY = Symbol();
+  let obj = {};
+
+  obj[MY_KEY] = 730;
+  obj[MY_KEY];
+  return => 730
+
+//use case 2: constants representing concepts
+//the const varaible can never be mistaken for another value
+const RED = Symbol('Red');
+const YELLOW = Symbol('Yellow');
+const CYAN = Symbol('Cyan');
+const ORANGE = Symbol('Orange');
+const GREEN = Symbol('Green');
+const PURPLE = Symbol('Purple');
+
+function getCompliment(color) {
+  switch (color) {
+    case RED:
+     return GREEN;
+    case YELLOW:
+      return PURPLE;
+    case CYAN:
+      return ORANGE;
+    case ORANGE:
+      return BLUE;
+    case GREEN:
+      return RED;
+    case PURPLE:
+      return YELLOW;
+    default:
+      throw new Exception('Unknown color: '+color);
+  }
+}
