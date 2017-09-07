@@ -1,0 +1,25 @@
+Check if a property is an object
+
+var myObject = {
+  name: 'Leather Jacket'
+};
+myObject return => {name: 'Leather Jacket'}
+
+-Two native ways to check if an object is in that property
+-IN operator and hasOwnProperty function
+
+-IN will show true whether it's created directly on object or if property is inherited from the protptype chain
+'name' in myObject;
+return => true
+
+-hasOwnProperty will only return true if key id available directly on object
+myObject.hasOwnProperty('name');
+return => true
+
+-valueOf is a property on all objects but not one specifically created on the object
+-valueOf is part of prototype of an object
+myObject.hasOwnProperty('valueOf');
+return => false
+
+'valueOf' in myObject;
+return => true
