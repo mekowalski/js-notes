@@ -1,0 +1,59 @@
+Template literals are string literals allowing embedded expressions
+-Can use multi-line strings & string interpolation
+-Enclosed with back ticks ``
+
+-Multi-line strings
+-Back ticks allow for entering of lines
+
+`this is a string`;
+return => 'this is a string'
+
+`line 1
+line 2
+line3
+
+etc...`
+return => "line 1
+          line 2
+          line3
+
+          etc..."
+
+-Expression interpolation
+var a = 6;
+var b = 12;
+`this amounts to ${a + b}`;  //the ${} will evaluate and be placed in your string
+return => 'this amounts to 18'
+
+-Tagged template literals, passing a template literal into a function
+function tag(strings, ...values) {
+  console.log(strings);
+  console.log(values);
+
+  return 'Learning is awesome!'  //in tag we return a string
+}
+
+tag`Hello ${a + b} world ${a * b}`;
+return => (3) ["Hello ", " world ", "", raw: Array(3)]
+          (2) [18, 72]
+          "Learning is awesome!"
+
+function template(strings, ...keys) {
+  return (function(...values) {  //here we return a function
+    var dict = values[values.length - 1] || {};
+    var result = [strings[0]];
+    keys.forEach(function(key, i) {
+      var value = Number.isInteger(key) ? values[key] : dict[key];
+      result.push(value, strings[i + 1]);
+    });
+    return result.join('');
+  });
+}
+
+var t1Closure = template`${0}${1}${0}!`;
+t1Closure('Y', 'A');
+return => 'YAY!'
+
+var t2Closure = template`${0} ${'greet'}!`;
+t2Closure('Hello', {greet: 'World'});
+return => 'Hello World'
