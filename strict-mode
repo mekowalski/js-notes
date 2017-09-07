@@ -36,3 +36,36 @@ obj.x = 730;  //not assign it a new value
 delete Object.prototype
 //SM makes attempting to delete an non-deletable property error out
 //in normal it would not delete, just doesn't have effect
+
+-In SM function params names must be unique
+function sum(a, a, c) {  //can't have two a's as params, probably a mistake/typo
+  'use strict';
+  return a + b + c;
+}
+
+-Changes to WITH and EVAL
+-WITH extends scope chain for a statement, SM prohibits WITH completely, makes optiomization better
+var x = 15;
+with (obj) {
+  x;  //is this var x or obj.x?
+}
+
+-In SM EVAL doesn't introduce new variables into surrounding scope
+-In SM EVAL creates variable only for code being evaluated, EVAL can't effect whether name refers to outer or local variable
+Normal code
+eval('var x;')  //introduces variable into surrounding function or global scope
+SM code
+eval('var x;')  //var x is only going to exist in parenthesis of code, outside there won't be var
+
+var x = 15;
+var evalX = eval("'use strict'; var x = 45; x;");  //normal JS x = 45 will change original x = 15
+console.assert(x === 15);  //in SM this will still be x = 17
+return => true
+
+console.assert(evalX === 45);  //in SM this will now be x = 45
+return => true
+
+-Secure JavaScript, SM helps to easily write secure js
+-Not possible to reference window object through THIS inside SM function
+-SM makes it impossible to access most recently called function & arguments
+-SM has security advantages & it helps with errors, SM is recommended for your code
