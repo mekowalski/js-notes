@@ -1,0 +1,37 @@
+var numbers = [3,4,2,5,1];
+
+function sort(array) {
+
+  /*
+    get each item with some code such as numbers array [index_location]
+    when i have each index_location then
+    modify original numbers array of 3, 4, 2, 5, 1 to 1, 2, 3, 4, 5
+
+  switch around the numerical values in the array to display the items form lowest to highest values
+  example: 4, 2 to be 2, 4
+
+  grab a specific item in the numbers array and place that into a new numbers
+
+  compare first number to see if it is greater than the next numbers (3 > 4 ??)
+  create an iteration to move largest number of sub array to the right hand side.
+   [3,2,4,1,5] (5 > 1) ?? yes
+  if greater ->
+    then swap numbers in array
+  else ->
+    leave it alone
+  */
+
+  return array;
+}
+
+console.log(sort(numbers)); // [1,2,3,4,5]
+
+/*
+
+RULES:
+
+  1. No Google
+  2. No build in enumerators (.mpa, .sort, .forEach) -> only for (var i) loops
+  3. Must write pseudo code first. Think solve it in english and then solve the JS syntax.
+  4. Think out loud, talk outloud, be yourself.
+*/
