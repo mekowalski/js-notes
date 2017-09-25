@@ -1,0 +1,42 @@
+Great example in chapter1 for psuedo or English code on how to make a cup of instant coffee
+(what i need to learn)
+
+1. Put coffee crystals in cup
+2. Fill kettle with water
+3. Put kettle to boil
+4. Has kettle boiled? If yes then pour water into cup otherwise continue waiting
+4. Drink coffee
+
+JavaScript is interpreted language rather than compiled
+-computer doesn't understand JavaScript therefore it uses an interpreter to understand the JS code
+-computer is machine code, binary numbers
+(had no idea about the types of languages)
+
+JavaScript is much easier to learn and use than Java but still powerful language
+
+Web servers have Internet Protocol(IP) addresses uniquely identifying them
+-4 sets of numbers separated by dots (127.0.0.1)
+
+Development tools for writing JavaScript code options:
+-simple text editor such as Notepad(Windows) or TextEdit(Mac)
+-Notepad2(Windows): www.flos-freeware.ch/notepad2.html
+-Brackets(Cross-Platform): brackets.io
+-Sublime Text(Cross-Platform): www.sublimetext.com [not free but has a time-limited evaluation]
+(i use atom text editor)
+
+'When it comes to learning the basics, it's often best to write the code by hand rather than rely on a tool to do it for you.  This helps you understand the fundamentals of the language before you attempt the more advanced logic that is beyond a tool's capability.' p5-pg2
+
+Script tells browser the following chunk of text between script tags is not HTML to display but code to be processed
+-script block
+  <script>
+    //JavaScript code here
+  </script>
+-has type attribute to tell browser what type of text is contained within element
+-give any external files the extension of .js, makes it easier to know what is contained in each file
+
+-linking external js file
+  <script src='MyCommonFunctions.js'></script>
+-this will read code and include file contents on web page
+
+Using external file may help with DRY code, by using one file & including it in all the pages needing it
+Also saves download time and reduce bandwidth usage
