@@ -1,0 +1,43 @@
+JavaScript contains many operators: +, !, <=, etc
+Reserved words by language for specific purpose: function, for, debugger, etc
+Everything else is data(7): numbers, strings, booleans, symbols, objects, null & undefined
+6 of 7 JS data types are primitive, except object. They represent single values such as: 7, "hello" or false
+
+NUMBERS: JavaScript has single, over-all 'number' type unlike other languages & their numbers of: integers, decimals, floats, etc
+-typeof gives idea of what type of data dealt with, accepts 1 argument, piece of data we'd like to know type of
+
+typeof 42 => "number"
+typeof 3.14 => "number"
+typeof -730 => "number"
+
+STRINGS: represent text in JavaScript with single '', double quotes "", or backticks ``
+
+typeof "What's your name?" => "string"
+typeof 'My name is Malind Kowalski.' => "string"
+typeof `Nice to meet you, Malind!` => "string"
+typeof "" => "string"
+
+BOOLEANS: 1 of 2 values of true or false, role of logical control flow & looping in JS
+
+typeof true => "boolean"
+typeof false => "boolean"
+
+OBJECTS: a collection of properties bound by curly braces {}, can point to values of any data type even objects
+
+{
+  'firstName': 'Malind',
+  'lastName': 'Kowalski',
+  'birthdate': {
+    'month': 'July',
+    'date': 30,
+    'year': 1991
+  },
+  'state': 'Colorado'
+}
+typeof {} => "object"
+
+NULL: represents absent object although typeof returns object when called on null
+typeof null => "object"
+
+UNDEFINED: misnomer, instead of 'not defined' more like 'not yet assigned value'
+typeof undefined => "undefined"
