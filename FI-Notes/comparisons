@@ -1,0 +1,39 @@
+EQUALITY OPERATORS
+When comparing values, the value returns true or false
+
+Loose equality op, returns true if 2 values are equal while performing type conversions: ==
+  30 == 30 => true
+  30 == '30' => true
+  '30' == false => true
+
+*Not good practice though, don't use for comparisons
+
+Strict equality op, returns true if 2 values are equal w/o performing type conversions: ===
+  30 === 30 => true
+  30 === '30' => false
+  '30' === false => false
+
+*Always use for comparisons
+
+Loose inequality op, returns true if 2 values aren't equal while performing type conversions: !=
+  9000 != 90000 => true
+  9000 != '9000' => false
+  [] != '' => false
+
+*Again not a good option for comparisons
+
+Strict inequality op, returns true if 2 values aren't equal w/o performing type conversions
+  9000 !== 90000 => true
+  9000 !== '9000' => true
+  [] !== '' => true
+
+*Always use for comparisons
+
+RELATIONAL OPERATORS
+  -greater than >
+  -greater than or equals >=
+  -less than <
+  -less than or equals <=
+  7 < 30 => true
+
+*stick to comparing numerical values only, not other data types such as strings
