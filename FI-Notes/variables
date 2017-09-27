@@ -1,0 +1,49 @@
+Variable is container storing value for later access
+Naming variables should be followed by format of three ways:
+  -begin variable name with lowercase letter, beginning with number isn't valid
+  -camelCaseName instead of snake_case_name
+  -do not use JS reserved or future reserved words such as: for, break, enum, function, etc
+
+Note: javaScript, javascript, JavaScript & JAVASCRIPT are 4 different variables
+
+Initialize with var reserved word, classic way & been around since birth of JavaSript
+2 step process:
+  -declare variable: var pi; => undefined
+  -assign value to that variable: pi = 3.14; => 3.14
+
+Or 1 step:
+  -var pi = 3.14; => undefined
+
+Access variable by referring to its name
+pi; => 3.14
+
+Variable values: at initialization all variables are automatically assigned undefined until we assign new value to that variable
+Use typeof to check data type of value stored
+
+var language; => undefined
+typeof language; => "undefined"
+language = 'JavaScript'; => 'JavaScript'
+typeof language; => "string"
+
+*Never set variable equal to undefined*
+
+Reassign variable to whatever we see put
+var pi = 3.14; => undefined
+typeof pi; => "number"
+pi = "ratio between a circle's circumference and diameter";
+=> "ratio between a circle's circumference and diameter"
+typeof pi; => "string"
+
+VAR not used with post-ES2015 world, no error is thrown when declaring variable twice
+
+LET and CONST: are the new var, both solve scope issues and give an error
+Can reassign variables with let, better option for declaring variables
+CONST is best option for default variable declaration, can't be reassigned
+Good for 3 reasons:
+  -when assigned variable with const, variable will always contain same value
+  -variable will always point to same object
+  -other developers will know what the variable points to
+
+Use VAR never
+Use LET for variable change such as with a counter/looping
+Use CONST for every other variable
