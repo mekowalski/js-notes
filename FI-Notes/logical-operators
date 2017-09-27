@@ -1,0 +1,26 @@
+Three logical operators:
+  -NOT !
+  -AND &&
+  -OR ||
+
+NOT is also called bang operator, operates single expression, returning opposite/inverse of truthiness
+  !true; => false
+  !false; => true
+
+Double!! converts any value into a boolean
+  !!false; => false
+  !!true; => true
+
+AND op takes 2 expressions to return true or false
+  -if both expressions are true then true is returned
+  true && true => true
+
+  -if either expression is true or false then false is returned
+  true && false => false
+
+OR op takes 2 expressions, return value is always 1 of the 2 expressions.
+  -if first expression is true then return value of FIRST expression
+  7 + 30 || 'Whatever' => 37
+
+  -if first expression is false then return the SECOND expression
+  7 > 30 || 'Whatever' => "Whatever"
