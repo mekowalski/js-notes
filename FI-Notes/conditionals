@@ -1,0 +1,88 @@
+EXPRESSIONS
+JavaScript expression: unit of code returning a value
+  9 => 9
+  'Hello' => "Hello"
+  false => false
+  7*30 => 210
+  7 < 30 => true
+
+Variable declarations are not expressions
+  let answer;
+But assignments are
+  answer = 1991; => 1991
+So are references
+  answer; => 1991
+
+BLOCK STATEMENTS
+Pair of curly braces {} used to group JavaScript statements, plays role in conditionals
+  {
+    'A statement in this block';
+
+    3 * 3 - 6 (returns evaluated expression, => 3, not the actual expression of 3*3-6)
+
+    const yellow = 'My favorite color is yellow';
+
+    const white = "Next fave color is white although that's not technically a color";
+  }
+
+TRUTHINESS & FALSINESS
+Indicates what happens when value converts to booleans
+Falsy: false, null, undefined, 0, NaN, an empty string ('', "")
+Every other value is truthy
+
+CONDITIONAL STATEMENTS
+3 structures to implement condition-based control:
+  -if... else statement
+  -switch statement
+  -ternary op
+
+If condition returns true, run whatever code
+If condition returns false, do nothing
+
+if (condition) {
+  block of code
+}
+
+const age = 26;                   const age = 7;
+let isAdult;                      let isAdult;
+
+if (age >= 18) {                  if (age >= 18) {}
+  isAdult = true;                   isAdult = true;
+}                                 }
+isAdult; => true                  isAdult; => undefined
+
+If condition returns false and we want action still, use ELSE clause
+
+const age = 7;
+let isAdult;
+
+if (age >= 18) {
+  isAdult = true;
+}
+else {
+  isAdult = false;
+}
+
+SWITCH
+Run multiple blocks in same control flow with switch.
+Need switch if conditional hinges on single value but requires separate handling for each potential case
+Default and Break are optional but useful
+Break: exits entire case statement, matches at most, a single case
+Default: specifies set of statements to run after all cases have been checked
+
+switch (expression) {
+  case val1:
+    //statements
+    break;
+  case val2;
+    //statements
+    break;
+  default:
+    //statements
+    break;
+}
+
+TERNARY OPERATOR
+Good way to represent single line of code for if...else statement
+condition ? expression1 : expression2;
+If condition TRUE run the first expression, if condition FALSE run second espression
