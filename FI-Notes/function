@@ -1,0 +1,37 @@
+Function, an object that holds sequences of actions that execute whenever we want, any number of times
+Accepts number of inputs, performs actions that are hidden from outside of the function & returns value to that out environment
+
+Similar JavaScript functions: Math.random(), console.log(), alert() etc
+All functions have the invocation operator ()
+
+A few different ways to declare function, primary way is function statement
+  -() needed as placeholders for values to pass when executing
+  -the placeholders are called parameters
+  -the actual value invoked is the argument
+  -{} needed to contain function body
+  -functions are JS objects that can be invoked
+  -arguments passed with comma separation
+
+DECLARATION
+function functionName(param1, param2) {
+  //code to execute
+}
+
+INVOCATION
+functionName('param1Value', 'param2Value');
+
+Return statements specify different value, taking value from inside function and making it available outside function
+  -once return statement is reached, JaveScript engine exits entire function, all other lines of code won't execute
+
+function functionName(param1, param2) {
+  //code to execute
+  //code to execute
+  return 'Whatever you want to return from the function'
+}
+
+Each function should have 1 responsibility
+  -if not, difficult to read
+  -difficult to debug
+  -code may not be DRY
+
+Code should maintain readability, code is modular and readable enough to others
