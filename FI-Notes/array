@@ -1,0 +1,68 @@
+Data Structure: means for associating & organizing information.
+ -ie: shopping list of food to buy at grocer
+ -ie: address book for organizing contact information
+
+Below are all examples of array literal syntax
+Array is an ordered list surrounded by square brackets []
+  -['Signal Hill', 'Long Beach', 'Rancho Cucamonga', 'Lakewood', 'Montclair']
+
+Members can be any data type
+  -['Caroga', 'Durango', 4, null]
+
+Arrays are ordered meaning the elements in them will always appear in the same order
+ -[1, 2, 3] is not the same is [3, 2, 1]
+
+Can assign array to a variable
+  -const malind = ['Malind', 'Kowalski', 26, 'Leo', 'Yellow']
+
+Can check length with .length method
+  -malind.length; => 5
+
+Every element in an array is assigned a specific index value, with index always beginning with 0
+Index is used to access certain element from an array
+  malind[1]; => 'Kowalski'
+  malind[4]; => 'Yellow'
+
+PUSH method adds elements to end of array
+  malind.push('Colorado');
+  malind;
+  => ['Malind', 'Kowalski', 26, 'Leo', 'Yellow', 'Colorado']
+
+UNSHIFT method adds elements to beginning of array
+  malind.unshift(07301991)
+  malind;
+  => [07301991,'Malind', 'Kowalski', 26, 'Leo', 'Yellow', 'Colorado']
+
+Both PUSH & UNSHIFT mutate original array, operations modifying original collection are known as
+destructive
+
+Spread operator allows addition of new elements while preserving original array
+  const livedInCities = ['Signal Hill', 'Lakewood', 'Salina', 'Davenport']
+  const allCities = [...livedInCities, 'Portsmouth']
+
+  livedInCities; => ['Signal Hill', 'Lakewood', 'Salina', 'Davenport']
+  allCities; = ['Signal Hill', 'Lakewood', 'Salina', 'Davenport', 'Portsmouth']
+
+POP method removes last element in an array
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  days.pop; => 'Sun'
+  days; => ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+SHIFT method removes first element in an array
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  days.shift; => 'Mon'
+  days; => [Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+SLICE() removes an element without destructing array, returns a portion, slice, of an array
+
+ARRAY IN ARRAYS
+An array can contain elements of any data type including other arrays
+  const board = [
+    ['X', 'O', ' '],
+    [' ', 'X', 'O'],
+    ['X', ' ', 'O']
+  ];
+  board; => [["X", "O", " "], [" ", "X", "O"], ["X", " ", "O"]]
+
+board[1]; => [" ", "X", "O"]
+board[0][2]; => " "
