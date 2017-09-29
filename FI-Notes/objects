@@ -1,0 +1,112 @@
+*JavaScript objects are a collection of properties bounded by curly braces {}, similar to a hash in Ruby.
+The properties can point to values of any data type — even other objects.*
+
+ Can have empty objects: {}
+ Objects with single key-value pair: {key: value}
+ Objects with multiple key-value pairs: {key1: value1, key2: value2}
+
+EXAMPLE:
+const malind = {
+  firstName: 'Malind',
+  lastName: 'Kowalski',
+  city: 'Durango'.
+  state: 'Colorado',
+  zipCode: 81301
+};
+
+-real data of object is stored in value half of key-value pairings, key gives us access to value
+
+Dot Notation uses a period . to access values in an object
+Simple to read, preferred usage to access properties
+  -malind.lastName; => "Kowalski"
+  -malind.zipCode; => 81301
+
+Accessing nonexistent property will return undefined because of no matching key on object
+  -malind.faveColor; => undefined
+
+Bracket Notation uses [] to access values of an object
+  -malind['firstName']; => "Malind"
+  -malind['city']; => "Durango"
+
+A bit harder to read
+Works better is key is nonstandard
+const wildKeys = {
+  'Cash rules everything around me.': 'Wu',
+  'C.R.E.A.M.': 'Tang',
+  'Get the money.': 'For',
+  "$ $ bill, y'all!": 'Ever'
+};
+
+wildKeys["Get the money"]; => "For"
+
+*Keeping everything standardized is good, and being able to access properties via dot notation is much
+more readable*
+
+Bracket notation has ability to compute value of variables on the fly
+const meals = {
+  breakfast: 'Oatmeal',
+  lunch: 'Caesar salad',
+  dinner: 'Chimichangas'
+};
+
+let mealName = 'lunch';
+
+meals[mealName]; => "Caesar salad"
+
+ADDING PROPERTIES TO AN OBJECT
+Add properties to an object with dot or bracket notation
+const caroga = {};
+
+caroga.firstName = "Caroga"
+caroga['lastName'] = "Kowalski"
+caroga.city = "Durango"
+caroga['state'] = "Colorado"
+caroga.zipCode = 81301
+
+caroga; => {firstName: 'Caroga', lastName: 'Kowalski', city: 'Durango', state: 'Colorado', zipCode: 81301}
+
+Multiple properties can have same value but keys must be unique
+
+CAN DESTRUCTIVELY MODIFY OBJECT
+function destructivelyUpdateObject (obj, key, value) {
+  obj[key] = value;
+
+  return obj;
+}
+
+ALTHOUGH IT'S BETTER TO COPY ALL OLD OBJECT INTO NEW OBJECT
+function nondestructivelyUpdateObject(obj, key, value) {
+  const newObj = { ...obj };
+
+  newObj[key] = value;
+
+  return newObj;
+}
+
+*This is a lot of code for both mays to modify and JavaScript has a better way*
+
+OBJECT.ASSIGN()
+Allows combination of properties from multiple objects in single object
+First argument passed in the initial object which all properties are merges
+Additional arguments are properties we ant to merge into first object
+
+Object.assign(initialObject, additionalObject, additionalObject, ...);
+
+Common pattern is to provide empty object as 1st argument
+Composes an entirely new object instead of modifying/overwriting existing object
+Also allows rewrite without destruction
+
+function nondestructivelyUpdateObject(obj, key, value) {
+  return Object.assign({}, obj, { [key]: value });
+}
+
+Important to merge everything into new empty object.
+
+DELETING A PROPERTY FROM AN OBJECT
+Pass property to remove with delete operator and JavaScript takes care of the rest
+delete object.property; => true
+
+Arrays are a special type of OBJECT
+For accessing elements of array always use integers
+Be wary of setting object-style properties on an array
+All object keys and array indexes are strings
