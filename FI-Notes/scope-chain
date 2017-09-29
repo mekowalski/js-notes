@@ -1,0 +1,29 @@
+Top level functions are the outer scope (global scope)
+Upon new function invocation, new scope retains a reference to the out scope in which it was declared
+Also have access to variables & functions declared in outer functions
+
+const globalVar = 1;
+
+function firstFunc() {
+  const firstVar = 2;
+
+  return firstVar + globalVar;
+}
+firstFunc(); => 3
+
+-have access to both global & local variable
+-const firstVar = 2; is run first, creates new variable
+-JS engine reaches second LOC return firstVar & is 100% go with local variable
+-JS engine reaches 2nd part of LOC globalVar & is unfamiliar
+-When engine can't find local match it looks in global cope & finds a match that way
+-This is access to scope-chain
+
+*What matters for the scope chain is where the function is declared — not where it is invoked.*
+*Scope chain is scopes, all the way down*
+*Scope chain goes in 1 direction, outer scope doesn't have access to things declared in inner scopes
+
+IDENTIFIERS
+Identifiers allow us to identify the variable or function we're referring to
+
+Compilation Phase: when the engine steps into our code line by line
+Execution Phase: runs our code after compilation phase, assigning variables a value and invoking functions
