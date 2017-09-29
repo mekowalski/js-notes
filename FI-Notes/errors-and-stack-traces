@@ -1,0 +1,38 @@
+*One of the biggest advantages an experienced programmer has is knowing how to quickly troubleshoot and fix
+errors they encounter. You will reach this point — it's just a matter of practice.*
+
+UNCAUGHT REFERENCEERROR: _____ IS NOT DEFINED
+Tried to reference a variable or function that doesn't exist in current scope or scope chain
+-double check where current thing is decalred
+-make sure it's declared at a scope where scope chain includes outer scope that includes declaration of the
+variable to access
+
+UNCAUGHT TYPEERROR: _____ IS NOT A FUNCTION
+Tried to invoke something not actually a function
+-happens when variable contains undefined instead of function
+-debug by finding attempted invocation occurrence and figure out why variable contains undefined
+
+UNCAUGHT SYNTAXERROR: MISSING ) AFTER ARGUMENT LIST
+Tried function invocation but forgot the closing parenthesis
+-make sure indentations are lined up
+
+UNCAUGHT TYPEERROR: ASSIGNMENT TO CONSTANT VARIABLE
+Accidentally tried assigning new value to variable declared with CONST, prevents reassignment.
+-could possibly be a typo
+-maybe using assignment op = instead of strict equality op ===
+
+
+STACK TRACES
+ERROR: Uncaught TypeError: Assignment to constant variable.    VM5412:3
+           at <anonymous>:3:20
+        (anonymous) @ VM5412:3
+
+VM- Virtual Machine
+5412- Chrome arbitrarily assigned ID
+:3- which line within script caused error(third line)
+at <anonymous>:3:20- indicates on 3rd line at 20th character
+<anonymous>- tells us error didn't occur in specific file
+(anonymous)- tells us we're in global scope, error didn't occur in a specific function
+
+JS provides control flow structure of try...catch
+try to run some JS statements and catch any errors thrown within try block
