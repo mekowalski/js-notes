@@ -1,0 +1,50 @@
+*This is really difficult material that even seasoned programmers occasionally struggle with*
+Function declared in global scope and JS doesn't care where it is invoked
+
+(can't put in my own words, perfect explanation)
+*The only thing that matters is where they are declared. When we declare a new function, the function asks,
+"Where was I created?" The answer to that question is the outer environment (the outer scope) that gets
+stored in the new function's scope chain.*
+
+^^^^Lexical Scoping
+  -lexical: having to do with words, what matters is where we(programmers) typed out the function declaration
+  within our code
+
+EXAMPLE 1
+const myVar = 'Foo';
+
+function first () {
+  console.log('Inside first()');
+  console.log('myVar is currently equal to:', myVar);
+}
+
+function second () {
+  const myVar = 'Bar';
+  first();
+}
+
+second(); => LOG: Inside first()
+             LOG: myVar is currently equal to: Foo
+
+-assignment of myVar = 'Bar' isn't visible to first().  second() isn't parent scope of first()
+-first() will go to outer scope to match myVar which is 'Foo'
+-when called in second(), first() will do the same steps to match variable as if not called in second()
+
+EXAMPLE 2
+const myVar = 'Foo';
+
+function second () {
+  function first () {
+    console.log('Inside first()');
+    console.log('myVar is currently equal to:', myVar);
+  }
+  const myVar = 'Bar';
+  first();
+}
+
+second(); => LOG: Inside first()
+             LOG: myVar is currently equal to: Bar
+
+-declare first() within second()
+-the outer reference layer will search and match within second()
+-therefore myVar is 'Bar'
