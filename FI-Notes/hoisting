@@ -1,0 +1,27 @@
+Hoisting deals with lifting variables and functions to the top of current scope
+-Declare all functions at the top of their scope
+-Only use CONST and LET, never VAR
+
+function myFunc () {
+  return 'Hello, world!';
+}
+myFunc(); => "Hello, world!"
+
+INVERSE also works
+//during execution phase, engine invokes myFunc(), already initialized during compilation phase
+myFunc();
+
+//during execution phase, engine simply ignores this function declaration that was already carried out in
+the compilation phase
+function myFunc () {
+  return 'Hello, world!';
+}
+=> "Hello, world!"
+
+*Your declarations are being evaluated before the rest of your code gets run, but hoisting is a bit of a
+misnomer: the physical location of the code isn't actually changing at all.*
+
+Using CONST and LET will have you avoid encounters with hoisting issues.
+
+Variables declared with CONST and LET technically get hoisted but JS engine doesn't allow them to be
+referenced before initiialization
