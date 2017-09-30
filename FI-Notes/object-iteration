@@ -1,0 +1,48 @@
+Looping is process of executing set of statements repeatedly until condition is met
+
+Iteration is process of executing a set of statements once for each element in a collection
+var myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+
+var j = 0;
+
+while (j < myArray.length) {
+  console.log(myArray[j++]);
+}
+
+FOR...OF
+-Introduced in ES2015, no initialization, no condition, no incrementing counter, no bracket notation
+-No such reassignment
+-Use any time to iterate oer an array
+const myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+
+for (const element of myArray) {
+  console.log(element);
+}
+
+ITERATING OVER OBJECTS
+FOR...IN
+-Iterates over properties in ab object but doesn't pass entire property into block, instead it passes the
+key
+-Use whenever you want to enumerate the properties of an object
+-Rule: don't use FOR...IN with arrays
+for (const <KEY> in <OBJECT>) {
+  // Code in the statement body
+}
+
+const address = {
+  street1: '11 Broadway',
+  street2: '2nd Floor',
+  city: 'New York',
+  state: 'NY',
+  zipCode: 10004
+};
+
+for (const key in address) {
+    console.log(key);
+}
+
+LOG: street1
+LOG: street2
+LOG: city
+LOG: state
+LOG: zipCode
