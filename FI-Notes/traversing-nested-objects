@@ -1,0 +1,58 @@
+*This is very advanced stuff, and you should absolutely not get discouraged if it doesn't click at first*
+Properties in an object can point to other objects
+
+const userInfo = {
+  firstName: 'Malind',
+  lastName: 'Kowalski',
+  birthdate: {
+    month: 'July',
+    date: 30,
+    year: 1991
+  },
+  dogs: [{
+    dogName: 'Caroga',
+    breed: 'American Pitbull and Chocolate Lab',
+    color: 'brown'
+  },
+  {
+    dogName: 'Titan',
+    breed: 'Unknown Mutt',
+    color: 'blonde'
+  }],
+  residence: {
+    city: 'Durango',
+    state: 'Colorado'
+  }
+};
+
+userInfo.dogs[1]
+=> {dogName: "Titan", breed: "Unknown Mutt", color: "blonde"}
+
+userInfo.dogs[0].dogName
+=> "Caroga"
+
+userInfo.residence["city"]
+=> "Durango"
+
+RECURSION
+A function that calls itself
+*It's one of the more powerful concepts in programming, but it's also pretty hard to grasp at first. Don't
+sweat it if it doesn't click immediately*
+
+function deepIterator (target) { //function first checks if arg is an obj or arr
+  if (typeof target === 'object') {
+    for (const key in target) { //if arg is an obj then iterate over properties in obj
+      deepIterator(target[key]);
+    }
+  } else {
+    console.log(target); //if arg isn't obj it logs out the arg and exits
+  }
+}
+
+DEBUGGER
+JavaScript built-in debugging solution, allows code to stop mid-execution and poke around a bit
+-Once engine hits first debugger statement, code is paused and a banner will pop up
+-Call stack is list of currently active, nested execution contexts.
+-(anonymous) is global execution context
+-Scope drop-down shows different scope categories
+-Local scope shows our target parameter
