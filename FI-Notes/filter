@@ -1,0 +1,57 @@
+*functional programming in JavaScript, it bears repeating: this is very complicated material!*
+Filter is reference of search process through an array
+
+const users = [
+  {
+    firstName: 'Kristopher',
+    lastName: 'Kowalski',
+    faveColor: 'Blue',
+    faveAnimal: 'Dragon'
+  },
+  {
+    firstName: 'Malind',
+    lastName: 'Kowalski',
+    faveColor: 'Yellow',
+    faveAnimal: 'Turtle'
+  },
+  {
+    firstName: 'Ryan',
+    lastName: 'Nikulski',
+    faveColor: 'Green',
+    faveAnimal: 'Dog'
+  },
+  {
+    firstName: 'Candace',
+    lastName: 'White',
+    faveColor: 'Red',
+    faveAnimal: 'Cat'
+  }
+]
+
+Separationg of concerns is nice and important
+filter() delegates comparison and trusts method will correctly return true or false
+function filter (collection) {
+  for (const user of collection) {
+    if (likesDogs(user)) {
+      console.log(user.firstName);
+    }
+  }
+}
+
+function likesDogs(user) {
+  return user['faveAnimal'] === 'Dog';
+}
+
+filter(users);
+LOG: Ryan
+
+PASSING FUNCTIONS
+Can pass functions into other functions, functions are objects with special hidden code property that can
+be invoked
+
+function iReturnThings (thing) {
+  return thing;
+}
+
+iReturnThings({ firstName: 'Kristopher', lastName: 'Kowalski' });
+// => {firstName: "Kristopher", lastName: "Kowalski"}

@@ -1,0 +1,39 @@
+When a function is passed into another function where it may be invoked is referred to as a callback
+Function isn't invoked immediately but called back or invoked at a later point
+Most callback functions are anonymous functions that aren't assigned an identifier
+
+function greeting (howdy) { //greeting() is stored in variable of howdy and then invoked callback function
+  console.log(howdy()); //invoked callback returned it's statement
+}
+
+greeting(function() { //anonymous function passed as argument to invocation of greeting()
+  return "Howdy partner, how's ranch life?"
+});
+=> Howdy partner, how's ranch life?
+
+filter() functions takes in a collection and callback and return every objects that make the callback true
+
+PURE FUNCTIONS
+Pure functions is repeatedly invoked with same set of arguments, always returns the same result with
+predictable behavior
+
+Impure functions return value unpredictable and invoking the function may alter objects passed as
+arguments
+Good to avoid impure functions because:
+  -Predictable code is good, you're always sure is return value
+  -And pure functions don't have side effects, making debugging easier
+
+function randomMultiplyAndFloor () {
+  return Math.floor(Math.random() * 100);
+}
+
+randomMultiplyAndFloor(); => 53
+randomMultiplyAndFloor(); => 66
+
+All JavaScript arrays come with their own filter() method:
+[1, 2, 3, 4, 5].filter(function (num) { return num > 3; });
+// => [4, 5]
+
+-Method accepts one argument, a callback function that invokes each element in the array.
+-Each element passed to the callback, if return is truthy, the element is copied into a new array
+-If callback return is falsey, the element is filtered out.
