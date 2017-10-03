@@ -23,3 +23,115 @@ Function declarations declare function in standard way without producing value
 
   -forms new function and immediately returns function as value when it's placed elsewhere
     (function () {})
+
+String literals give new strings, array literals give new arrays, object literals give new objects
+Function expressions give new functions
+'Good morning!' => "Good morning!"
+
+[] => []
+
+{} => {}
+
+(function () {}) => f () {}
+-parenthesis around expression are only required if function keyword would otherwise be the first thing in
+line of cde
+
+Functions are objects, first-class citizen of the JavaScript language
+Everything we can do to an object can also be done to a function
+  Abilities:
+  -function can be assigned to a variable
+  const myObj = {};
+
+  const myFunc = function ( {
+    return 3 + 6;
+  })
+  myFunc(); => 9
+
+  -function can be stored in data structure
+  -function can be return value of another function
+  -function can be passed as argument to another function
+
+Since function (& variable declarations) are already stored during compilation phase, we can refer hoisted
+functions before lexical declaration, above where they're written in code
+sayHi();
+
+function sayHi () {
+  console.log('Hi');
+}
+
+Function expressions are not hoisted an ignored during compilation phase therefore only evaluated during
+execution phase
+sayHello();
+
+const sayHello = function () {
+  console.log('Hello');
+};
+ERROR: Uncaught ReferenceError: sayHello is not defined
+
+ADDING PROPERTIES TO A FUNCTION
+Can add properties to functions then access them
+const myFunc = function () {
+  return 6 + 9;
+};
+
+myFunc.favoriteNumber = 42;
+// => 42
+
+console.log("myFunc()'s favorite number is", myFunc.favoriteNumber);
+// LOG: myFunc()'s favorite number is 42
+
+STORING FUNCTIONS IN AN ARRAY
+Can store functions as elements in an array
+const arrayOfDogs = [
+  {name: 'Caroga'},
+  {name: 'Titan'},
+  {name: 'Norman'}
+];
+
+const arrayOfFunctions = [
+  function () {console.log('This'); },
+  function () {console.log('is'); },
+  function () {console.log('quite'); },
+  function () {console.log('intense'); }
+];
+
+STORE FUNCTIONS IN OBJECTS
+Can store functions as properties of an object
+When fucntion is stored in an object, we call it a method
+const malind = {
+  fullname: 'Malind Evalette Kowalski',
+  greet: function(name) {
+    console.log(`hey there ${name}, I'm Malind.`);
+  },
+  currentlyQuoting: functions () {
+    console.log('The main focus is about to FEEL the makeup, not seeing it');
+  }
+};
+malind.fullName; => "Malind Evalette Kowalski"
+
+RETURNING FUNCTIONS FROM FUNCTIONS
+This is a great pattern for cutting down on repetitive code
+Instead of declaring 100 different functions, we declare a single function and invoke it 100 times,
+passing different arguments
+Functions can return any kind of data: strings, numbers, objects and other functions
+const createDivisibleFunction = function (divisor) {
+  return function (num) {
+    return num % divisor === 0;
+  };
+};
+
+const divisibleBy3 = createDivisibleFunction(3);
+
+divisibleBy3; => ƒ (num) { return num % divisor === 0; }
+
+divisibleBy3(9); => true
+
+divisibleBy3(10); => false
+
+Although not best idea, deeply nested code is meant to familiarize ourselves with combination of:
+  -Invoke functions
+  -Functions can return other functions
+  -We can invoke return value of another function
+
+FUNCTIONS PASSED AS ARGUMENTS
+Functions can be passed into another function as arguments
