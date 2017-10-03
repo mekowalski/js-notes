@@ -1,0 +1,54 @@
+FOREACH(): built in method on all JavaScript arrays that accepts one argument, a callback function
+Available on EVERY array in JavaScript, don't need to build anything additional
+Common constructs for learning about callbacks in JavaScript
+-Callback function invoked once for each element in array & passed three arguments
+  -current element
+  -index of that element
+  -the array itself
+
+const callback = function(el, i, arr) {
+  console.log('the current element is' el);
+  console.log('the current index is' i);
+  console.log('the current array is' arr);
+};
+
+['Red', 'Yellow', 'Blue'].forEach(callback);
+  The current element is Red
+  The index of the current element is 0
+  The current array is (3) ["Red", "Yellow", "Blue"]
+  ----------------
+  The current element is Yellow
+  The index of the current element is 1
+  The current array is (3) ["Red", "Yellow", "Blue"]
+  ----------------
+  The current element is Blue
+  The index of the current element is 2
+  The current array is (3) ["Red", "Yellow", "Blue"]
+  ----------------
+
+SORT()
+Helps organize an array in place, destructively rearranging elements in original array
+
+const dogs = ['Caroga', 'Titan', 'Norman', 'Cheif', 'Otto', 'Orion']
+dogs.sort(); => (6) ["Caroga", "Cheif", "Norman", "Orion", "Otto", "Titan"]
+dogs; => (6) ["Caroga", "Cheif", "Norman", "Orion", "Otto", "Titan"]
+
+Sort with callback to customize array according to our need
+dogs.sort(function (a, b)) {
+  //comparison code here
+}
+
+Sort method coerces numbers into strings then compares each character with unicode
+Pass in a callback that correctly sorts number in ascending order
+
+const threes = [12, 9, 15, 21, 6, 3, 18];
+threes.sort(); => (7) [12, 15, 18, 21, 3, 6, 9]
+
+if number1 is greater than number2
+  return positive number, tells sort() to revers order of number1 & number2
+else if number1 - number2 is negative or 0
+  sort will keep order in array
+const threesSort = function (number1, number2) {
+  return number1 - number2;
+}
+threes.sort(threesSort); => (7) [3, 6, 9, 12, 15, 18, 21]
