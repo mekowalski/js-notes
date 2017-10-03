@@ -1,0 +1,25 @@
+Statement: unit of code that accomplishes task but doesn't produce value
+-Used to hold data: CONST, LET, VAR
+-Iterate over data: FOR, FOR...IN, FOR...OF, WHILE
+-Control flow of data: IF...ELSE, SWITCH, BREAK
+-Debug data: DEBUGGER
+
+Expression: unit of code that produces a value
+-Produces data
+
+if (true) { //statement
+  6 + 9; //expression
+}
+-statement itself doesn't produce value: 15
+-expression: 6 + 9 produces value
+ Uncaught SyntaxError: Unexpected token (statement keyword)
+ -means the keyword is used for creating statements, stop using it as though it's an expression!
+
+FUNCTION EXPRESSIONS
+Function declarations declare function in standard way without producing value
+-function keyword is adaptable:
+  -forms new function in memory when first thing in LOC
+    function myFunction() {}
+
+  -forms new function and immediately returns function as value when it's placed elsewhere
+    (function () {})
