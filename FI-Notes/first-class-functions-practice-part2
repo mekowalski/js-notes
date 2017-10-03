@@ -1,0 +1,44 @@
+Reduce: sometimes we need to aggregate a result from elements, summing an array into a single composite
+-Reduce array to a single ultimate value
+const products = [
+  { name: 'Head & Shoulders Shampoo', price: 4.99 },
+  { name: 'Twinkies', price: 7.99 },
+  { name: 'Oreos', price: 6.49 },
+  { name: 'Jasmine-scented bath pearls', price: 13.99 }
+];
+
+
+Create function accepting the array of products, initializes a starting value(totalPrice) and iterates over
+passed-in products array, adding each product's price to the sum stored in totalPrice
+const getTotalAmountForProducts = function (products) {
+  let totalPrice = 0;
+
+  products.forEach(function (product) {
+    totalPrice += product.price;
+  });
+
+  return totalPrice;
+};
+getTotalAmountForProducts(products); => 33.46
+
+
+Above function may work well but it doesn't take account of reducing products array of objects, we would
+have to create a new function to contain product names as strings
+const gatherProductNames = function (products) {
+  const names = [];
+
+  products.forEach(function (product) {
+    names.push(product.name);
+  });
+
+  return names;
+};
+
+gatherProductNames(products);
+=> ["Head & Shoulders Shampoo", "Twinkies", "Oreos", "Jasmine-scented bath pearls"]
+
+REDUCE(): remove hard-coding & extract logic out into a callback function
+  -applies a function against an accumulator & each element in the array(left to right) to reduce into a
+  single value
+  -Syntax: arr.reduce(callback[, initialValue])
+  -Return value: value result from reduction
