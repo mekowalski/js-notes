@@ -1,0 +1,61 @@
+RETURNING FUNCTIONS FROM FUNCTIONS
+This is a great pattern for cutting down on repetitive code
+Instead of declaring 100 different functions, we declare a single function and invoke it 100 times,
+passing different arguments
+Functions can return any kind of data: strings, numbers, objects and other functions
+const createDivisibleFunction = function (divisor) {
+  return function (num) {
+    return num % divisor === 0;
+  };
+};
+
+const divisibleBy3 = createDivisibleFunction(3);
+
+divisibleBy3; => ƒ (num) { return num % divisor === 0; }
+
+divisibleBy3(9); => true
+
+divisibleBy3(10); => false
+
+Although not best idea, deeply nested code is meant to familiarize ourselves with combination of:
+  -Invoke functions
+  -Functions can return other functions
+  -We can invoke return value of another function
+
+FUNCTIONS PASSED AS ARGUMENTS
+Functions can be passed into another function as arguments
+
+IIFE
+Immediately invoked function expressions: a function expression that we invoke immediately
+  -A function that returns a function object:
+  (function () { console.log("Help, I've been invoked!") });
+  => ƒ () { console.log("Help, I've been invoked!") }
+
+  -We can invoke the returned function object immediately:
+  (function () { console.log("Help, I've been invoked!") })();
+  LOG: Help, I've been invoked!
+
+ANONYMOUS FUNCTION EXPRESSIONS
+Function declaration must have a name, required as an identifier to refer function object
+  -Forgoing name results in error:
+  function () {}
+  ERROR: Uncaught SyntaxError: Unexpected token (
+
+Function expressions may or may not have a name
+Most times an anonymous function will suffice, keeps code clean and easy to read
+Although a great reason to name you function expressions is a better stack trace
+(function namedFunctionExpression1 () {}) => ƒ namedFunctionExpression1() {}
+
+const myFunc = function namedFunctionExpression2 () {};
+
+myFunc; => ƒ namedFunctionExpression2() {}
+
+---------------
+
+(function () {})
+// => ƒ () {}
+
+const myFunc = function () {};
+
+myFunc;
+// => ƒ () {}

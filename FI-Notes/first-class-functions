@@ -108,30 +108,3 @@ const malind = {
   }
 };
 malind.fullName; => "Malind Evalette Kowalski"
-
-RETURNING FUNCTIONS FROM FUNCTIONS
-This is a great pattern for cutting down on repetitive code
-Instead of declaring 100 different functions, we declare a single function and invoke it 100 times,
-passing different arguments
-Functions can return any kind of data: strings, numbers, objects and other functions
-const createDivisibleFunction = function (divisor) {
-  return function (num) {
-    return num % divisor === 0;
-  };
-};
-
-const divisibleBy3 = createDivisibleFunction(3);
-
-divisibleBy3; => ƒ (num) { return num % divisor === 0; }
-
-divisibleBy3(9); => true
-
-divisibleBy3(10); => false
-
-Although not best idea, deeply nested code is meant to familiarize ourselves with combination of:
-  -Invoke functions
-  -Functions can return other functions
-  -We can invoke return value of another function
-
-FUNCTIONS PASSED AS ARGUMENTS
-Functions can be passed into another function as arguments
