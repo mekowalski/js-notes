@@ -1,0 +1,69 @@
+Simple creation of JavaScript object:
+let malind = {
+  name: 'Malind',
+  city: 'Durango'
+  state: 'Colorado'
+}
+
+let lisa = {
+  name: 'Lisa',
+  city: 'Portland'
+  state: 'Oregon'
+}
+
+Above is repetitive code, not DRY
+
+CONSTRUCTOR FUNCTION
+This operates as a factory for new objects
+function Person() { //declare functions with capitalization.
+
+}
+Person() => undefined
+
+new Person => {} //call with new keyword creating new object & object is automatically returned from
+function
+
+Provides mechanism for standardizing attributes
+function Person(name, city, state) {
+
+}
+let malind = new Person('Malind', 'Durango', 'Colorado') => {} //attributes not returned
+
+Attributes are logged in order to write code and access new object and assign attributes
+function Person(name, city, state) {
+  console.log(name)
+  console.log(city)
+  console.log(state)
+}
+let malind = new Person('Malind', 'Durango', 'Colorado')
+=> Malind
+=> Durango
+=> Colorado
+
+To access new object we use THIS keyword
+THIS references the objects that recieves method call
+function Person(name, city, state) {
+  console.log(this)
+}
+let malind = new Person('Malind', 'Durango', 'Colorado')
+=> {}
+=> {}
+
+Final step is to modify object by assigning it some attributes accordingly
+And we can create how ever many new objects with constructor function
+function Person(name, city, state) {
+  this.name = name
+  this.city = city
+  this.state = state
+}
+let malind = new Person('Malind', 'Durango', 'Colorado')
+=> {name: 'Malind', city: 'Durango', state: 'Colordo'}
+
+let Lisa = new Person('Lisa', 'Portland', 'Oregon')
+=> {name: 'Lisa', city: 'Portland', state: 'Oregon'}
+
+Can read or modify object with bracket or dot notation
+malind['city'] => 'Durango'
+
+malind['city'] => 'Telluride'
+malind => => {name: 'Malind', city: 'Telluride', state: 'Colordo'}
