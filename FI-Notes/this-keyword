@@ -1,0 +1,42 @@
+*If THIS is referenced directly inside a method, it equals the object that received the method call otherwise
+THIS is global*
+
+JavaScript method: a property on an object that points to a function
+let person = {
+  greet: function() {
+    return 'Bonjour!'
+  }
+}
+typeof person.greet; => 'function'
+
+GREET property is a method, we know that when called person.greet() the object receiving the method call
+equals person
+
+let person = {
+  greet: function() {
+    return this
+  }
+}
+
+typeof person.greet; => 'function'
+person.greet() == person; => true
+
+let person = {
+  greet: function greeting() {//object as a greet property pointing to greeting function
+    function otherFunction() {//when greet is called, declares & invokes otherFunction function
+      return this  //then returns THIS
+    }
+    return otherFunction()  //otherFunction is not a method but a function
+  }
+}
+
+[1, 2, 3].filter(function(element) {
+  console.log(this)
+  return element%2 == 0
+})
+=> window
+=> window
+=> window
+
+Each time callback is invoked, THIS is global
+Function is invoked by filter() method
