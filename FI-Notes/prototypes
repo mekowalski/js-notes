@@ -1,0 +1,26 @@
+When constructor functions are run, it declares new object with new function property
+All these function properties of new objects are the same except that they return different values
+Declare a function just one time and grant each object made, the reference the this function
+
+Protoype is a JavaScript object that can store specific attributes
+
+*separate*
+function Person(name, age) {
+  this.name = name
+  this.age = age
+}
+
+*separate*
+//moved declaration of function outside constructor function
+Person.protoype.sayHello = function() {
+  console.log(`Hi there, my name is ${this.name}!`)
+}
+
+*separate*
+var malind = new Person('Malind', 26)
+malind.sayHello(); => "Hi there, my name is Malind!"
+
+Each JavaScript object has reference to attributes declared on its constructor's prototype, the exact same
+function
+
+Separation of code is best practice
