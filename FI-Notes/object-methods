@@ -1,0 +1,30 @@
+Want to be able to give our objects behavior
+caroga.barkBark() => 'woof, bork, BARK!'
+
+Start with one method to one object
+function Dog(name, breed) {
+  this.name = name
+  this.breed = breed
+}
+let caroga = new Dog('Caroga', 'American Pit/Chocolate Lab')
+=> Dog {name: 'Caroga', breed: 'American Pit/Chocolate Lab'}
+
+Assign object (caroga) a new attribute and point that attribute to a function
+caroga.barkBark = function(){
+  console.log('woof, bork, BARK!')
+}
+caroga.barkBark() => woof, bork, BARK!
+
+Move this new attribute of a function onto the constructor function'
+We use THIS keyword within constructor function to point to the specific function
+Have a constructor function that returns object with data and behavior
+function Dog(name, breed) {
+  this.name = name
+  this.breed = breed
+  this.barkBark = function(){
+    console.log('woof, bork, BARK!')
+  }
+}
+let titan = new Dog('Titan', 'Pitbull Mutt')
+
+titan.barkBark() => woof, bork, BARK!
