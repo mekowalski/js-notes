@@ -1,0 +1,81 @@
+Currently with constructor function and use of prototype methods, they're separated
+Need a way to encase both attributes and functionality in one spot
+
+Class: provides shortcut for organizing our objects
+-Doesn't actually turn JavaScript into a class-based object-oriented paradigm, it's just nice abstraction
+over protoypal object created
+
+CONSTRUCTOR AND PROTOTYPE SEPARATED
+function Person(name, email) {
+  this.name = name
+  this.email = email
+}
+
+Person.protoype.sayHello = function() {
+  console.log(`Hi there, my name is ${this.name}!`)
+}
+
+var malind = new Person('Malind', 'malind@test.com')
+malind.sayHello(); => "Hi there, my name is Malind!"
+
+CLASS
+class Person {
+  constructor(name, email) { //define function named constructor
+    this.name = name;
+    this.email = email;
+  }
+
+  sayHello() { //define function  directly in body of class, verify function is defined on the prototype
+  with Person.prototype
+    console.log(`Hi there, my name is ${this.name}!`);
+  }
+}
+
+var malind = new Person('Malind', 'malind@test.com')
+malind.sayHello(); => "Hi there, my name is Malind!"
+
+CLASS INHERITANCE WITH EXTENDS
+Used when we wold like to reuse same functionality from a previously defined class, but extent that class's
+functionality
+
+class Employer extends Person {
+
+}
+
+let fephen = new Employer('Fephen', 'fephen@test.com')
+fephen.sayHello(); => 'Hi there, my name is Fephen!'
+
+Employer class has no defined properties but we can still assign a name, email and call sayHello method
+Can also add new methods to Employer class not declared on Person
+
+class Employer extends Person {
+  givePayCheck() {
+    return `I'm your employer, ${this.name}, and here is your paycheck.  Good work!`
+  }
+}
+
+fephen.givePayCheck();
+=> I'm your employer, Fephen, and here is your paycheck.  Goodwork!
+
+Can also override an inherited method by defining another method with the same name
+
+class Employer extends Person {
+  sayHello() {
+    console.log('Well howdy to you.')
+  }
+}
+fephen.sayHello(); => Well howdy to you
+
+SUPER
+Allows preservationof behavior already there and add to it, rather then repeat code, SUPER gives access to
+it programmatically
+
+class Employer extends Person {
+  sayHello() {
+    super.sayHello()
+    console.log('Well howdy to you.')
+  }
+}
+fephen.sayHello();
+=> Hi there, my name is Fephen!
+=> Well howdy to you
