@@ -1,0 +1,79 @@
+Example of object relation code
+
+let itemId = 0
+
+class Item {
+  constructor(name, price, user) {
+    this.id = ++itemId
+    this.name = name
+    this.price = price
+    if(user){
+      this.userId = user.id
+    }
+    store.items.push(this)
+  }
+  setUser(user){
+    this.userId = user.id
+  }
+}
+
+let malind = new User('Malind')
+let kristopher = new User('Kristopher')
+
+let dress = new Item('dress', 56, malind)
+let jeans = new Item('jeans', 28, kristopher)
+let tshirt = new Item('tshirt', 5, kristopher)
+
+store
+=> {users: [{id: 1, name: 'Malind'}, {id: 2, name: 'Kristopher'}],
+    items: [{id: 1, name: 'dress', price: 56, userId: 1},
+            {id: 2, name: 'jeans', price: 28, userId: 2},
+            {id: 3, name: 'tshirt', price: 5, userId: 2}
+            ]}
+
+Want to be able to find item associated with the user
+let malind = store.users[0]
+malind.items()
+//should return 'dress' but nor currently implemented
+
+Can use FILTER() to return: items that match a user AND a user when an item is returned
+class User {
+  constructor(name) {
+    this.id = ++userId
+    this.name = name
+
+    //insert user to store
+    store.users.push(this)
+  }
+  items(){
+    return store.items.filter(function(item) {
+      return item.userId === this.id
+    }
+  }
+}
+
+class Item {
+  constructor(name, price, use) {
+    this.id = ++itemId
+    this.name = name
+    this.price = price
+    if(user) {
+      this.userId = user.id
+    }
+
+    //insert item to store
+    store.items.push(this)
+  }
+  setUser(user) {
+    this.userId = user.id
+  }
+  user() {
+    return store.users.find(function(user) {
+      return user.id === this.userId
+    })
+  }
+}
+
+let user = new User('Ryan')
+let item = new Item('jeans', 28, user)
+item.user() => {id: 2, name: 'Ryan'}
