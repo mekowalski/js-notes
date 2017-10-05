@@ -1,0 +1,54 @@
+When a function is invoked as a method of an object, THIS equals the object receiving the method call
+JavaScript allows setting of THIS equal to whatever we want
+function greet() {
+  console.log(`hey, my name is ${this.name}!`)
+}
+
+let malind = {name: 'Malind'}
+
+greet.apply(malind) => hey, my name is Malind!
+greet.call(malind) => hey, my name is Malind!
+
+Both CALL and APPLY give us a way to invoke a function & explicitly set THIS equal to the first argument of
+CALL or APPLY
+
+Difference of CALL and APPLY is the way arguments are passed to target function
+CALL()
+When we invoke greet, we explicitly set THIS but also pass values for the 2 arguments
+Using CALL we pass the object THIS as the first argument followed by any function arguments in order
+
+function greet(person1, person2) {
+  console.log(`Hello ${person1} and ${person2}!  My name is ${this.name}, great to meet yall!`)
+}
+
+let malind = {name: 'Malind'}
+
+greet.call(malind, 'Kristopher', 'Ryan')
+=> Hello Kristopher and Ryan!  My name is Malind, great to meet yall!
+*if no arguments are passed we see undefined in both argument places*
+
+APPLY()
+Similar to CALL but only takes in 2 arguments: the value of THIS and the array of arguments to pass to the
+target function
+
+greet.apply(malind, ['Kristopher', 'Ryan'])
+=> Hello Kristopher and Ryan!  My name is Malind, great to meet yall!
+
+BIND()
+Bind is similar to CALL but has a couple differences:
+  -Set functions value to THIS value but delay calling the function until later
+  -BIND() creates a new function the same capabilities as original function
+
+let malind = {name: 'Malind'}
+
+function greet(person) {
+  console.log(`Hi there ${person}, my name is ${this.name}!`)
+}
+
+let newGreet = greet.bind(malind)
+*bind does not change original function, it copies the function and sets the copied function's THIS context
+to whatever is passed through as an argument to bind*
+
+newGreet('Christine') => Hi there Christine, my name is Malind!
+
+greet('Christine') => Hi there Christine, my name is !
