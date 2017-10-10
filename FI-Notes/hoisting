@@ -24,4 +24,4 @@ misnomer: the physical location of the code isn't actually changing at all.*
 Using CONST and LET will have you avoid encounters with hoisting issues.
 
 Variables declared with CONST and LET technically get hoisted but JS engine doesn't allow them to be
-referenced before initiialization
+referenced before initialization

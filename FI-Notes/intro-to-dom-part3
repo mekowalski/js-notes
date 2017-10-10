@@ -1,0 +1,32 @@
+HTML is a markup language for webpages
+Nodes are elements that have a starting and ending tag
+Some only have a starting tag called self-closing elements which don't have content nested inside of then,
+more so they're void elements
+
+normal tag:
+<p>I'm a paragraph.</p>
+
+self-closing tag, trailing optional:
+<img src="https://media.giphy.com/media/3o6MbkZSYy4mI3gLYc/giphy.gif" alt="A policeman">
+<img src="https://media.giphy.com/media/3o6MbkZSYy4mI3gLYc/giphy.gif" alt="A policeman" />
+
+DOM structure is like a tree, one big trunk and all other elements sprout from trunk
+Those elements can also have children themselves leading to a branched structure
+Most elements begin at <body>
+<body>
+  <main>
+    <p>I'm a paragraph in the main element which is in the body!</p>
+  </main>
+</body>
+
+Every HTML element has a display value that can be: none(hides element), block or inline
+
+BLOCK ELEMENTS
+Block elements start a new line and stretch horizontally, take up available width and used for layout
+purposes
+Many block elements but some are: <div>, <h1>, <form>, <main>, <p>
+
+INLINE ELEMENTS
+Inline elements are shy and compact, they only contain text and other inline elements.
+Best to avoid adding block and inline elements because browser will appear wonky
+Some examples of inline elements: <span>, <em>, <strong>, <a>, <img>
