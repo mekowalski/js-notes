@@ -1,0 +1,36 @@
+document.createElement(): creates an element accepting an argument for and valid HTML tag(p, div, spn, etc)
+var element = document.createElement('div')
+element.innerHTML = 'Hello, DOM!'
+element.style.backgroundColor = '#f9f9f9';
+
+*page is blank and will not show elements*
+
+APPENDCHILD()
+To enable appearance of an element in the DOM, we have to append it to the existing DOM node
+document.body.appendChild(element)
+*this is now working and displaying Hello DOM! on page*
+
+Can append elements to that element:
+var ul = document.createElement('ul')
+
+for (let i = 0; i < 3; i++) {
+  let li = document.createElement('li')
+  li.innerHTML = (i + 1).toString()
+  ul.appendChild(li)
+}
+
+element.appendChild(ul)
+ul.style.textAlign = 'left'
+*created a list with bullets and indexed 1 2 3 aligned on left side of screen*
+
+REMOVECHILD()
+Remove a specific part of element
+
+ul.removeChild(ul.querySelector('li:nth-child(2)'))
+*bullet point 2 is removed*
+
+ELEMENT.REMOVE()
+Removes entire element
+
+ul.remove()
+*list is removed on page*
