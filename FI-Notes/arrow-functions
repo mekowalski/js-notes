@@ -1,0 +1,67 @@
+Old standard:
+let arrowFunction = function() {
+  return 'this is an old function expression standard!'
+}
+
+Arrow function standard:
+-body of function is still declared inside {}
+-arguments to function go inside () before arrow
+-arrow => goes between () and {}
+let arrowFunction = () => {
+  return 'this is a new arrow function standard!'
+}
+
+All arrow functions are anonymous, they do not take names for identifiers
+Can set pointer to an arrow function or pass arrow function through as an argument to another function
+
+let square = (n) => n * n
+[3, 6, 9].map((n) => n*n)
+=> (3) [9, 36, 81]
+
+*lighweight nature of arrow functions make them useful for callbacks*
+
+
+ARROW FUNCTIONS & THIS
+When a function is invoked from another function, THIS value goes global
+let person = {
+  name: 'malind kowalski',
+  greet: function(){
+    return function reallyGreet() {
+      return `hello! i'm ${this.name}!`
+    }
+  }
+}
+person.greet()() => "hello! i'm !"
+THIS becomes global from inner function because that inner function is not a method of PERSON
+
+We could use old BIND method to fix\
+let person = {
+  name: 'malind kowalski',
+  greet: function(){
+    return function reallyGreet() {
+      return `hello! i'm ${this.name}!`
+    }.bind(this)
+  }
+}
+person.greet()() => "hello! i'm malind kowalski!"
+
+
+Another way to achieve same results of setting inner functions context to PERSON is with an arrow function
+This inner arrow functions retains scope of outer GREET method
+Because outer GREET is method context is PERSON, inner function's context is also PERSON
+let person = {
+  name: 'malind kowalski',
+  greet: function() {
+    return () => {
+      return `hello! i'm ${this.name}!`
+    }
+  }
+}
+person.greet()() => "hello! i'm malind kowalski!"
+
+
+When using arrow functions, consider if the function should be anonymous
+Prime candidates for anon functions are out callbacks to iterators: callbacks that we pass into the MAP,
+FILTER and FOREACH functions can be anonymous, espicially when wrestling with THIS
+
+*is more an art than a science*
