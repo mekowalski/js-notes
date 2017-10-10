@@ -1,0 +1,35 @@
+JavaScript gives mechanisms to construct objects with specific state, with such behavior shared and some data
+is different
+
+-Use class constructor to create different objects
+Each shoe has a different factoryPrice
+The marketMultiplier represents varying prices in different markets
+
+class Shoe {
+  constructor(name, color, factoryPrice) {
+    this.name = name
+    this.color = color
+  }
+  retailPrice(marketMultiplier) {
+    return marketMultiplier * this.factoryPrice
+  }
+}
+let shoe1 = new Shoe('Espadrilles', 'Ivory', 32)
+shoe1 => Shoe {name: "Espadrilles", color: "Ivory" factoryPrice: 32}
+shoe1.retailPrice(3.2) => 102.4
+
+
+In JavaScript you can also create functions that share specific capabilities but change others
+To create a function, return a function from another function
+function retailPriceMaker(factoryPrice) { //declared function
+  return function(marketMultiplier) { //return value is a function itself, takes in an argument
+    return marketMultiplier * factoryPrice  //references factoryPrice, in its scope & returns retail price
+  }
+}
+
+typeof retailPriceMaker => "function"
+
+CLOSURE: the attribute that all JavaScript functions have, hold onto the scope that they had when they were
+declared
+Closures are also used for privacy in JavaScript, impossible to change attribute, it is only readable
+We can always change data of an object but attributes are made truly private when using a closure
