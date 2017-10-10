@@ -1,0 +1,68 @@
+DOM provides way to manipulate HTML/XML documents
+This is known as Application Programming Interface(API)
+Dom gives structural representation of the document in tree form
+
+The HTML DOM
+                     WINDOW
+                       |
+                       |
+                    DOCUMENT
+                       |
+  |--------------------|--------------------|
+FORMS[]             ANCHORS             IMAGES[]
+  |
+  |
+  |-----TEXTBOXES
+        RADIO BUTTONS
+        CHECKBOXES
+        SELECT LISTS
+        TEXTAREAS
+        BUTTONS
+
+WINDOW:
+-highest level of DOM tree, is a browser window, contains entire DOM document, all components of HTML file
+will be accessible from WINDOW
+-has large number of properties that return info about the object, some examples:
+  window.document; returns entire HTML document
+  window.innerWidth; returns inner width of browser window, can change with expansion/shrinkage
+  window.innerHeight; returns inner height of browser window
+
+DOCUMENT:
+-represents any web page loaded in browser, contains all nodes the represent the HTML elements of page
+-used to traverse through HTML and manipulate elements
+-many properties that allow access of info about document programmatically:
+  document.all; returns all nodes inside document object
+  document.contentType; returns the type of content contained
+  document.URL; returns URL of document object
+
+BELOW DOCUMENT ARE ALL NODES REPRESENTING THE HTML OR XML ON THE PAGE
+
+ALTERING THE DOM
+Add/Remove HTML elements
+  add elements with appendChild
+  remove elements with removeChild
+  both can be called on any node in DOM tree
+
+Add/Remove/Change HTML attributes
+  if DOM node name element, element.attributes gives access to its attributes
+  you can remove attributes with removeAttribute
+
+Add/Remove/Change CSS styles
+  can modify any DOM nodes 'style' property
+
+Listen for key or mouse presses on elements
+  add multiple types of event listeners with addEventListener
+
+Create events in the page
+
+SELECTING ELEMENTS
+Retrieve HTML elements in document with JavaScript and JQuery
+
+JavaScript
+document.getElementsByTagName("p"); OR
+document.querySelectorAll('p');
+returns all 'p' tags on page
+
+JQuery: a library developers use for interacting with DOM, provides function aliased as $, wrapping
+document.querySelectorAll() and adds a bit more
+$('p'); returns all the 'p' tags on page
