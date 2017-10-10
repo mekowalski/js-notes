@@ -1,0 +1,78 @@
+Trees can contain subtrees, which for now treat independently of their parent trees
+
+DOM begins at <html> and careful consideration should be made to manipulate what's between the <head></head>
+tags
+<body> is the subtree tree at its root and manipulation may occur here instead, this subtree may also have
+subtrees
+
+<body>
+  <div>
+    <p>Hello</p>
+  </div>
+
+  <div>
+    <p>Laters!</p>
+  </div>
+</body>
+
+FINDING A NODE
+Courtesy of DOCUMENT JavaScript exposes a few ways to finding DOM nodes more/less directly
+
+document.getElementById(): quickest access to a node but requires its ID, this method only returns one
+element since IDs are unique, keep ID's unique
+<div>
+  <h5 id="greeting">Hello!</h5>
+</div>
+document.getElementById('greeting') //id is identical to <h5 id='greeting'>
+
+document.getElementsByClassName(): className doesn't need to be unique, will return a collection of all
+elements with the given class, you can iterate over collection with FOR loop
+<div>
+  <div class="banner">
+    <h1>Hello!</h1>
+  </div>
+
+  <div class="banner">
+    <h1>Sup?</h1>
+  </div>
+
+  <div class="banner">
+    <h5>Tinier heading</h5>
+  </div>
+</div>
+document.getElementsByClassName('banner') //find all elements with className === 'banner'
+
+document.getElementsByTagName(): returns a collection of 0 to many nodes with given tag, tag names aren't
+unique
+
+
+FINDING A NODE WITHOUT KNOWING ABOUT IT
+
+<main>
+  <div>
+    <div>
+      <p>Hello!</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p>Hello!</p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p>Hello!</p>
+    </div>
+  </div>
+</main>
+
+-Begin with <main> element:
+const main = document.getElementsByTagName('main')[0]
+
+-Then we can get children of <main> using main.children:
+const div = main.children[1]
+
+-Finally can get and update our element(using p tag for example):
+const p = div.getElementsByTagName('p')[0]
+
+p.textContect = 'Goodbye!'
