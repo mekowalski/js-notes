@@ -1,0 +1,26 @@
+DOM: Document Object Model
+
+Concluding that by changing Document Object Model, we change the way our webpage displays
+And can do this even if HTML is unchanged
+
+DOM is a representation of current view of the browser and can be manipulated without reloading the page
+The HTML is the test in a file first used to display the page
+
+With JavaScript we can view a current rep of the DOM & we can select specific portions of DOM to manipulate
+
+MANIPULATE INSTRUCTIONS IN README
+-remove header with JavaScript
+document.querySelector('header')
+
+returns
+<header class="site-header flex-grid flex-grid--center-y">...</header>
+
+document.querySelector('header').remove
+returns f remove() { [native code] }
+
+-HTML is a markup language used to display content in a browser
+-When changing the appearance of webpage we're really changing the DOM with directly determines display of
+  current page
+-Can view and manipulate DOM by with console in developer tools
+-Can also view DOM by opening up console and typing document
+-Select specific parts of DOM using JavaScript
