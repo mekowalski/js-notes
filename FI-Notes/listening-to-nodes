@@ -1,0 +1,83 @@
+To interact with nodes on a page we listen for them
+
+
+ADDEVENTLISTENER()
+To listen to an event we can use addEventListener() which takes in 2 argument: the name of the event and the
+function to handle the event
+
+const main = document.getElementById('main')
+
+main.addEventListener('click', function(event) { //click is event to listen for, function to handle event
+  alert('I was click!')
+})
+*pops alert window when clicked on id='main'*
+
+event.which: tells us which key was pressed
+
+
+PREVENTING DEFAULT BEHAVIOR
+Every DOM event comes with a preventDefault property, a function that will prevent the default action from
+occurring
+preventDefault allows for opportunity to intercept and tweak user interactions
+stopPropagation stops event from triggering other nodes in DOM that might listen for the same event
+
+BUBBLING AND CAPTURING
+Bubbling: starts at the target node and moves up the DOM tree to the root
+let divs = document.querySelectorAll('div')
+
+function bubble(e) {
+  console.log(this.firstChild.nodeValue.trim() + 'bubbled')
+}
+
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', bubble)
+}
+click on div containing 5, return => 5bubbled
+                                     4bubbled
+                                     3bubbled
+                                     2bubbled
+                                     1bubbled
+*the event begins at div 5 and bubbles up to the topmost node*
+
+Capturing: starts at the target node's parents elements and propagates down the tree until it reaches the
+target
+In order to capture we need to set a 3rd argument to true
+divs = document.querySelectorAll('div')
+
+function capture(e) {
+  console.log(this.firstChild.nodeValue.trim() + ' captured')
+}
+
+for (let i =0; i < divs.length; i++) {
+  divs[i].addEventListener('click', capture, true)
+}
+click on div containing 5, return => 1 captured
+                                     2 captured
+                                     3 captured
+                                     4 captured
+                                     5bubbled
+                                     5 captured
+                                     4bubbled
+                                     3bubbled
+                                     2bubbled
+                                     1bubbled
+*event propagates from top of page towards the target node, triggering event handlers as appropriate
+along the way*
+*target node is last node to capture the event but is the first node to bubble the event up*
+
+
+STOPPROPAGATION()
+Sometimes there is a generic event that we want to constrain to its target, stopPropagation() allows for
+this
+const divs = document.querySelectorAll('div')
+
+function bubble(e) {
+  e.stopPropagation()
+
+  console.log(this.firstChild.nodeValue.trim() + ' bubbled')
+}
+
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', bubble)
+}
+click on any, single node returns only that node bubbled
