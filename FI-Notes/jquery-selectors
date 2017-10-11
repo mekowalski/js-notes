@@ -1,0 +1,30 @@
+A big part of making DOM manipulation quick and painless is via selecting the correct DOM node you want to
+work with
+
+When using JQuery wrap selectors ('in strings') in a call to $ such as:
+$('div')
+
+To set up JQuery selector, you always begin with $, every line of JQuery should begin with $
+$('selector-goes-here')
+*there are many types of selectors*
+
+ELEMENT SELECTORS
+$('img'): will return array of all images
+
+CLASS SELECTORS
+$('.pics'): use dot for class denotation, this will return elements with class of .whatever
+
+ID SELECTORS
+$('#baby-ninja'): works the same as class selector but # denotes the id
+
+DESCENDANT SELECTOR
+$('ul li'): helps select all list items inside ul tag, the li tags are descendants
+
+FIRST CHILD
+$('parent-tag child-tag:first-child'): returns the first selected tag inside each div
+
+ALT TAG SELECTOR
+$("img[alt='the beatles making faces']"): selects image with specific alt text ie. the beatles making faces
+
+LAST SELECTOR
+$('div:last'): returns last selected part of the page
