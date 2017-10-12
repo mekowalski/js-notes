@@ -1,0 +1,93 @@
+CSS: cascading style sheets, is a language that allows specification of what element should look like
+
+p {
+  font-size: 15px;
+  color: yellow;
+}
+*this tells browser that in the <p> tags, the font should 15pixels and color yellow*
+
+CSS framework allows us to have custom styling without writing any, or a lot, CSS ourselves
+99% of CSS in any application is usually declared in external sheets, referenced by <link> tag in the <head>
+of document
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+An element can match several selectors and the properties of the selectors can overwrite each other
+body {
+  font-size: 24px;
+  color: blue;
+}
+
+p {
+  color: red;
+}
+*font size will inherit 24px and a red color, ruleset for making <p> red has precedence since its selector
+is more specific.*
+
+
+CLASSES AND ID'S
+Can add class and id attributes to DOM nodes to make it easier to work with styling.
+
+.red {
+  color: red;
+}
+
+<p>
+  I am a <span class="red">paragraph</span> with some red <span class="red">words</span>.
+</p>
+
+Can add multiple classes to same HTML element
+.red {
+  color: red;
+}
+
+.big {
+  font-size: 24px;
+}
+
+<p>
+  I am a <span class="red big">paragraph</span> with some red <span class="red big">words</span>.
+</p>
+
+
+ID's are used to specifically target one element and an id can only be used once in entire DOM
+<p id="paragraph">I am a paragraph.</p>  //valid
+
+<p id="paragraph">I am a paragraph.</p>  //invalid
+<p id="paragraph">I am another paragraph.</p>  //invalid
+
+
+SELECTORS
+Selectors are identifiers to select the element needed to style
+-tag: <p>, <div> tec
+-class: .red
+-id: #exact-id
+
+
+SELECTOR SPECIFICITY
+Any CSS declaration has a certain weight attached to it determined by selector type; some selectors are
+more specific and higher up in priority list
+p { //generic, nothing specific
+  font-size: 14px;
+}
+
+.bigger { //a class selector has more weight therefore font size goes up to 16px
+  font-size: 16px;
+}
+
+#paragraph { //id takes precedence over the tag selector therefore font size goes up to 24px
+  font-size: 24px;
+}
+
+
+USING JS TO SELECT DOM NODES
+JS example to select 'red' class:
+const redElements = document.querySelectorAll('.red')  //returns all 'red' class listed
+const redElements = document.querySelector('.red')  //returns first matching 'red' class
+
+JQuery example:
+const redElements = $('.red')  //returns an array of 'red' class
+
+Can also select multiple elements:
+const boldElementsAndRedParagraphs = document.querySelectorAll('.big, .red p')
