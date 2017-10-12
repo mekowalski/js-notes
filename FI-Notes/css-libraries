@@ -1,0 +1,26 @@
+CSS has frameworks with styling already taken care of, both curse and blessing:
+  -save a lot of time by following framework conventions and styling
+  -giving up customization
+
+Frameworks provide a slew of classes that can be used to style the application
+-classes allow reuse of styling across several components.
+
+BASSCSS
+-very lightweight CSS framework focusing on sane defaults and more complex layout possibilities
+-not all-in-one framework like Bootstrap or Foundation but helps lay out application in better way
+
+TYPOGRAPHY
+-BASSCSS has default styles for all typographic elements (p, h1, h2, ul, div, etc)
+-less styling to worry about
+
+GRID
+-in BASSCSS grid has standard 12 column layout system that is also in Bootstrap, Foundation and other
+frameworks
+-foregoing this grid layout gives flexbox layout, helping solve many problems
+
+FLEXBOX
+-relatively new concept that more developers are starting to use, allowing for powerful layout solutions that
+can't be achieved with traditional layout techniques
+-BASSCSS provides layout classes that can create any kind of layout necessary
+-elements can align themselves with flexbox shrink/stretch
+-considered close to Golden Age of web layout
