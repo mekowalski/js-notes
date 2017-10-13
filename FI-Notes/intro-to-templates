@@ -1,0 +1,114 @@
+In many ways building applications boils down to manipulating the DOM of a page to change the look and data
+shown to the user
+
+MANUALLY UPDATING COMMENTS
+*intro to templates index.html file*
+-going to add new comments with a new <div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Hand-Written Templates</title>
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <article>
+      <header><h2>The Results are In!</h2></header>
+      <p>
+        After careful consideration and a generous grant from NASA, our team has determined that a woodchuck could chuck five wood, with a standard deviation of +/- .37 wood.
+      </p>
+      <footer>posted by Chuck Wooden</footer>
+      //new div for new comment
+      <div>
+        <p>This checks out.</p>
+        <p>posted by: Woodrow P Chuckington</p>
+      </div>
+    </article>
+  </body>
+</html>
+
+Editing comments directly in the HTML is unsustainable
+
+
+DYNAMICALLY UPDATING COMMENTS WITH JAVASCRIPT
+Can use JavaScript to update HTML and save time
+-going to a div with an id of 'comments'
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Hand-Written Templates</title>
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <article>
+      <header><h2>The Results are In!</h2></header>
+      <p>
+        After careful consideration and a generous grant from NASA, our team has determined that a woodchuck could chuck five wood, with a standard deviation of +/- .37 wood.
+      </p>
+      <footer>posted by Chuck Wooden</footer>
+      //new div for new comment
+      <a href="#" onclick="addComment();">Add Comment</a>
+          <div id="comments">
+          </div>
+        </article>
+        <script type="text/javascript" charset="utf-8">
+          function addComment() {
+            var commentDiv = document.getElementById('comments');
+            commentDiv.innerHTML = '<div><p>This research is bold and important!</p><p>I wish to join your team</p></div><div><p>posted by: <span>I swear I am not a woodchuck</span></p></div>';
+          }
+        </script>
+    </article>
+  </body>
+</html>
+
+This works but this is ugly, difficult to manually keep track of and we want to separate concerns
+
+
+CREATING A TEMPLATE
+Templates define the HTML and provides places to insert data dynamically
+Need to separate creation of markup structure form process of collecting and inserting new data
+A few things to do for every comment:
+  -create div to hold comment text
+  -create div to hold commenter name with 'posted by:' text
+  -add it all to the post's main comment div
+*implement this by moving them into a .js file to keep tidy and clean*
+
+Broken up the tasks into 4 functions that can:
+  -pass any comment text and commenter to them and build out a fully-formed well-formatted comment div
+  -ability to modify structure of the HTML we use for comments without affecting how we collect and insert
+  data of comments
+  -created a template for comments with functions
+  -broke each function up along the lines of each section of the DOM we wish to manipulate
+
+Templates are about being able to dynamically modify the DOM repeatedly in chunks that are easy to manage,
+maintain and change
+
+
+DYNAMIC DATA COLLECTION
+Create truly dynamic feature by adding comment form
+*intro to templates index.html file*
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Hand-Written Templates</title>
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <article>
+      <header><h2>The Results are In!</h2></header>
+      <p>
+        After careful consideration and a generous grant from NASA, our team has determined that a woodchuck could chuck five wood, with a standard deviation of +/- .37 wood.
+      </p>
+      <footer>posted by Chuck Wooden</footer>
+      //new dynamic feature with comment form
+      <form id="newComment" onSubmit="addComment()">
+        Add comment: <input type="text" id="commentText"><br>
+        Your name: <input type="text" id="commenterName"><br>
+        <input type="submit">
+      </form>
+      <div id="comments">
+      </div>
+    </article>
+  </body>
+</html>
