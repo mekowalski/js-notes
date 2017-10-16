@@ -1,0 +1,113 @@
+XMLHTTPREQUEST: XHR is a JavaScript API allowing transfer of data between client and server
+-Helps write dynamic programs by allowing to fethc data from a server based on user events and update parts
+of the page without refresh
+*code along: index.html and index.js files*
+
+
+CREATING XHR REQUEST
+First add link to HTML to trigger the resquest
+*index.html*
+<body>
+  <div class="flexbox-container">
+    <div>
+      <h3>Repositories</h3>
+      //added link
+      <a href="#" onclick="getRepositories()">Get Repositories</a>
+    </div>
+    <div>
+      <h3>Commits</h3>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+AND CREATE getRepositories function to initiate XHR request
+*index.js*
+function getRepositories() {
+  const req = new XMLHttpRequest()
+  req.open("GET", 'https://api.github.com/users/octocat/repos')
+  req.send()
+}
+Both successfully fetch data fro remote source without XHR reloading page
+
+
+HANDLING XHR RESPONSE
+The second part of XHR is handling response once request is made
+Do this by defining event listener on request to listen for 'load' event
+*index.js above getRepositories function*
+function showRepositories(event, data) {
+  //this is set to the XMLHttpRequest object that fired the event
+  console.log(this.responseText)
+}
+
+function getRepositories() {
+  const req = new XMLHttpRequest()
+  //add event listener to 'req' object and set 'this' to be 'req' object inside callback function
+  req.addEventListener("load", showRepositories);
+  req.open("GET", 'https://api.github.com/users/octocat/repos')
+  req.send()
+}
+
+
+PARSING XHR RESPONSE
+Githug API deals strictly with JSON therefore response will be well-formed JSON
+Parse response to list repos on the page
+*index.html*
+<div>
+  <h3>Repositories</h3>
+  <a href="#" onclick="getRepositories()">Get Repositories</a>
+  <div id="repositories"></div>
+</div>
+
+And list names of repo names
+function showRepositories(event, data) {
+  console.log(this.responseText)
+  let repoList = "<ul>"
+  for(var i=0;i < this.responseText.length; i++) {
+    repoList += "<li>" + this.responseText[i]["name"] + "</li>"
+  }
+  repoList += "</ul>"
+  document.getElementById("repositories").innerHTML = repoList
+}
+This returns a list of 'undefined' instead of the repo names
+
+They way to tell interpreter that it's working with JSON is to parse with JSON.parse
+function showRepositories(event, data) {
+  //JSON.parse below
+  var repos = JSON.parse(this.responseText)
+  console.log(repos)
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + '</li>').join('')}</ul>`
+  document.getElementById("repositories").innerHTML = repoList
+}
+This returns repo names!
+
+Want to be able to see commits of a repo, begin with adding link to pro output
+*index.js*
+function showRepositories(event, data) {
+  var repos = JSON.parse(this.responseText)
+  console.log(repos)
+
+  //using data attributes to hold repo name, data attr makes it easy to pass data around between DOM & JS
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
+  //onclick is explicitly passing 'this' to getCommits() function
+
+  document.getElementById("repositories").innerHTML = repoList
+}
+
+Need to set up getCommits() function
+*index.js*
+function getCommits(el) {//grab data-repo value through dataset property then set up XHR request
+  const name = el.dataset.repo
+  const req = new XMLHttpRequest()
+  req.addEventListener("load", showCommits)
+  req.open("GET", 'https://api.github.com/repos/octocat/' + name + '/commits')
+  req.send()
+}
+
+Finally handle request with callback function, will provide repo's commits without page refresh
+*index.js*
+function showCommits() {
+  const commits = JSON.parse(this.responseText)
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
+  document.getElementById("commits").innerHTML = commitsList
+}
