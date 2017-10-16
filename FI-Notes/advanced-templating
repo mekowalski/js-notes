@@ -1,0 +1,127 @@
+Templates are a powerful way to dynamically create HTML content without having to hand build and concatenate
+strings of HTML and data values within JavaScript code
+
+Basic Handlebars
+Similar to other template engines, can define Handlebars template inside <script> tag
+*advanced templating index.html file*
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Handlebars Templates</title>
+  </head>
+  <body>
+    <h1>KOWALSKI ARE YOU THERE??</h1>
+    <main id="main">
+    </main>
+    <script src="handlebars.js"></script>
+    <script src="issues.js"></script>
+    <script src="index.js"></script>
+    <main id="main">
+      <a href="#" onclick="loadIssue();">Load GitHub Issue</a>
+    </main>
+    //scritp tag with id and type of 'text/x-handlebars-template'
+    <script id="issue-template" type="text/x-handlebars-template">
+      <article>
+      //double curly brace delimiter renders this template & have variable called 'state' that want on the
+      spot
+        <header><h3>Issue #{{number}} ({{state}})</h3></header>
+        <p>{{body}}</p>
+        <footer><a href="{{url}}">created {{created_at}}</a></footer>
+      </article>
+    </script>
+  </body>
+</html>
+
+In .js file, include 'loadIssue' function to render template
+function loadIssue() {
+  //create simple 'issue' object to hold Github issua data
+  var issue = {
+    state: "closed",
+    number: 5,
+    created_at: "2016-03-31 16:23:13 UTC",
+    body: "Instructions say GET /team and POST /newteam. Rspec wants GET/newteam and POST/team."
+  }
+  //make a call to 'Handlebars.compile' with the 'innerHTML' of template
+  var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
+  var result = template(issue);
+  document.getElementsByTagName("main")[0].innerHTML += result;
+}
+Both .html and .js render template and put it back into our page to see it
+
+
+HANDLEBARS HELPER
+To take data and render it multiple times using EACH helper, and use a FOR loop in 'loadIssue' function
+function loadIssue() {
+  var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
+  for(var i=0;i<issues.length;i++) {
+    //this is slow though, allocating result variable every time then querying DOM every time & adding
+    it every time through loop
+    //also heavy-lifting is being done through iteration of collection instead of template doing this
+    var result = template(issues[i]);
+    document.getElementsByTagName("main")[0].innerHTML += result;
+  }
+}
+
+ALTER loadIssues() function
+function loadIssues() {//change name to coincide dealing with many issues
+  var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
+  //passing whole 'issues' array to 'template()'
+  var result = template(issues);
+  document.getElementsByTagName("main")[0].innerHTML += result;
+}
+
+AND CHANGE template to handle collection
+<main id="main">
+  <a href="#" onclick="loadIssues();">Load GitHub Issue</a>
+</main>
+<script id="issue-template" type="text/x-handlebars-template">
+  {{#each this}}
+  <article>
+    <header><h3>Issue #{{number}} ({{state}})</h3></header>
+    <p>{{body}}</p>
+    <footer><a href="{{url}}">created {{created_at}}</a></footer>
+  </article>
+  {{/each}}
+</script>
+Both .html and .js bring a collection list of github issues
+
+
+IF HELPER
+You can only give IF a value from the context object and if that value evaluates false
+In index.html
+<script id="issue-template" type="text/x-handlebars-template">
+  {{#each this}}
+  <article>
+    <header><h3>Issue #{{number}} ({{state}})</h3></header>
+    <p>{{body}}</p>
+    {{#if comments_count}}
+    <p>{{comments_count}} Comments</p>
+    //provided else statement to default to if there are no comments
+    {{else}}
+    <p>No Comments Yet</p>
+    {{/if}}
+    <footer><a href="{{url}}">created {{created_at}}</a></footer>
+  </article>
+  {{/each}}
+</script>
+
+
+CUSTOM HELPERS
+Handlebars allows creation and registration of custom helpers to display logic into a function in
+template
+Use 'Handlebars.registerHelper' to register helper for use in template in .js file above loadIssue()
+function
+Handlebars.registerHelper('comment_body', function() {//telling Handlebars to register a helper called
+  //'comment_body' for use
+  if(this.state === "closed") {
+    return new Handlebars.SafeString(this.body)
+  } else {
+    return new Handlebars.SafeString("<strong>" + this.body + "</strong>")
+  }
+})
+
+function loadIssues() {
+  //...
+}
+
+In .html file, replace {{body}} with {{comment_body}}
