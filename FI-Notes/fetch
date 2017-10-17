@@ -1,0 +1,61 @@
+XHR can handle more protocols than HTTP and more formats than XML but it wasn't designed with the level of
+incorrectedness of today's programming in mind
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.github.com/repos/jquery/jquery/commits');
+xhr.responseType = 'json';
+
+xhr.onload = function() {
+  console.log(xhr.response);
+};
+
+xhr.onerror = function() {
+  console.log('Booo');
+};
+
+xhr.send();
+
+FETCH(): a global function with a new API for fetching resources, doesn't crate new XHR objects and stream-
+lines simple resource requests:
+*XHR to FETCH*
+fetch('https://api.github.com/repos/jquery/jquery/commits') //making simple GET request
+  .then(res => res.json())
+  .then(json => console.log(json));
+
+PROMISES AND THEN
+Promise object represents a value that may not be yet available, allows to write more flexible asynchronous
+code
+All promises implement a 'then' function that is called when promise is fulfilled or completed successfully
+
+.then(res => res.json())
+is getting response 'res' from 'fetch' and using the 'json' method to turn it into JSON
+
+.then(json => console.log(json));
+then passes JSON onto this line to be handled by the function
+
+
+BODY MIXIN
+Additional code called body that has functions specializing in transforming the body of a request or response
+Body mixin parses many formats including JSON, plain text and even blobs for binary/image data
+Calling 'res.json()' in 'fetch' is just a nice way of saying 'give me the body of the response parsed in
+JSON'
+
+
+OAUTH
+In production settin gyou would register an application with a provider and receive appID and secretID
+Allows provider to track, monitor API access and protects users by granting authorization through registered
+apps
+
+Using token to access the API is a simple matter of creating an Authorization header with request
+fetch('https://api.github.com/user/repos').
+  then(res => res.json()).
+  then(json => console.log(json))
+
+*this code will get a 401 (Unauthorized) response*
+Need to provide auth token in order to list our own repos
+const token = 'c481a65484839ae5de3cd2f974b1670de6fb2ec3'
+fetch('https://api.github.com/user/repos', {
+  //passed in desired headers as part of 2nd argument to fetch
+  headers: {
+    Authorization: `token ${token}`
+  }
+}).then(res => res.json()).then(json => console.log(json));
