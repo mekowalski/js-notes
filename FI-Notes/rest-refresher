@@ -1,0 +1,61 @@
+Roy Thomas Fielding came up with REST, REpresentational State Transfer as a standard way web applications
+should structure their URLs
+
+RESTful systens are centered on the idea of a resource
+Real world example
+  -You open a page with a blank form you use to make a new account
+    In terms of REST this represents a 'new resource'
+  -You fill out the form and click submit, any information is sent to the application server and is saved in
+  the database, creating your new account
+    In terms of REST this represents a 'create resource'
+  -After the server saves your account it redirects you the the page to view your account
+    In terms of REST this represents 'show resource'
+  -You decide to add a photo to your account or change your username/password
+    In terms of REST this represents 'edit resource'
+  -You change the info wanted to change and submit the form, on the server side, the new info is applied to
+  your account
+    In terms of REST this represents 'update resource'
+  -Finally you want to browse other accounts and ask for a list of those accounts
+    In terms of REST this represents 'index pf resource'
+
+Most systems follow a standard pattern for routing types of requests made
+Four key actions the system has: CRUD
+  Create
+  Read
+  Update
+  Destroy
+  and an INDEX so five routes
+  a form for creating and a form for updating so seven routes total
+
+
+HTTP VERBS AND REST
+GET: we view a readable source that doesn't need change on the server
+POST: encloses data with the request that the server will use to create the requested resource
+PATCH: to update an existing resource, that also encloses data to identify existing resource update
+and update attributes
+DELETE: to destroy a resource, will request resource identifier, find it and delete it
+
+PUT should be used if an entire resource is being replaced
+PATCH should be used to update a resource
+
+
+ROUTES
+The combination of an HTTP verb and URI
+Some examples:
+GET /accounts
+//show all accounts
+
+POST /accounts
+//create a new account
+
+GET /accounts/new
+//render form for creating new account
+
+PATCH /accounts/:id
+//show specific account
+
+DELETE /accounts/:id
+//delete specific account
+
+
+NESTED ROUTES
