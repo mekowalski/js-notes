@@ -1,0 +1,82 @@
+When using XHR to make dynamic web apps, often times DOM needs to be manipulated in repeatable, reusable
+chunks
+
+
+ADDING DATA FROM XHR RESPONSE TO THE DOM
+*advanced ajax lab index.html*
+First create simple request to list public repositories, trigger the request and display the data
+<body>
+  <main id="main">
+    //firing getRepositories() function when user clicks anchor tag, need to implement in index.js
+    <a href="#" onclick="getRepositories()">Get Repositories</a>
+    <div id="repositories"></div>
+  </main>
+  <script src="handlebars.js"></script>
+  <script src="index.js"></script>
+</body>
+
+*index.js*
+function getRepositories() {
+  //initializing new XMLHttpRequest() and making GE request to URI for list user repo API
+  const req = new XMLHttpRequest()
+  //defining callback function showRepositories to handle response
+  req.addEventListener('load', showRepositories)
+  req.open('GET', 'https://api.github.com/users/octocat/repos')
+  req.send()
+}
+
+Need to also build showRepositories() function in index.js
+function showRepositories() {
+  //use JSON.parse to parse the response string into proper objects & building an unordered list
+  const repos = JSON.parse(this.responseText)
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + '</li>').join('')}</ul>`
+
+  document.getElementById('repositories').innerHTML = repoList
+}
+Shows name of each repo. but not all the repo's information
+
+Add into showRepositories() HTML URL as a link to display more information on the repo
+const repoList = `<ul>${repos.map(r => '<li><a href="' + r.html_url + '">' + r.name + '</a></li>').join('')}</ul>`
+
+*this is manageable and delivers working link to repo site but ugly with concatenation*
+
+To add anything else, break up into more lines, modify showRepositories() function
+const repoList = '<ul>' + repos.map(r => {
+   return (`
+          <li>
+            <h2><a href="${r.html_url}">${r.name}</a></h2>
+            <p>Watchers: ${r.watchers_count}</p>
+            <p>Forks: ${r.forks_count}</p>
+            <p>Issues: ${r.open_issues_count}</p>
+          </li>`
+          )
+  }).join('') + "</ul>"
+*a bit more info listed for each repo but still ugly and don't want HTML code in JS functions*
+
+
+HANDLEBARS TEMPLATES
+Handlebars is a template engine that gives a way to build HTML templates to dynamically update DOM
+-Create Handlebars template within <script> tag and use {{}} delimiters to hold places for data
+-Converts repository template to Handlebars in index.html
+*index.html before last </body> tag*
+<script id="repository-template" type="text/x-handlebars-template">
+  <ul>
+   {{#each this}}
+     <li>
+      //name in {{}} delimiters should always match names of properties of the context object
+       <h2><a href="{{html_url}}">{{name}}</a></h2>
+       <p>Watchers: {{watchers_count}}</p>
+       <p>Forks: {{forks_count}}</p>
+       <p>Issues: {{open_issues_count}}</p>
+     </li>
+     //instead of building each list separately, make use of {{#each}} helper to build list based upon
+     array of objects passed in
+    {{/each}}
+  </ul>
+</script>
+
+And update showRepositories() function in .js file to use the template
+Add owner information also in template
+
+Power of using template engine like Handlebars is presentation(HTML code) can be managed separately from
+logic and data
