@@ -1,0 +1,41 @@
+In JavaScript the use of XMLHttpRequest directly accesses remote data or web APIs but requires a lot of lower
+level wiring to get everything working
+
+POSTMAN AND GITHUB API(DONE)
+-Postman is an easy to use Chrome extension that allows making of different web requests
+-Working with Github API to retrieve information about jQuery Github repository
+-Postman displays JSON list of the URL entered in the textbox
+
+DEFINING APIs
+-An application programming interface(API) is a set of routines, protocols and tools for building software
+and applications
+-In relation to OOP, an API is a class and the list of methods defined for that class
+
+AJAX
+-Asynchronous JavaScript & XML(AJAX) is a technique that is used in web applications
+-Provides retrieval of content from server and displays it without a page refresh
+-This allows a better user experience by allowing users to manipulate data on the server and see results
+without page refreshes
+-With jQuery there is a set of AJAX related functions to make dynamic updating easier
+
+*ajax and callbacks edits in: index.html, sentence.html & script.js*
+Remote data can come from anywhere, even your own server, it just means it directly isn't included in the
+current page
+We used power of AJAX to load data from 'sentence.html' file to display in browser
+
+CALLBACKS
+Using callbacks allows code to make request and continue doing other things until request is completed
+AJAX is an asynchronous pattern which is non-blocking, meaning it doesn't sit around and wait fr request to
+finish before running all the code
+Real world example:
+  -Put food in oven
+  -You don't stand and wait for food to cook
+  -You can do other things while food cooks in oven such as cleaning up the mess that was made or drink some
+  wine or browse the internet or take a power nap
+  -When food is done the timer beeps and you remove food and eat it
+  ^^this final step is how callbacks work
+
+HANDLING PROBLEMS
+What happens if an API used doesn't respond or doesn't exist?
+A good developer will make sure to handle these unexpected events gracefully when using AJAX
+Can provide multiple callbacks with jQuery: 1 for successful response and 1 for errors
