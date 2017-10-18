@@ -1,0 +1,33 @@
+Spying is to test program to see if functions are being called and passed around properly
+Use 'Sinon.js' to help
+To verify that a callback gets called every time data changes
+Pass in 'spy' to the tested function provided
+Using spies is relatively straight forward and makes writing tests more pleasant
+
+SPYING ON EXISTING FUNCTIONS
+-Sometimes testing a function to verify another function being called is necessary but instead of overwriting
+the function to be called with a spy, and reimplementing its logic, we 'spy' on the existing function
+-Helpful when trying to verify if code is calling library functions correctly
+
+Example wanting to verify that 'sayHi()' function works correctly:
+function sayHi(name) {
+  console.log(`Hi there, ${name}!`)
+}
+
+function doorGreeting(person) {
+  door.open()
+  sayHi(person.firstName)
+  door.close()
+}
+
+*with Sinon.js spy*
+describe('doorGreeting()', function() {
+  it('should call the sayHi() function', function() {
+    const spy = sinon.spy(window, 'sayHi')
+    //sinon is wrapping 'sayHi' function to spy and verify it has been called
+
+    doorGreeting({firstName: 'Malind'})
+
+    expect(spy.calledOnce).toBeTruthy()
+  })
+})
