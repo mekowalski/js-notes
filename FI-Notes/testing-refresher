@@ -1,0 +1,26 @@
+-Testing may seem like a massive undertaking but in reality it can be super helpful
+-Helps verify our code works the way we intended it to be
+-There is time gained by writing test BUT it's better to have a machine check code instead of doing it
+manually
+-Allows writing of more code in less time
+-Writing tests forces putting into words the code we want to write
+
+Red: writing a test that fails initially
+Green: making tests pass in the simplest way possible
+Refactor: to optimize performance, make code more legible or simply clean and DRY the code
+
+
+UNIT TESTING
+-Smallest unit possible of program, usually single functions but can be relatively big depending on size of
+unit to test
+
+
+INTEGRATION TESTING
+-How do all the units(no matter the size) work together
+-Do they play well together
+-Is the data returned from the functions being stored in the right place
+
+
+END TO END TESTING
+-Most similar of manual testing
+-This kind of testing takes a while to set up and the slowest to run since the tests have so much to do
