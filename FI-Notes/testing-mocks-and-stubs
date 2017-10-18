@@ -1,0 +1,69 @@
+STUBS
+Stubs allow replacement of the functionality completely unlike spy wrapping existing functionality
+Original function no longer runs but rather new stub returns a result
+
+Example:
+function getNames(callback) {
+  $.get('http://api.example.com/names', callback)
+}
+*this seems easy enough bu async code like this becomes difficult to test. instead we stub jQuery's '.get()'
+method so that is doesn't make any external requests for the purposes of testing. more stable and faster*
+
+describe('getNames()', function() {
+  it('should get the names from an external API', function() {
+    const spy = sinon.spy()
+    const facedGet = sinon.stub($, 'get')
+    faceGet.yields()
+
+    getNames(spy)
+    expect(spy.calledOnce).toBeTruthy()
+  })
+})
+*what happens when the request fails or sends back unexpected data. stubbing gives control over data that is
+returned through '$.get()' method*
+
+
+MOCKS
+Mocks are end-all of fake methods similar to spies but also have stubbed behavior & contain pre-programmed
+expectations
+
+Example, to save user preference:
+const userStorage = {
+  saveRemainLoggedInPreference(remainLoggedIn) {
+    //save remainLoggedIn in some way
+  },
+  saveLanguagePreference: (language) => {//save language preference in some way}
+}
+
+to save options on UI to the storage:
+function sendPrefsToStorage({ remainLoggedIn, language }) {
+  storage.saveRemainLoggedInPreference(remainLoggedIn);
+  storage.saveLanguagePreference(language);
+}
+
+$('#prefs-submit').on('click', function () {
+  const remainLoggedIn = $('#remain-logged-in').is(':checked');
+  const language = $('#language-selector').val();
+  sendPrefsToStorage({ remainLoggedIn, language });
+});
+
+Test sendPrefsToStorage() method:
+describe('sendPrefsToStorage', function() {
+  it('should save the preferences in storage', function() {
+    var storageMock = sinon.mock(storage);
+    storageMock.expects('saveRemainLoggedInPreference').once().withArgs(true);
+    storageMock.expects('saveLanguagePreference').once().withArgs('en-US');
+
+    sendPrefsToStorage({ remainLoggedIn: true, language: 'en-US' });
+
+    storageMock.restore();
+    storageMock.verify();
+  });
+});
+*only mock what is actually needed 'storage'*
+
+
+Best kind of code is modular with most of its functions pure(determines return value by its input values
+without side effects)
+Easier to test actual implementations piece by piece rather than relying on stubs and mocks
+Stubs and mocks should be used sparingly
