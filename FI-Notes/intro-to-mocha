@@ -1,0 +1,23 @@
+Group together the tests into suites that contain both other suites and tests to allow organization
+
+Mocha exposes a few methods to write the tests with, the 2 common ones are:
+  -describe(): allows definition of a suite, 1st argument is the name of the suite
+  -it(): function that is the actual test, takes in a string as 1st argument about what to test & a function
+  that contains an assertion(.expect) that compares written code to expected outcome
+
+To run certain code before or after the test runs, we use:
+  -before() or before every test- beforeEach()
+  -after() or after every test- afterEach()
+
+  -any of these^^ functions can have an optional 1st argument, a function usually called 'done' by convention
+
+jsdom.env() is a function called and receives 4 arguments:
+  -an HTML string to set up DOM
+  -an array of paths to source files
+  -a callback function (usually in Node.js fashion) receives an error first, the 'err' will mostly be 'null'
+  but if defined, 'done(err)' will tell Mocha to stop and show what's wrong.  If things go well then all
+  things defined are taken on 'window' and added to 'global' to be call in the tests
+
+-Test will have a function named and the 'it' block will declare in plain English the expectation to test
+-The 'expect' block calls the function behind the tests and uses a matcher(.toBe) to test what return value
+of the function should be
