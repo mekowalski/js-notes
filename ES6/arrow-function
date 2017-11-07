@@ -61,3 +61,7 @@ Whenever you're going to return an object, always put object in ()
 //{} could refer to the statements that the function should run but it also could refer to an object
 //to make it clear, put object in ()
 var function = () => ({foo:1})
+
+Within arrow function, line breaks are not allowed, using {} would be okay but without {}, the arrow
+function would need to be on one line
+var function = () => 1;
