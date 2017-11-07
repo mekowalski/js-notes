@@ -55,5 +55,9 @@ function Person(){
     this.age++
   }, 1000)
 }
-
 var p = new Person()
+
+Whenever you're going to return an object, always put object in ()
+//{} could refer to the statements that the function should run but it also could refer to an object
+//to make it clear, put object in ()
+var function = () => ({foo:1})
