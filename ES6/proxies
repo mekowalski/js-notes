@@ -1,0 +1,28 @@
+Proxies(object): used to define custom behavior when properties of a target object are accessed
+SYNTAX:
+var p = new Proxy(target, handler);
+  -target is just any object you're passing in
+  -handler explains how it's going to be different than usual when you access the object, can make things
+  a little different than what would normally happen
+  -methods in handler are called
+
+EXAMPLE 1:
+var handler = {
+  //in this handler, define new get method. get method is normally part of the object
+  get (target, key) {
+    //if key is in the target, searching for key part of the object, if true(?)
+    //target[key] will happen
+    // (:) else false, 37 happens
+    return key in target ? target[key] : 37
+  }
+}
+
+var p = new Proxy({}, handler) (this will give 37)
+var p = {} (without the proxy this will give undefined)
+//in p.a, a is key and has a value of 1
+p.a = 1
+p.b = undefined
+
+console.log(p.a, p.b) => 1 undefined
+
+console.log('c' in p, p.c) => false 37
