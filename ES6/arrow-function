@@ -1,0 +1,59 @@
+Arrow function has shorter syntax than standard function and does not bind its own THIS
+Best suited for non-method functions
+SYNTAX:
+(param1, param2) => {statements}
+(param1, param2) => expression
+(param1, param2) => {return expression}
+
+//() are optional with one parameter
+(singleParam) => {statements}
+singleParam => {statements}
+
+//function without parameters requires ()
+() => {statements} OR expression or {return expression}
+
+(param1, param2, paramN) => expression
+
+STANDARD:
+var multiply = function(a, b) {
+  return a * b
+}
+
+ARROW:
+var multiply = (a, b) => {return a * b}
+||
+var multiply = (a, b) => a * b
+
+Arrow functions work well with higher-order functions such as:map, filter and reduce
+EXAMPLE:
+var dogs = ['Caroga', 'Titan', 'Chief', 'Norman']
+
+//Standard
+var dogsLength1 = dogs.map(function(dog) {
+  return dog.length
+})
+
+//Arrow
+var dogsLength2 = dogs.map((material) => {
+  return dog.length
+})
+
+//Arrow shortened
+var dogsLength3 = dogs.map(dog => dog.length)
+
+Until arrow functions, every new functions defined its own THIS value
+Arrow function doesn't create its own THIS context
+
+//no binding of THIS
+//will work as expected
+function Person(){
+  //in normal function THIS will refer to global object
+  //but here in this function THIS will refer to the Person object
+  this.age = 0
+
+  setInterval(() => {
+    this.age++
+  }, 1000)
+}
+
+var p = new Person()
