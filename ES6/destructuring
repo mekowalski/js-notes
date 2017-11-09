@@ -1,0 +1,59 @@
+Destructuring assignment is a JavaScript syntax that makes it possible to extract data from an array or
+objects into distinct variables
+
+ASSIGN VARIABLES FOMR OBJECTS
+(Old way)
+var value = {x: 3, y: 6, z: 9}
+var x = value.x; => (x = 3)
+var y = value.y; => (y = 6)
+var z = value.z; => (z = 9)
+
+(Destructuring)
+-the 3 variables will be created from value
+const {x, y, z} = value;
+console.log(x) => 3
+
+-take value of x and copy it to a, etc
+const {x: a, y: b, z: c} = value;
+console.log(b) => 6
+
+
+ASSIGN VARIABLES FROM NESTED OBJECTS
+const nest = {
+  start: {x: 3, y: 6},
+  end: {x: 6, y: -9}
+}
+const {start : {x: startX, y: startY}} = nest
+^^ here start is assigned to the value of a.start, which is also an object
+^^ take the x value and assign that to the variable startX which is 3
+
+console.log(startX) => 3
+
+
+ASSIGN VARIABLES FROM ARRAYS
+const [m, k] = [3, 6, 9, 12]
+//assign m and k to the array of numbers but it takes 1st 2 elements of array and assign that to m & k
+
+console.log(m, k) => 3 6
+
+
+REST OPERATOR TO REASSIGN ARRAY ELEMENTS
+const [r, n, ...rest] = [3, 6, 9, 12]
+^^r & n get 1st and 2nd value of array && the ...rest operator get the rest of the values in from of array
+console.log(r, n) => 3 6
+console.log(rest) => (2) [9, 12]
+-rest element only works properly as the last variable in the list
+
+
+PASS AN OBJECT AS A FUNCTION'S PARAMETERS
+1 of 2 ways to do this
+const profileUpdate = (profileData) => {
+  const {name, age, city, state} = profileData //destructuring line
+  //more code
+}
+
+2 of 2 ways to do this
+const profileUpdate = ({name, age, city, state}) => {
+  //from beginning in params, destructuring object into different variables
+  //more code
+}
