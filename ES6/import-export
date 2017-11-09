@@ -1,0 +1,52 @@
+Import/Export statements allow breaking up of code into different files or modules
+An official ES6 feature but nor implemented in any browsers natively at the moment
+It is implemented in transpilers such as Babel and WebPack
+
+NAMED EXPORTS
+Exporting things with specific names
+Export statement is used to export functions, objects or primitives from given file or module
+-can export constant, function all with different names
+
+//lib.js
+export const sqrt = Math.sqrt
+export function square(x) {
+    return x * x
+}
+export function diag(x, y) {
+    return sqrt(square(x) + square(y))
+}
+
+IMPORT PART OF A MODULE
+-can import in another file
+-can be done individually or altogether
+
+//main.js
+import { square, diag } from 'lib'
+console.log(square(11))
+console.log(diag(4, 3))
+
+IMPORTING COMPLETE MODULE
+//main.js
+import * as lib from 'lib'
+console.log(lib.square(11)) //now calling lib.square() not just square()
+console.log(lib.diag(4, 3))
+
+IMPORTING WITH MORE CONVENIENT ALIAS
+import {reallyReallyLongModuleMemberName as shortName}
+  from 'my-module'
+
+
+SINGLE DEFAULT EXPORT
+-Going to use this syntax if only one value is being exported from a file
+-Also used to create fallback value for a file or module
+
+//myFunction.js
+export default function () { ··· } // no semicolon!
+//this is the entire file
+//entire function/class goes into {}
+
+//main1.js
+import myFunction from 'myFunc'
+//when importing single default export there are no {}
+//myFunction is also not up here so we give it a name in the file
+myFunc(); //then call it here
