@@ -1,0 +1,95 @@
+Maps are data structures that store key-value pairs, in JavaScript objects are maps
+-Maps provide rapid lookup of stored items based on key values and very common in useful data structures
+-Normally you wouldn't have to write your own data structure in JavaScript because objects provide a very
+efficient map structure
+
+When using a map, first enter the key and value pairs then later you may want to look up a value
+
+  KEYS        VALUES
+  January   |   31
+  February  |   28
+  March     |   31
+  April     |   30
+  May       |   31
+  June      |   30
+  July      |   31        *if you want value, you would look up July key and get value of 31*
+  August    |   31
+  September |   30
+  October   |   31
+  November  |   30
+  December  |   31
+
+Code for how to implement a map in JavaScript
+let myMap = function() {
+	this.collection = {} //keep track of collection, all things
+	this.count = 0 //number of items you have
+	this.size = function() { //size method to get size of map
+		return this.count
+	}
+	this.set = function(key, value) { //set means just to add something, pass key & value
+		this.collection[key] = value
+		this.count++
+	}
+	this.has = function(key) { //check if the map has that key
+		return (key in this.collection) //in op returns true if specified property is in specified object
+	}
+	this.get = function(key) { //get, pass in the key and get the value back
+		return (key in this.collection) ? this.collection[key] : null
+	}
+	this.delete = function(key) { //delete item in map by passing in the key
+		if (key in this.collection) {
+			delete this.collection[key]
+			this.count--
+		}
+	}
+	this.values = function() { //function to return an array of all the values in the map
+		let result = new Array()
+		for (let key of Object.keys(this.collection)) {
+			result.push(this.collection[key])
+		}
+		return (result.length > 0) ? result : null
+	}
+	this.clear = function() { //method clears all items of map
+		this.collection = {}
+		this.count = 0
+	}
+}
+
+EXAMPLE OF MAP
+let map = new myMap()
+map.set('arms', 2)
+map.set('fingers', 10)
+map.set('eyes', 2)
+map.set('belly button', 1)
+
+console.log(map.get('fingers')) => 10
+console.log(map.size()) => 4
+console.log(map.values()) => [2, 10, 2, 1]
+
+
+ES6 MAP OBJECTS
+-Objects are similar to maps that they both let you set key-value pairs
+-Both retrieve, delete, store values
+-An object has a prototype so there are default keys in a map that may collide with your keys
+-Keys of an object can only be strings or symbols
+-Keys for a map can be any value (functions, objects, numbers, booleans or even NAN)
+-Mainly want to use a map if you have a collection
+
+let map2 = new Map()
+map2.has('hands');
+map2.entries() //returns all the keys in the map
+
+let keyObject = {},
+    keyFunction = function() {}
+
+map2.set('hello', 'string value')
+map2.set(keyObject, 'obj value')
+map2.set(keyFunction, 'func value')
+map2.set(NaN, 'NaN value')
+
+console.log(map2.size) => 4
+
+console.log(map2.get('hello')) => 'string value'
+console.log(map2.get(keyObj)) => 'obj value'
+console.log(map2.get(keyFunc)) => 'func value'
+console.log(map2.get(NaN)) => 'NaN value'
