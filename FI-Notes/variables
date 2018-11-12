@@ -52,3 +52,17 @@ Good for 3 reasons:
 Use VAR never
 Use LET for variable change such as with a counter/looping
 Use CONST for every other variable
+
+describe: function provided by Mocha test library used to hold tests
+-after the word describe, information about tests are present
+ eg:
+ describe('index.js', function() {
+  //other stuff in here
+ })
+
+-tests are used for ways to document behavior of function
+ eg: explaining that companyName should be 'Coffee Home'
+ first describe L59
+  describe('companyName', function() {
+    more stuff in here
+  })
