@@ -1,0 +1,13 @@
+Template Literals: strings allowing embedded expressions
+-Multi-line strings and string interpolation with template literals
+-previous ES5 called it template strings
+-Enclosed with back ticks `` instead of either quotes '' OR ""
+  eg:
+  `howdy cowboy`
+  `hello
+   to you!`
+  `hello ${name}`
+
+Strings: global object constructor for sequence of characters
+-Useful for holding representable data in text form
+-Common operations include, .length(check their length), build and concatenate with + AND += operators
