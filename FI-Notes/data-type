@@ -55,4 +55,5 @@ SYMBOLS: 7th data type, relatively new and primarily used as alternate way to ad
  undefined ** null //undefined to the power of null => 1
  *What in the holy hecken bob is this???*
 
--JS always returns actionable data instead of throwing errors
+-JS always returns actionable data instead of throwing errors but this creates data type issues that need
+ to be watched
