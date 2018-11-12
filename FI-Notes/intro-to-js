@@ -4,3 +4,14 @@ JAVACRIPT LANGUAGE AND ITS USES
 
 -HTML: HyperText Markup Language: provides content structure, arranged in nested-tree form, allowing markup
  of content with attributes like id and class
+-CSS: Cascading Style Sheets: adds styling to a page, allowing customization via id and class attrs, in order
+ to access elements wanted to
+
+JAVASCRIPT
+-Does practically everything else, handling most of dynamic behavior of website
+ eg: reacting to events(clicking button, hovering over a link, etc, accessible via id/class attrs)
+-Changes page content without reloading, executing requests in the background
+-JS is fundamental and prominent for modern user/web interaction
+-One of the most popular languages in the world
+-Only programming language able to run in every major browser
+  -HTML is a markup language and CSS is a style sheet language
