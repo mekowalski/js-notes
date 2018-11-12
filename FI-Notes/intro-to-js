@@ -15,3 +15,15 @@ JAVASCRIPT
 -One of the most popular languages in the world
 -Only programming language able to run in every major browser
   -HTML is a markup language and CSS is a style sheet language
+-Flexible to allow different programming styles: functional and OOP
+
+JS HISTORY
+-First version of JS built in 1995 with JS developments around 2000 but very similar to JS Dev in mid 90's
+-AJAX: Asynchronous JavaScript and XML: process of making requests for additional data
+-Standard/Modernization: AJAX helps provide useful functionality but JS was still difficult to program
+ -Due to different browsers implementing different features in different ways, developers decided and agreed
+ upon a standardization
+-ES5(5th versions) known as ECMAScript(official JS name) releases in 2009
+-Harmonization is great but JS still lacked modern language features compared to standards like PHP, Java, C
+ Python and RUby
+ -JS addressed concerns with ES6 and ES2016/2017 bringing additional modern features
