@@ -1,0 +1,31 @@
+MATH IS AWESOME!!!
+
+JavaScript represents everything(number) as float
+
+OPERATORS
+-Addition(+): concatenate strings and also adds numbers togethers
+ eg:
+ 'High ' + 5 + '!!!' => "High 5!!!"
+ 3+3 => 6
+
+-Subtraction(-): returns difference between two numbers
+  eg: 90-30 => 60
+
+-Multiplication(*): returns product of two numbers
+ eg: 18*3 => 54
+
+
+-Division(/): returns numerical value of how many times the number on the right can fit into the number
+ on the left of the operator
+ eg: 189/3 => 63 *3 can fit into 189, 63 times*
+
+-Remainder(%): returns remaining value when a number is divided by the right number
+ eg: 9001%42 => 13
+ explained:
+ 1. 9001/42 => 214.31
+ 2. 42*214 => 8999
+ 3. 9001-8999 => 13 *13 is the remaining value*
+
+-Exponent(**): returns left number raised to the power of the right number
+ eg: 12**3 => 1728
+ explained 12*12 => 144, 144*12 => 1728
