@@ -25,5 +25,14 @@ JS HISTORY
  upon a standardization
 -ES5(5th versions) known as ECMAScript(official JS name) releases in 2009
 -Harmonization is great but JS still lacked modern language features compared to standards like PHP, Java, C
- Python and RUby
+ Python and Ruby
  -JS addressed concerns with ES6 and ES2016/2017 bringing additional modern features
+
+COMPILATION AND JAVASCRIPT
+-JavaScript derives from a marketing scheme: when Java was popular in 1995 but the 2 languages share little
+ in common such as some syntax borrowed from Java, nothing more
+-Unlike Java, JS doesn't need to be compiled, written code in a JS file is the exact same code in browser
+-Java allows writing code in human-readable format then a compiler translates that code into a
+ machine-readable code
+ - This then makes it difficult to open up application's source code
+-Compiling JS can be done, opening a source code is doable and readable with JS
