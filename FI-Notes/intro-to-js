@@ -36,3 +36,17 @@ COMPILATION AND JAVASCRIPT
  machine-readable code
  - This then makes it difficult to open up application's source code
 -Compiling JS can be done, opening a source code is doable and readable with JS
+
+WRITE JS IN CHROME DEV TOOLS CONSOLE
+-Every browser comes with built-in dev tools to inspect, modify and debug web page content
+-Open chrome dev tools via Ctrl+Shift+I or J(Linux/Windows) and Cmd+Opt+I or J(Mac)
+  *i have always only used ctrl+shift+i or F12, +j is new to me*
+-Console in a browser environment to type and run arbitrary JS code
+-Sandboxed: the only resources the console has access to is the current loaded page
+-Console is single best tool for debugging JS code
+
+-Coding: In console type (number) + (another number) then enter
+ eg: > 3+3, enter, <- 6
+ *this is a JS expression, any valid unit of code that returns a value*
+ eg: classic phrasing with quotes
+  > 'Howdy Cowboy', enter <- "howdy Cowboy"
