@@ -66,3 +66,19 @@ describe: function provided by Mocha test library used to hold tests
   describe('companyName', function() {
     more stuff in here
   })
+
+-tests are then expected in it block
+ eg: what companyName should be
+ first describe L59
+  second describe L66
+    it('is set as Coffee Home', function() {
+      the final testing part
+    })
+
+-test expectations within the it block
+ eg: expecting companyName to be 'Coffee Home'
+ first describe L59
+  second describe L66
+    it block L74
+      expect(companyName).to.equal('Coffee Home');
+    })
