@@ -49,4 +49,25 @@ WRITE JS IN CHROME DEV TOOLS CONSOLE
  eg: > 3+3, enter, <- 6
  *this is a JS expression, any valid unit of code that returns a value*
  eg: classic phrasing with quotes
-  > 'Howdy Cowboy', enter <- "howdy Cowboy"
+  > 'Howdy Cowboy', enter <- "Howdy Cowboy"
+
+-Debugging: JS provides a number of built-in features to help build and debug applications
+ eg: alert() function
+ > alert('you are beautiful or whatever alert you want in here'), enter
+ a window will appear with the website-url says: you are beautiful
+
+JS SYNTAX AND BEST PRACTICES
+-Semicolons: ending each statement with ; is optional
+
+-JS engine passes over the same code at least 3 times
+  1. passing code to parse syntax of code
+  -engine takes process of automatic semicolon insertion: will automatically insert ; for us therefore making
+   ; optional
+  -; ARE part of JS syntax, good practice though
+  2. passes code to initialize varaibles/functions and stores them in memory
+  3. passes code to actually execute code line-by-line
+
+ESTABLISHING GOOD JS HABITS
+-True education of knowing JS is to write a lot of JS code
+-Always have browser console open to play with code, familiarize with code and errors
+-code code code code code code code
