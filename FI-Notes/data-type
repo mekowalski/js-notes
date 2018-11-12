@@ -54,3 +54,5 @@ SYMBOLS: 7th data type, relatively new and primarily used as alternate way to ad
  null ** 2 //null to the power of 2 => 0
  undefined ** null //undefined to the power of null => 1
  *What in the holy hecken bob is this???*
+
+-JS always returns actionable data instead of throwing errors
