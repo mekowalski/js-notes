@@ -11,3 +11,7 @@ Template Literals: strings allowing embedded expressions
 Strings: global object constructor for sequence of characters
 -Useful for holding representable data in text form
 -Common operations include, .length(check their length), build and concatenate with + AND += operators
+-Character Access:
+  1. charAt(i) returns value at index specified
+  2. 'string'[i] returns value at index specified
+-String has many useful methods including: .toUpperCase(), .toLowerCase(), .slice()
