@@ -1,7 +1,7 @@
 Variable is container storing value for later access
 Naming variables should be followed by format of three ways:
   -begin variable name with lowercase letter, beginning with number isn't valid
-  -camelCaseName instead of snake_case_name
+  -camelCaseName instead of snake_case_name and no spaces allowed
   -do not use JS reserved or future reserved words such as: for, break, enum, function, etc
 
 Note: javaScript, javascript, JavaScript & JAVASCRIPT are 4 different variables
@@ -17,7 +17,8 @@ Or 1 step:
 Access variable by referring to its name
 pi; => 3.14
 
-Variable values: at initialization all variables are automatically assigned undefined until we assign new value to that variable
+Variable values: at initialization all variables are automatically assigned undefined until we assign new
+value to that variable
 Use typeof to check data type of value stored
 
 var language; => undefined
@@ -35,6 +36,10 @@ pi = "ratio between a circle's circumference and diameter";
 typeof pi; => "string"
 
 VAR not used with post-ES2015 world, no error is thrown when declaring variable twice
+var language = 'Ruby'; => undefined
+var language = 'JavaScript'; => undefined
+language; => "JavaScript"
+*this is BAD*
 
 LET and CONST: are the new var, both solve scope issues and give an error
 Can reassign variables with let, better option for declaring variables
