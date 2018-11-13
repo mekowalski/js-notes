@@ -1,3 +1,17 @@
+PROBLEM STATEMENTS
+eg:
+-If you're hungry, you make food
+ if hungry -> make food
+ else don't make food
+
+-If the traffic light is green, you press the gas pedal down and go
+ if light is green -> press gas pedal
+ else keep brake pedal pressed
+
+-if your rent is due, then you pay rent
+ if rent is due -> pay rent
+ else don't pay rent
+
 EXPRESSIONS
 JavaScript expression: unit of code returning a value
   9 => 9
