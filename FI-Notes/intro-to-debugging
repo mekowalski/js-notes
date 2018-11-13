@@ -3,3 +3,24 @@ Tracing: uses an output statement (ie: console.log()) to provide feedback about 
 
 -Common requests are regarding behavior, processes and sometimes it doesn't quite give what is wanted
 -Debugging traces the program for steps on how the issue came to be
+
+CONSOLE OBJECT FOR DEBUGGING
+-The browser(not JS language) provides an object called console
+-console: object with specific methods that send text to DevTools logging area, commonly known as the console
+-.log() method enters/records/logs general info to the console, with a number of arguments
+ eg:
+ console.log('hello', 'world') => hello world
+
+-Can log, Strings, Numbers and Objects
+-Use of console.log() in code snippets preface with LOG: to differentiate messages logged out to console
+ from values returned by an expression
+ eg:
+ function logReturner() {
+  console.log(false);
+
+  return true
+ }
+
+ logReturner();
+ LOG: false
+ => true
