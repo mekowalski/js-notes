@@ -24,3 +24,6 @@ OR op takes 2 expressions, return value is always 1 of the 2 expressions.
 
   -if first expression is false then return the SECOND expression
   7 > 30 || 'Whatever' => "Whatever"
+
+-Link conditions with && and || operators often used to link multiple conditions in a statement
+-Logical ops are powerful backbone of JS with most website logic based on
