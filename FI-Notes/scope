@@ -2,13 +2,24 @@ Scope, the concept of where something is available.
 
 Slack has many channels: #general, #education, #engineering
   -each channel forms its own scope, its messages are only shown in that channel
-  -can interact with members in a channel but each channel is not connected and knows about other members or messages in other channels
+  -can interact with members in a channel but each channel is not connected and doesn't know about other
+  members or messages in other channels
 
-EXCECUTION CONTEXTS
+EXECUTION CONTEXTS
 JavaScript runs code in execution context where all variables & functions declared are accessed
   -can write expression to reference that variable or call a function
   -myFunc() & myVar are both global scope
   -if variable or function isn't declared inside function/block, it is global
+  -Variables/functions declared in global execution context(global scope) are accessible everywhere
+  eg:
+  function myFunction() {
+    return 36;
+  }
+
+  const myVar = myFunction() * 3;
+
+  myVar  => 108
+  
 
 FUNCTION SCOPE
 Declaring functions & variables within function body, not longer global.
@@ -33,7 +44,7 @@ Variables declared with LET & CONST are block scoped
   myOtherVar; => Uncaught ReferenceError: myOtherVar is not defined
 
 GLOBAL DECLARATION
-Variables created without VAR, LET or CONST are always globally scoped, no matter the variable location 
+Variables created without VAR, LET or CONST are always globally scoped, no matter the variable location
   if (true) {
     lastName = 'Kowalski';
   }
