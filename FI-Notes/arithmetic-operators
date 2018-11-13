@@ -29,3 +29,16 @@ OPERATORS
 -Exponent(**): returns left number raised to the power of the right number
  eg: 12**3 => 1728
  explained 12*12 => 144, 144*12 => 1728
+
+ODER OF OPERATIONS
+1. Any parenthesis has highest priority
+2. Exponentiation is second priority
+3. Multiplication, division and remainder
+4. Addition and subtraction lastly
+
+() > ** > */% > +-
+
+eg:
+2 - (2 % 2) + (2 / 2 ** 2) * 2 => 3
+
+2 - (2 % (2+2) / 2**2) * 2 => 1
