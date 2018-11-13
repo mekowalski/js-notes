@@ -24,3 +24,15 @@ CONSOLE OBJECT FOR DEBUGGING
  logReturner();
  LOG: false
  => true
+
+CONSOLE.ERROR()
+-.error() method prints out an error to the console and can take multiple arguments
+-Useful for providing future engineers a message that is more important than just logging
+ eg: Network is down, Data has changed, User enters invalid data
+
+CONSOLE.TABLE()
+-.table() prints out an entry for an Array, handy, useful and clean to read
+
+-Debugging helps programmers understand what their code is doing
+-Helps understand a language deeper
+-Hints at a program and allows you to ask for help from another set of eyes
