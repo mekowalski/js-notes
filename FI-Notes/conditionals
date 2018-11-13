@@ -99,4 +99,4 @@ switch (expression) {
 TERNARY OPERATOR
 Good way to represent single line of code for if...else statement
 condition ? expression1 : expression2;
-If condition TRUE run the first expression, if condition FALSE run second espression
+If condition TRUE run the first expression, if condition FALSE run second expression
