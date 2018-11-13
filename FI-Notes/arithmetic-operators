@@ -59,3 +59,24 @@ INCREMENTING AND DECREMENTING
 
 -Both cases, counter returns value of 1 after incrementing, it's a matter of whether the operation should
  return original or incremented value
+
+-Decrement(--): decrements the number by 1 and has same pair of prefix/postfix options as ++
+ eg:
+ let counter = 0
+ counter-- => 0
+ counter => -1
+
+ --counter => -2
+ counter => -2
+
+ASSIGNMENT OPERATORS
+-Most basic assign operator in JavaScript is =
+-Can couple = with arithmetic operator to perform operation AND assign value
+ eg:
+ let counter = 0 => undefined
+ counter += 10 => 10
+ counter -= 2 => 8
+ counter *= 4 => 32
+ counter /= 2 => 16
+ counter %=6 => 4
+ counter **=3 => 64
