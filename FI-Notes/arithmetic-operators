@@ -42,3 +42,20 @@ eg:
 2 - (2 % 2) + (2 / 2 ** 2) * 2 => 3
 
 2 - (2 % (2+2) / 2**2) * 2 => 1
+
+INCREMENTING AND DECREMENTING
+-Increment(++): increments the number by 1, if ++ comes after variable then variable's value is returned
+ first then incremented
+ eg:
+ let counter = 0 => undefined
+ counter++ => 0
+ counter => 1
+
+-If ++ comes before variable, the variable's value is incremented first then returned
+ eg:
+ let counter = 0
+ ++counter => 1
+ counter => 1
+
+-Both cases, counter returns value of 1 after incrementing, it's a matter of whether the operation should
+ return original or incremented value
