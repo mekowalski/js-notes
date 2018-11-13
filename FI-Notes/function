@@ -1,5 +1,19 @@
-Function, an object that holds sequences of actions that execute whenever we want, any number of times
-Accepts number of inputs, performs actions that are hidden from outside of the function & returns value to that out environment
+Function: an object that holds sequences of actions that execute whenever we want, any number of times
+-Accepts number of inputs, performs actions that are hidden from outside of the function & returns value to
+that out environment
+
+-Functions serve as a way to group together related parts of JS, this helps to read, debug and improve code
+
+DEFINE ABSTRACTION
+-Latin to pull away, or take away or impression of a whole
+ eg:
+ Single Units                              Abstraction
+ Harry, Hermione, Ron                      Gryffindor
+ 2 pieces of bread, jam, peanut butter     PB&J sandwich
+ Bourbon, simple syrup, bitters, ice       Old Fashioned
+
+-Abstractions help thinking of complex activities
+-Abstractions then created held work as functions
 
 Similar JavaScript functions: Math.random(), console.log(), alert() etc
 All functions have the invocation operator ()
@@ -21,7 +35,8 @@ INVOCATION
 functionName('param1Value', 'param2Value');
 
 Return statements specify different value, taking value from inside function and making it available outside function
-  -once return statement is reached, JaveScript engine exits entire function, all other lines of code won't execute
+  -once return statement is reached, JaveScript engine exits entire function, all other lines of code won't
+  execute
 
 function functionName(param1, param2) {
   //code to execute
