@@ -14,6 +14,30 @@ DEFINE ABSTRACTION
 
 -Abstractions help thinking of complex activities
 -Abstractions then created held work as functions
+-To call(execute/invoke) a functions means to run independent pieces that make a function
+
+DECLARATION
+function functionName(param1, param2) {
+//code to execute
+}
+
+-Series of single, non-abstract pieces
+console.log('Caroga')
+console.log('Titan')
+console.log('Norman')
+console.log('Otto')
+console.log('Orion')
+
+-Abstraction of pieces in a collective name
+function listDogs() {
+  console.log('Caroga')
+  console.log('Titan')
+  console.log('Norman')
+  console.log('Otto')
+  console.log('Orion')
+}
+
+*Abstract 5 activities into 1 activity*
 
 Similar JavaScript functions: Math.random(), console.log(), alert() etc
 All functions have the invocation operator ()
@@ -26,10 +50,6 @@ A few different ways to declare function, primary way is function statement
   -functions are JS objects that can be invoked
   -arguments passed with comma separation
 
-DECLARATION
-function functionName(param1, param2) {
-  //code to execute
-}
 
 INVOCATION
 functionName('param1Value', 'param2Value');
