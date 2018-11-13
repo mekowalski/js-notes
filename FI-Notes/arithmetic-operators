@@ -93,5 +93,14 @@ BUILT IN OBJECTS
  Number.isInteger(18) => true
  Number.isInteger(.39) => false
 
--Popular methods may include: .isFinite(), .isNan(), .parseInt()(which accepts string as arg and passees it
+-Popular methods may include: .isFinite(), .isNan(), .parseInt()(which accepts string as arg and passes it
  as an integer)
+
+-Math: object containing properties representing common mathematical values
+-Popular methods:
+ eg:
+ .ceil()(round up): Math.ceil(.5) => 1
+ .floor()(round down): Math.floor(.5) => 0
+ .round()(rounds up or down, whichever is nearest): Math.round(.5) => 1, Math.round(.49) => 0
+ .min()(returns lowest constituent) Math.min(3, 6, 9) => 3
+ .max()(returns highest constituent) Math.max(3, 6, 9) => 9
