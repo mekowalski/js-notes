@@ -80,3 +80,18 @@ ASSIGNMENT OPERATORS
  counter /= 2 => 16
  counter %=6 => 4
  counter **=3 => 64
+
+ NAN
+ -JS tries to always return a value for every operation but sometimes it asks to calculate the incalculable
+ -When JS engine can't calculate a number and undefined the return is Nan
+ -NaN: Not a Number
+ -Never assign NaN as a value
+
+BUILT IN OBJECTS
+-Number: object that holds collection of methods used to check/convert numbers in JS
+ eg: Number.isInteger()
+ Number.isInteger(18) => true
+ Number.isInteger(.39) => false
+
+-Popular methods may include: .isFinite(), .isNan(), .parseInt()(which accepts string as arg and passees it
+ as an integer)
