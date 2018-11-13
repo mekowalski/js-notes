@@ -19,7 +19,7 @@ JavaScript runs code in execution context where all variables & functions declar
   const myVar = myFunction() * 3;
 
   myVar  => 108
-  
+
 
 FUNCTION SCOPE
 Declaring functions & variables within function body, not longer global.
@@ -34,6 +34,7 @@ Variables declared with VAR are not block scoped
   myVar; => 30
 
 Variables declared with LET & CONST are block scoped
+-What happens in the block stays in the block
   if (true) {
     const myVar = 30;
 
@@ -45,6 +46,7 @@ Variables declared with LET & CONST are block scoped
 
 GLOBAL DECLARATION
 Variables created without VAR, LET or CONST are always globally scoped, no matter the variable location
+-If it's create inside a block, it's still available globally
   if (true) {
     lastName = 'Kowalski';
   }
