@@ -1,0 +1,5 @@
+An essential practice for debugging is tracing
+Tracing: uses an output statement (ie: console.log()) to provide feedback about what the machine is thinking
+
+-Common requests are regarding behavior, processes and sometimes it doesn't quite give what is wanted
+-Debugging traces the program for steps on how the issue came to be
