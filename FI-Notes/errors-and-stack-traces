@@ -3,21 +3,38 @@ errors they encounter. You will reach this point — it's just a matter of pract
 
 UNCAUGHT REFERENCEERROR: _____ IS NOT DEFINED
 Tried to reference a variable or function that doesn't exist in current scope or scope chain
--double check where current thing is decalred
+eg: myVar; => ERROR: Uncaught ReferenceError: myVar is not defined
+    Hello, world; => ERROR: Uncaught ReferenceError: Hello is not defined
+
+-double check where current thing is declared
 -make sure it's declared at a scope where scope chain includes outer scope that includes declaration of the
 variable to access
 
+
 UNCAUGHT TYPEERROR: _____ IS NOT A FUNCTION
 Tried to invoke something not actually a function
+eg: const myVar = 'Hello, world!';
+    myVay(); => ERROR: Uncaught TypeError: myVar is not a function
+
 -happens when variable contains undefined instead of function
 -debug by finding attempted invocation occurrence and figure out why variable contains undefined
 
+
 UNCAUGHT SYNTAXERROR: MISSING ) AFTER ARGUMENT LIST
 Tried function invocation but forgot the closing parenthesis
+eg: console.log('Hello,', 'world!'; => ERROR: Uncaught SyntaxError: missing ) after argument list
+
 -make sure indentations are lined up
+
 
 UNCAUGHT TYPEERROR: ASSIGNMENT TO CONSTANT VARIABLE
 Accidentally tried assigning new value to variable declared with CONST, prevents reassignment.
+eg: const snackSelection = 'Pretzels';
+    if ((snackSelection = 'Pretzels')) {
+      console.log("That'll be $1, please!");
+    }
+    => ERROR: Uncaught TypeError: Assignment to constant variable.
+
 -could possibly be a typo
 -maybe using assignment op = instead of strict equality op ===
 
