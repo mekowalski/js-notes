@@ -29,11 +29,13 @@ second(); => LOG: Inside first()
 -assignment of myVar = 'Bar' isn't visible to first().  second() isn't parent scope of first()
 -first() will go to outer scope to match myVar which is 'Foo'
 -when called in second(), first() will do the same steps to match variable as if not called in second()
+-lexical environment is a synonym of scope
+-LEXICAL: having to do with words
 
 EXAMPLE 2
 const myVar = 'Foo';
 
-function second () {
+function second () { #second() IS parent scope of first()
   function first () {
     console.log('Inside first()');
     console.log('myVar is currently equal to:', myVar);
@@ -48,3 +50,8 @@ second(); => LOG: Inside first()
 -declare first() within second()
 -the outer reference layer will search and match within second()
 -therefore myVar is 'Bar'
+
+*LEXICAL SCOPE and SCOPE CHAIN are difficult concepts
+*Better understanding comes with practice of writing JS code
+*Understanding what's going on under the hood during declaration and invocation is powerful
+*This understanding helps debugging less of a pain
