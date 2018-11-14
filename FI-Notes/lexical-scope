@@ -20,7 +20,7 @@ function first () {
 
 function second () {
   const myVar = 'Bar';
-  first();
+  first(); #second() is NOT the parent scope of first()
 }
 
 second(); => LOG: Inside first()
