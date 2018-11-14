@@ -41,6 +41,26 @@ firstFunc(); => 3
  }
  firstFunc(); => 6
 
+*Two or more functions declared in same scope DO NOT have access to anything in the other's scope
+ eg:
+ const fruit = 'apple' #both functions have access to fruit
+
+ function one() {
+  const veggie = 'carrot'
+
+  console.log('fruit:', fruit)
+  console.log('veggie:', veggie)
+  console.log('seafood:', seafood) #function one can't access seafood from function two
+ }
+
+ function two() {
+  const seafood = 'oyster'
+
+  console.log('fruit:', fruit)
+  console.log('veggie:', veggie) #function two can't access veggie from function one
+  console.log('seafood:', seafood)
+ }
+
 IDENTIFIERS
 Identifiers allow us to identify the variable or function we're referring to
 
