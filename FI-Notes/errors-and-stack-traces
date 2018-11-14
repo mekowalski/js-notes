@@ -53,3 +53,6 @@ at <anonymous>:3:20- indicates on 3rd line at 20th character
 
 JS provides control flow structure of try...catch
 try to run some JS statements and catch any errors thrown within try block
+
+*Difference between novice and expert programmer is the level of comfort reading and debugging errors
+*JS goes out of the way to provide information needed to find and fix an error, messages can be terrifying
