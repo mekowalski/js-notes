@@ -22,6 +22,25 @@ firstFunc(); => 3
 *Scope chain is scopes, all the way down*
 *Scope chain goes in 1 direction, outer scope doesn't have access to things declared in inner scopes
 
+-With functions nested in functions in functions, each new level creates a new scope that can reference
+ functions and variables declared in outer scopes through SCOPE CHAIN
+ eg:
+ const globalVar = 1;
+
+ function firstFunc() {
+   const firstVar = 2;
+
+   function secondFunc() {
+     const secondVar = 3;
+
+     return secondVar + firstVar + globalVar;
+   }
+   const resultFromSecondFunc = secondFunc();
+
+   return resultFromSecondFunc;
+ }
+ firstFunc(); => 6
+
 IDENTIFIERS
 Identifiers allow us to identify the variable or function we're referring to
 
