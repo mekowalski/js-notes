@@ -63,6 +63,7 @@ firstFunc(); => 3
 
 IDENTIFIERS
 Identifiers allow us to identify the variable or function we're referring to
+eg: const, function, let, return, etc
 
 Compilation Phase: when the engine steps into our code line by line
 Execution Phase: runs our code after compilation phase, assigning variables a value and invoking functions
