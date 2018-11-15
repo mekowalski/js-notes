@@ -36,3 +36,20 @@ Using CONST and LET will have you avoid encounters with hoisting issues.
 
 Variables declared with CONST and LET technically get hoisted but JS engine doesn't allow them to be
 referenced before initialization
+
+-Two ways to keep JS engine from hoisting variables
+1. If project NEEDS use of var, declare all var variables at the top of a function
+eg:
+BAD
+function myBadFunction() {
+  console.log('this is a BAD example');
+
+  var myVar = 654;
+}
+
+GOOD
+function myGoodFunction() {
+  var myVar = 654;
+
+  console.log('this is a much better and good example')
+}
