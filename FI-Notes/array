@@ -9,6 +9,8 @@ Array is an ordered list surrounded by square brackets []
 Members can be any data type
   -['Caroga', 'Durango', 4, null]
 
+
+CREATE ARRAYS
 Arrays are ordered meaning the elements in them will always appear in the same order
  -[1, 2, 3] is not the same is [3, 2, 1]
 
@@ -18,11 +20,15 @@ Can assign array to a variable
 Can check length with .length method
   -malind.length; => 5
 
+
+ACCESSING ELEMENTS IN AN ARRAY
 Every element in an array is assigned a specific index value, with index always beginning with 0
 Index is used to access certain element from an array
   malind[1]; => 'Kowalski'
   malind[4]; => 'Yellow'
 
+
+ADD ELEMENTS TO AN ARRAY
 PUSH method adds elements to end of array
   malind.push('Colorado');
   malind;
@@ -43,6 +49,8 @@ Spread operator allows addition of new elements while preserving original array
   livedInCities; => ['Signal Hill', 'Lakewood', 'Salina', 'Davenport']
   allCities; = ['Signal Hill', 'Lakewood', 'Salina', 'Davenport', 'Portsmouth']
 
+
+REMOVE ELEMENTS FROM AN ARRAY
 POP method removes last element in an array
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   days.pop; => 'Sun'
@@ -54,6 +62,17 @@ SHIFT method removes first element in an array
   days; => [Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 SLICE() removes an element without destructing array, returns a portion, slice, of an array
+eg:
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+days.slice(5); => ['Sat', 'Sun']
+days => ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+SPLICE() desctuctively removes a chunk of the original array beginning at the provided index
+eg:
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+days.splice(2); => ["Wed", "Thu", "Fri", "Sat", "Sun"]
+days => ["Mon", "Tue"]
+
 
 ARRAY IN ARRAYS
 An array can contain elements of any data type including other arrays
