@@ -18,6 +18,17 @@ function myFunc () {
 }
 => "Hello, world!"
 
+*Whole picture
+myFunc();
+
+function myFunc () {
+  return 'Hello, world!';
+}
+=> "Hello, world!"
+
+-By the time JS engine reaches execution phase, myFunc() has already been created in memory
+-Then the engine begins again at the top of the code and executes code line by line
+
 *Your declarations are being evaluated before the rest of your code gets run, but hoisting is a bit of a
 misnomer: the physical location of the code isn't actually changing at all.*
 
