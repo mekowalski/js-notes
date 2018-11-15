@@ -53,3 +53,17 @@ function myGoodFunction() {
 
   console.log('this is a much better and good example')
 }
+
+2. FOR THE LOVE OF GOOD CODE DO NOT USER VAR
+- const and let get technically hoisted but JS engine won't allow these variables to be referenced
+  before initialization
+eg:
+BAD
+myVar;
+
+let myVar = 'Assignment optional due to use of LET'
+// ERROR: Uncaught ReferenceError: myVar is not defined
+
+GOOD
+const myOtherVar = 'definitely assign value to beloved CONST'
+// => definitely assign value to beloved CONST
