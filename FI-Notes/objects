@@ -1,4 +1,4 @@
-*JavaScript objects are a collection of properties bounded by curly braces {}, similar to a hash in Ruby.
+*JavaScript objects are a collection of properties bounded by curly braces {}, similar to a Ruby hash
 The properties can point to values of any data type — even other objects.*
 
  Can have empty objects: {}
@@ -56,6 +56,8 @@ eg:
 -start key with lowercaseLetter
 -noSpacesOrPunctuation
 
+
+ACCESS PROPERTIES DYNAMICALLY
 Bracket notation has ability to compute value of variables on the fly
 const meals = {
   breakfast: 'Oatmeal',
@@ -67,6 +69,12 @@ let mealName = 'lunch';
 
 meals[mealName]; => "Caesar salad"
 
+-Dot notation doesn't work
+-JS doesn't treat declared variable as a variable, it checks whether the property of the keyName
+ exists
+ eg: only properties of breakfast, lunch, dinner will return and mealName will be defined
+
+
 ADDING PROPERTIES TO AN OBJECT
 Add properties to an object with dot or bracket notation
 const caroga = {};
@@ -77,9 +85,16 @@ caroga.city = "Durango"
 caroga['state'] = "Colorado"
 caroga.zipCode = 81301
 
-caroga; => {firstName: 'Caroga', lastName: 'Kowalski', city: 'Durango', state: 'Colorado', zipCode: 81301}
+caroga; => {firstName: 'Caroga', lastName: 'Kowalski', city: 'Durango', state: 'Colorado',
+zipCode: 81301}
 
 Multiple properties can have same value but keys must be unique
+eg:
+const names = {
+  firstName: 'Caroga',
+  lastName: 'Kowalski',
+  familyName: 'Kowalski'
+}
 
 CAN DESTRUCTIVELY MODIFY OBJECT
 function destructivelyUpdateObject (obj, key, value) {
