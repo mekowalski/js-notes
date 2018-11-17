@@ -13,6 +13,7 @@ for ([initialization]; [condition]; [iteration]) {
  -If expression evaluates to false, loop exits
 -Iteration: statement executed at the end of each iteration, bringing loop closer to completion
 -Loop body: code that runs on each pass through the loop
+-Often used to iterate over every element in an array
 
 const dogs = ['Caroga', 'Titan', 'Chief'];
 
@@ -32,7 +33,8 @@ L7: i < dogs.length is the CONDITION
   1. run code in loop until i is not less than gods length
   2. as long as condition evaluates to true, execute code then reevaluate condition
   3. as soon as condition evaluates to false, exit loop
-
+L7: i++ is the iteration, that increments value for condition by 1 after every pass through loop
+L21-23: loop body, set of statements that run when condition evaluates to true
 
 WHILE LOOP
 -Designed to loop an indefinite amount of times, keeps looping WHILE condition is true or UNTIL condition
