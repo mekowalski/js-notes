@@ -36,7 +36,7 @@ Bracket Notation uses [] to access values of an object
   -malind['city']; => "Durango"
 
 A bit harder to read
-Works better is key is nonstandard
+Works better if key is nonstandard
 const wildKeys = {
   'Cash rules everything around me.': 'Wu',
   'C.R.E.A.M.': 'Tang',
@@ -45,9 +45,16 @@ const wildKeys = {
 };
 
 wildKeys["Get the money"]; => "For"
+*In order to access property via dot notation, key must follow same naming rules applied to variables
+and functions
+*All keys are strings
 
 *Keeping everything standardized is good, and being able to access properties via dot notation is much
 more readable*
+eg:
+-camelCaseEverything
+-start key with lowercaseLetter
+-noSpacesOrPunctuation
 
 Bracket notation has ability to compute value of variables on the fly
 const meals = {
