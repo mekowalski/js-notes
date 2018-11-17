@@ -111,6 +111,7 @@ function nondestructivelyUpdateObject(obj, key, value) {
 
   return newObj;
 }
+*Use of spread operator to copy all old data and the proposed changes
 
 *This is a lot of code for both mays to modify and JavaScript has a better way*
 
@@ -120,6 +121,8 @@ First argument passed in the initial object which all properties are merges
 Additional arguments are properties we ant to merge into first object
 
 Object.assign(initialObject, additionalObject, additionalObject, ...);
+eg:
+Object.assign({eggs: 3}, {flour: '1 cup'}, {honey: '1/2 cup'})
 
 Common pattern is to provide empty object as 1st argument
 Composes an entirely new object instead of modifying/overwriting existing object
@@ -130,6 +133,24 @@ function nondestructivelyUpdateObject(obj, key, value) {
 }
 
 Important to merge everything into new empty object.
+
+OBJECT.KEYS()
+-When Object is passed an argument to Object.keys(), return value is Array containing all keys at
+ top level of Object
+ eg:
+ const booze = {
+   whiskey: {
+     scotch: 'Red Label',
+     bourbon: 'Woodford Reserve',
+     rye: 'Bulleit 95 Rye'
+   },
+   sangria: 'Lady printed on front of bottle, how did i forget',
+   stout: 'Guinness',
+   champagne: 'Moet & Chandon'
+ }
+ Object.keys(booze); => ['whiskey', 'sangria', 'stout', 'champagne']
+ *only keys declared at top level are returned
+ 
 
 DELETING A PROPERTY FROM AN OBJECT
 Pass property to remove with delete operator and JavaScript takes care of the rest
