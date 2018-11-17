@@ -14,7 +14,9 @@ const malind = {
   zipCode: 81301
 };
 
--real data of object is stored in value half of key-value pairings, key gives us access to value
+-Real data of object is stored in value half of key-value pairings, key gives us access to value
+-Use identifiers to name variables and functions, inside an Object each value is assigned a key
+-Can then refer to key and JS engine knows which value to access
 
 Dot Notation uses a period . to access values in an object
 Simple to read, preferred usage to access properties
