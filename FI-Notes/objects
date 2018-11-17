@@ -18,13 +18,18 @@ const malind = {
 -Use identifiers to name variables and functions, inside an Object each value is assigned a key
 -Can then refer to key and JS engine knows which value to access
 
-Dot Notation uses a period . to access values in an object
+
+ACCESS VALUE STORED IN OBJECT
+Dot Notation uses a period (.) to access values in an object
 Simple to read, preferred usage to access properties
   -malind.lastName; => "Kowalski"
   -malind.zipCode; => 81301
+  *lastName and zipCode are defined and given value therefore accessible
 
 Accessing nonexistent property will return undefined because of no matching key on object
   -malind.faveColor; => undefined
+  *faveColor isn't defined therefore an UNDEFINED error is thrown
+  *keep in mind, good indicator to recheck which Object properties exist
 
 Bracket Notation uses [] to access values of an object
   -malind['firstName']; => "Malind"
