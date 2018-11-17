@@ -12,23 +12,27 @@ while (j < myArray.length) {
 FOR...OF
 -Introduced in ES2015, no initialization, no condition, no incrementing counter, no bracket notation
 -No such reassignment
--Use any time to iterate oer an array
+-Use any time to iterate over an array
 const myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 
 for (const element of myArray) {
   console.log(element);
 }
+*CONST is used for designating an item/variable of the array, instead of LET which allows incrementing
+a variable
+*With for...of, each loop assigns the next element in the collection to a new element variable
 
 ITERATING OVER OBJECTS
 FOR...IN
--Iterates over properties in ab object but doesn't pass entire property into block, instead it passes the
-key
+-Iterates over properties in ab object but doesn't pass entire property into block, instead it passes
+the key
 -Use whenever you want to enumerate the properties of an object
 -Rule: don't use FOR...IN with arrays
 for (const <KEY> in <OBJECT>) {
   // Code in the statement body
 }
 
+*Accessing object's value combing passed-in key with bracket operator
 const address = {
   street1: '11 Broadway',
   street2: '2nd Floor',
@@ -46,3 +50,7 @@ LOG: street2
 LOG: city
 LOG: state
 LOG: zipCode
+
+-Cannot access object's value with dot notation
+-When trying to access and object's keys, variables don't work because dot notation will treat variable
+ name as a literal key, which won't work and return UNDEFINED
