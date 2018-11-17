@@ -2,12 +2,15 @@ Loops are used to execute same code block a specified number of times.
 WHILE and FOR are the 2 main loops in JavaScript
 
 FOR LOOP
+-Most common loop
 -Use for loop when you know exact number of times to run loop
 for ([initialization]; [condition]; [iteration]) {
   [loop body]
 }
 -Initialization: begin a counter variable
 -Condition: expression evaluated before passing through each loop
+ -If expression evaluates to true, statements in loop are executed
+ -If expression evaluates to false, loop exits
 -Iteration: statement executed at the end of each iteration, bringing loop closer to completion
 -Loop body: code that runs on each pass through the loop
 
@@ -23,6 +26,12 @@ goodDog(dogs); => Who's a good dog? Caroga's a good dog!'
                   Who's a good dog? Titan's a good dog!'
                   Who's a good dog? Chief's a good dog!'
                   (3) ["Caroga", "Titan", "Chief"]
+
+L7: let i = 0 is the INITIALIZATIN, use LET instead of CONST because value needs to be incremented
+L7: i < dogs.length is the CONDITION
+  1. run code in loop until i is not less than gods length
+  2. as long as condition evaluates to true, execute code then reevaluate condition
+  3. as soon as condition evaluates to false, exit loop
 
 
 WHILE LOOP
