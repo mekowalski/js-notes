@@ -1,5 +1,7 @@
 *This is very advanced stuff, and you should absolutely not get discouraged if it doesn't click at first*
-Properties in an object can point to other objects
+
+-Properties in an object can point to other objects
+-Helps reading objects and overall code easier to read
 
 const userInfo = {
   firstName: 'Malind',
@@ -24,6 +26,8 @@ const userInfo = {
     state: 'Colorado'
   }
 };
+*Instead of having 15 total single properties, now it's paired dowm to an understandable, certain
+ five properties of: firstName, lastName, birthdate, dogs and residence
 
 userInfo.dogs[1]
 => {dogName: "Titan", breed: "Unknown Mutt", color: "blonde"}
@@ -36,8 +40,8 @@ userInfo.residence["city"]
 
 RECURSION
 A function that calls itself
-*It's one of the more powerful concepts in programming, but it's also pretty hard to grasp at first. Don't
-sweat it if it doesn't click immediately*
+*It's one of the more powerful concepts in programming, but it's also pretty hard to grasp at first.
+Don't sweat it if it doesn't click immediately*
 
 function deepIterator (target) { //function first checks if arg is an obj or arr
   if (typeof target === 'object') {
