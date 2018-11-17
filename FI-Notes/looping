@@ -36,10 +36,12 @@ L7: i < dogs.length is the CONDITION
 L7: i++ is the iteration, that increments value for condition by 1 after every pass through loop
 L21-23: loop body, set of statements that run when condition evaluates to true
 
+
 WHILE LOOP
--Designed to loop an indefinite amount of times, keeps looping WHILE condition is true or UNTIL condition
-is false
--Use when we do't know how many times to run loops
+-Designed to loop an indefinite amount of times, keeps looping WHILE condition is true or UNTIL
+condition is false
+-Use when we don't know how many times to run loops
+-Remember to make sure condition updates with each pass through loop so that loop eventually terminates
 while ([condition]) {
   [loop body]
 }
@@ -49,3 +51,6 @@ let countdown = 10;
 while (countdown > 0) {
   console.log(--countdown);
 }
+
+
+*If uncertain which loop to use, try FOR first, if that doesn't serve the purpose then try WHILE
