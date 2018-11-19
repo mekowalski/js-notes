@@ -59,9 +59,9 @@ filter(users);
 LOG: Ryan
 
 PASSING FUNCTIONS
-Can pass functions into other functions, functions are objects with special hidden code property that can
-be invoked
-
+-Can pass functions into other functions, JS functions ARE objects
+-They are objects with special hidden code property that can be invoked
+eg:
 function iReturnThings (thing) {
   return thing;
 }
