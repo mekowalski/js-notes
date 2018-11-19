@@ -129,3 +129,10 @@ randomNumber; => 0.7206049784780868
 multiplyAndFloor(randomNumber); => 71
 multiplyAndFloor(randomNumber); => 71
 multiplyAndFloor(randomNumber); => 71
+
+
+-All JS arrays come with their own .filter() method
+-.filter() accepts one argument, a CB function that will invoke each element in the array
+-If CB return is true, the element is copied into a new array
+-If CB return is false, the element is filtered out
+ Array.prototype.filter()
