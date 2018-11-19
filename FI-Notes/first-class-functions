@@ -112,7 +112,7 @@ const original = function() {
   console.log("i'm the original!!!")
 }
 
-const copt = original
+const copy = original
 
 copy(); => LOG: I'm the original!!!
 
@@ -159,6 +159,7 @@ const arrayOfDogs = [
   {name: 'Titan'},
   {name: 'Norman'}
 ];
+arrayOfDogs[1]; => {name: 'Titan'}
 
 const arrayOfFunctions = [
   function () {console.log('This'); },
@@ -169,7 +170,12 @@ const arrayOfFunctions = [
 
 STORE FUNCTIONS IN OBJECTS
 Can store functions as properties of an object
-When fucntion is stored in an object, we call it a method
+When function is stored in an object, we call it a method
+-methods are subset of functions
+-Good rule of thumb: if you need to use dot operator to invoke function(as in object.method() instead of
+ simply method()) then it's a method
+ eg: console.log() : invoking log() method on console object
+
 const malind = {
   fullname: 'Malind Evalette Kowalski',
   greet: function(name) {
@@ -180,3 +186,22 @@ const malind = {
   }
 };
 malind.fullName; => "Malind Evalette Kowalski"
+
+
+ANONYMOUS FUNCTION EXPRESSIONS
+-Function declaration must have a name, JS engine requires assignment of identifier that can be referred
+ to object memory
+-Forgoing will result in error message
+ eg: function () { }
+ => ERROR: Uncaught SyntaxError: Unexpected token ()
+
+-No constraints for function expressions
+ eg: (function nameOneFunctionExpression() {})
+ => f nameOneFunctionExpression() {}
+
+ (function() {}) => f () {}
+
+ const myFunction = function () {}
+ myFunction =. f () {}
+
+*One main benefit of naming function expressions it BETTER STACK TRACES
