@@ -102,6 +102,43 @@ myFunc.favoriteNumber = 42;
 console.log("myFunc()'s favorite number is", myFunc.favoriteNumber);
 // LOG: myFunc()'s favorite number is 42
 
+
+PASSING BY REFERENCE
+-Like all JS objects, objects are passed by reference
+-Storing a reference to location in memory where the function lives
+-If new variable is assigned the first variable, the new variable also points to same location in memory
+eg:
+const original = function() {
+  console.log("i'm the original!!!")
+}
+
+const copt = original
+
+copy(); => LOG: I'm the original!!!
+
+-If function is modified, the object in memory is changed, therefore every reference of the function will
+ see all modifications
+ eg:
+ copy.newProperty = "I'm a new property"
+
+ original.newProperty; => "I'm a new property"
+
+-If a variable is reassigned to a new function, it will no longer point to the same location in memory
+ eg:
+ let original = function() {
+  console.log("I'm the original!!!")
+ }
+
+ const copy = original
+
+ original = function() {
+  console.log("I'm a new function!!!")
+ }
+
+ copy(); => I'm the original!!!
+ original(); => I'm a new function!!!
+
+
 STORING FUNCTIONS IN AN ARRAY
 Can store functions as elements in an array
 const arrayOfDogs = [
