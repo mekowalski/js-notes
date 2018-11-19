@@ -10,6 +10,7 @@ const callback = function(el, i, arr) {
   console.log('the current element is' el);
   console.log('the current index is' i);
   console.log('the current array is' arr);
+  console.log('----------------')
 };
 
 ['Red', 'Yellow', 'Blue'].forEach(callback);
@@ -25,6 +26,24 @@ const callback = function(el, i, arr) {
   The index of the current element is 2
   The current array is (3) ["Red", "Yellow", "Blue"]
   ----------------
+
+-Same functionality can be built with FOR...OF statement
+eg:
+const callback = function(el, i, arr) {
+  console.log('the current element is' el);
+  console.log('the current index is' i);
+  console.log('the current array is' arr);
+  console.log('----------------')
+};
+
+const myForEach = function(arr, cb) {
+  for (const el of arr) {
+    cb(el, arr.indexOf(el), arr)
+  }
+}
+
+myForEach(['Red', 'Yellow', 'Blue'], callback) => same exact as L16-L28
+
 
 SORT()
 Helps organize an array in place, destructively rearranging elements in original array
