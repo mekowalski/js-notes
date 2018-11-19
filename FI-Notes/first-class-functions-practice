@@ -48,11 +48,11 @@ myForEach(['Red', 'Yellow', 'Blue'], callback) => same exact as L16-L28
 SORT()
 Helps organize an array in place, destructively rearranging elements in original array
 
-const dogs = ['Caroga', 'Titan', 'Norman', 'Cheif', 'Otto', 'Orion']
-dogs.sort(); => (6) ["Caroga", "Cheif", "Norman", "Orion", "Otto", "Titan"]
-dogs; => (6) ["Caroga", "Cheif", "Norman", "Orion", "Otto", "Titan"]
+const dogs = ['Caroga', 'Titan', 'Norman', 'Chief', 'Otto', 'Orion']
+dogs.sort(); => (6) ["Caroga", "Chief", "Norman", "Orion", "Otto", "Titan"]
+dogs; => (6) ["Caroga", "Chief", "Norman", "Orion", "Otto", "Titan"]
 
-Sort with callback to customize array according to our need
+SORT() with callback to customize array according to our need
 dogs.sort(function (a, b)) {
   //comparison code here
 }
@@ -64,7 +64,7 @@ const threes = [12, 9, 15, 21, 6, 3, 18];
 threes.sort(); => (7) [12, 15, 18, 21, 3, 6, 9]
 
 if number1 is greater than number2
-  return positive number, tells sort() to revers order of number1 & number2
+  return positive number, tells sort() to reverse order of number1 & number2
 else if number1 - number2 is negative or 0
   sort will keep order in array
 const threesSort = function (number1, number2) {
