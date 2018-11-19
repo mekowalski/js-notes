@@ -88,3 +88,23 @@ main(function() {
 });
 => LOG: After I get passed to the main() function as the only argument, I am stored in the local 'cbf'
 variable
+
+-filter() function doesn't know or care about any comparison logic encapsulated in CB function
+-It only takes in a collection, a callback and a console.log()
+
+
+PURE FUNCTIONS
+-JS function can be pure or impure
+-Pure Function: is repeatedly invoked with same set of arguments, function will always return the same
+ results
+ -Behavior is predictable, no side-effects
+
+-Impure Functions: return value that is unpredictable and invokes the function that may make network/DB
+ calls or alter and objects passed in
+ eg:
+ function randomMultiplyAndFloor() {
+  return Math.floor(Math.random() * 99)
+ }
+ randomMultiplyAndFloor(); => 8
+ randomMultiplyAndFloor(); => 17
+ randomMultiplyAndFloor(); => 78
