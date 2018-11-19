@@ -8,6 +8,7 @@ Map is another common built in array method, transforming every element in an ar
 OUR OWN MAP() METHOD
 Function needs to accept array we would like to map the values as an argument
 MAP() should only care about iterating over collection and letting callback function handle transformations
+eg:
 function map(array, callback) {
   //Iterate over each element in passed-in array with FOR...OF
   for(const element of array)
@@ -17,13 +18,14 @@ function map(array, callback) {
 
 map([1, 2, 3], function (num) { console.log(num * num); });
 
+RETURNING A BRAND NEW COLLECTION
 Map will return the new values but also should return an entirely new array
 Create a new array within the function
 function map(array, callback) {
   const newArray = [];
 
   for(const element of array) {
-    //Use push to return calue of each callback invocation into newArray
+    //Use push to return value of each callback invocation into newArray
     newArray.push(callback(element));
   }
   //return new array at end of function
@@ -38,5 +40,7 @@ const newNumbers = map(original, function(number) {
 
 newNumbers; => [9, 36, 81, 144]
 
-Can use Object.assign() to create new object, rather then destruct original it's better to practice
+Can use Object.assign() to create new object, rather than destruct original it's better to practice
 nondestructive updating
+
+Array.prototype.map()
