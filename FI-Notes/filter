@@ -108,3 +108,10 @@ PURE FUNCTIONS
  randomMultiplyAndFloor(); => 8
  randomMultiplyAndFloor(); => 17
  randomMultiplyAndFloor(); => 78
+
+-Pure functions are best practice because:
+ 1. predictable code is good, makes writing tests for that function simple and easy
+ 2. pure functions don't have any side effects, making debugging easier
+ 3. if array was returned from pure functions, debugging process would be linear and well-scoped
+ 4. if array is modified by impure functions, following data around on a wild chase, combing through each
+    impure function and seeing array modifications would be a debugging NIGHTMARE
