@@ -28,7 +28,20 @@ const users = [
   }
 ]
 
-Separationg of concerns is nice and important
+-Hard code logic created in a custon filter function may seem generic and reusable but it includes too
+ much logic and is too specific
+ eg:
+ function colorFilter(collection, color) {
+  for (const user of collection) {
+    if (user.favoriteColor === color) {
+      console.log(user.firstName);
+    }
+  }
+ }
+ colorFilter(users, 'Red'); => LOG: Candace
+
+
+Separation of concerns is nice and important
 filter() delegates comparison and trusts method will correctly return true or false
 function filter (collection) {
   for (const user of collection) {
