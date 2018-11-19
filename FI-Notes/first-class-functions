@@ -139,6 +139,19 @@ copy(); => LOG: I'm the original!!!
  original(); => I'm a new function!!!
 
 
+ADDING PROPERTIES TO A FUNCTION
+-A function is just a special object therefore properties can be added to functions and accessed
+eg:
+const myFunction() = function() {
+  return 3 + 6
+}
+
+myFunction.favoNumber = 18 => 18
+
+console.log("myFunction()'s favorite number is", myFunction.faveNumber)
+=> myFunction()'s favorite number is 18
+
+
 STORING FUNCTIONS IN AN ARRAY
 Can store functions as elements in an array
 const arrayOfDogs = [
