@@ -12,17 +12,34 @@ if (true) { //statement
 }
 -statement itself doesn't produce value: 15
 -expression: 6 + 9 produces value
- Uncaught SyntaxError: Unexpected token (statement keyword)
+-can't assign IF statement to variable
+ eg:
+ const myVar 3 + 6
+ myVar; => 9
+
+ const myOtherVar = if (true) {3 + 6};
+ => Uncaught SyntaxError: Unexpected token (statement keyword)
  -means the keyword is used for creating statements, stop using it as though it's an expression!
+
+-JS program effectively is a series of statements that control, organize and structure a series of
+ expressions
 
 FUNCTION EXPRESSIONS
 Function declarations declare function in standard way without producing value
--function keyword is adaptable:
-  -forms new function in memory when first thing in LOC
-    function myFunction() {}
+-Functions declarations are a type of function in a standard way that doesn't produce value
+eg:
+function myFunc() {
+  //code in here
+}
 
+-function keyword is adaptable:
+  -function declaration creating new function in memory, not producing value
+  -forms new function in memory when first thing in LOC
+    => function myFunction() {}
+
+  -function expression creating new function and immediately returns function as a value
   -forms new function and immediately returns function as value when it's placed elsewhere
-    (function () {})
+    => (function () {})
 
 String literals give new strings, array literals give new arrays, object literals give new objects
 Function expressions give new functions
@@ -34,9 +51,10 @@ Function expressions give new functions
 
 (function () {}) => f () {}
 -parenthesis around expression are only required if function keyword would otherwise be the first thing in
-line of cde
+line of code
 
-Functions are objects, first-class citizen of the JavaScript language
+FUNCTIONS ARE OBJECTS
+-First-class citizen of the JavaScript language
 Everything we can do to an object can also be done to a function
   Abilities:
   -function can be assigned to a variable
@@ -59,7 +77,7 @@ function sayHi () {
   console.log('Hi');
 }
 
-Function expressions are not hoisted an ignored during compilation phase therefore only evaluated during
+Function expressions are not hoisted and ignored during compilation phase therefore only evaluated during
 execution phase
 sayHello();
 
@@ -67,6 +85,10 @@ const sayHello = function () {
   console.log('Hello');
 };
 ERROR: Uncaught ReferenceError: sayHello is not defined
+*variables declared with CONST aren't hoisted
+*storing a function expression in a CONST-declared variable is good default strategy
+*intelliegent scoping behavior is provided by CONST
+
 
 ADDING PROPERTIES TO A FUNCTION
 Can add properties to functions then access them
