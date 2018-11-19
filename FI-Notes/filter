@@ -68,3 +68,23 @@ function iReturnThings (thing) {
 
 iReturnThings({ firstName: 'Kristopher', lastName: 'Kowalski' });
 // => {firstName: "Kristopher", lastName: "Kowalski"}
+
+
+CALLBACK FUNCTIONS
+-Referred when a function is passed into another function that might be invoked later
+-Deriving from the function not invoked IMMEDIATELY but called back ad a later point
+-Many callback functions are anonymous, not assigned an identifier, it's not necessary to name them(this
+may just create a cluster)
+
+-Plus a majority of the time, the callback function is named by the parameter passed in
+eg:
+function main(cbf) {
+  console.log(cbf());
+}
+
+main(function() {
+  return "After I get passed to the main() function as the only argument, I am stored in the local 'cbf'
+  variable"
+});
+=> LOG: After I get passed to the main() function as the only argument, I am stored in the local 'cbf'
+variable
