@@ -41,13 +41,17 @@ let malind = new Person('Malind', 'Durango', 'Colorado')
 => Colorado
 
 To access new object we use THIS keyword
-THIS references the objects that recieves method call
+-Access newly created object then assign its attributes corresponding to the values passed through
+THIS references the objects that receives method call
 function Person(name, city, state) {
   console.log(this)
 }
 let malind = new Person('Malind', 'Durango', 'Colorado')
 => {}
 => {}
+-When function is called with NEW keyword, the object receiving the method call is the newly created object
+-When the new object is logged twice, the FIRST time is from console.log(this) and the SECOND time is the
+ constructor function returning the newly created object(L50-51)
 
 Final step is to modify object by assigning it some attributes accordingly
 And we can create how ever many new objects with constructor function
