@@ -1,5 +1,6 @@
-*If THIS is referenced directly inside a method, it equals the object that received the method call otherwise
-THIS is global*
+-THIS outside any function refers to Global Object, in browsers it is Window
+-THIS inside a object method refers to the object that received the method call
+-THIS inside a standalone function will either default to Global Object or be undefined
 
 JavaScript method: a property on an object that points to a function
 let person = {
