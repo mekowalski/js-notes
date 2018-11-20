@@ -55,6 +55,10 @@ let malind = new Person('Malind', 'Durango', 'Colorado')
 
 Final step is to modify object by assigning it some attributes accordingly
 And we can create how ever many new objects with constructor function
+
+THIS PART MAKES SO MUCH SENSE!
+[-Refer to JS object from insides function with THIS keyword
+-Then assign that new JS object attributes with its corresponding values received when passed through]
 function Person(name, city, state) {
   this.name = name
   this.city = city
