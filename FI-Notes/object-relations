@@ -20,7 +20,9 @@ class Item {
 //I assume, but not sure, this is supposed to be `new Item('Flatscreen', 400)`
 new Item(400)
 
-There is potential that 2 users may have the same name therefore we give the user and ID and each item and ID
+There is potential that 2 users may have the same name therefore we give the user and ID and each item and
+ID
+eg:
 let store = {items: [
     {id: 1, price: 2, name: 'red socks', userId: 1},
     {id: 2, price: 7, name: 'blue shirt', userId: 1},
@@ -31,7 +33,10 @@ let store = {items: [
     {id: 2, name: 'Billy'},
     {id: 3, name: 'Bobby'}
   ]}
-
+*Store Object has 2 keys each of which poinst to an array:
+ -one to represent the collection of items
+ -one to represent collection of users
+ 
 -Assign a variable called Store to a JavaScript Object
 -Store object represents all objects initialized and will be used to hold objects
 
