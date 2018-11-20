@@ -4,7 +4,10 @@ function greet() {
   console.log(`hey, my name is ${this.name}!`)
 }
 
-let malind = {name: 'Malind'}
+let malind = {
+  name: 'Malind',
+  greet: greet
+}
 
 greet.apply(malind) => hey, my name is Malind!
 greet.call(malind) => hey, my name is Malind!
@@ -13,6 +16,8 @@ Both CALL and APPLY give us a way to invoke a function & explicitly set THIS equ
 CALL or APPLY
 
 Difference of CALL and APPLY is the way arguments are passed to target function
+
+
 CALL()
 When we invoke greet, we explicitly set THIS but also pass values for the 2 arguments
 Using CALL we pass the object THIS as the first argument followed by any function arguments in order
@@ -38,6 +43,8 @@ BIND()
 Bind is similar to CALL but has a couple differences:
   -Set functions value to THIS value but delay calling the function until later
   -BIND() creates a new function the same capabilities as original function
+  -BIND() doesn't change function instead copies the function and sets the copied function's THIS context
+   to whatever is passed through as an argument
 
 let malind = {name: 'Malind'}
 
@@ -52,3 +59,22 @@ to whatever is passed through as an argument to bind*
 newGreet('Christine') => Hi there Christine, my name is Malind!
 
 greet('Christine') => Hi there Christine, my name is !
+
+
+BIND() via MDN
+-Creates new function that, when called, has its THIS keyword set to the provided value, with a given
+ sequence of arguments preceding any provided when new function is called
+eg:
+let module = {
+  x: 42,
+  getX: function() {
+    return this.x
+  }
+}
+
+let unboundGetX = module.getX
+console.log(unboundGetX()); => undefined
+//function gets invoked at the global scope
+
+let boundGetX = unboundGetX.bind(module)
+console.log(boundGetX()); => 42
