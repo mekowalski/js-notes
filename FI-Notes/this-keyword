@@ -40,7 +40,7 @@ let greetFunction = person.greet
 //assign local variable greetFunction to refer to the function on the Person Object BUT it doesn't refer to
   the Person Object at all
 //it has zero knowledge of Person Object, it only points to the function
-//therefore not calling the property of the Person Object but invoking function by calling greetFunction 
+//therefore not calling the property of the Person Object but invoking function by calling greetFunction
 
 greetFunction == person; => false
 
@@ -49,14 +49,17 @@ person.greet() == person; => true
 
 FUNCTION WITHIN FUNCTIONS
 let person = {
-  greet: function greeting() {//object as a greet property pointing to greeting function
+  greet: function greeting() {//object has a greet property pointing to greeting function
     function otherFunction() {//when greet is called, declares & invokes otherFunction function
       return this  //then returns THIS
     }
     return otherFunction()  //otherFunction is not a method but a function
   }
 }
+*Method is a property that points to a function
 
+
+CALLBACKS
 [1, 2, 3].filter(function(element) {
   console.log(this)
   return element%2 == 0
@@ -67,3 +70,5 @@ let person = {
 
 Each time callback is invoked, THIS is global
 Function is invoked by filter() method
+-Can invoke property of the array however the callback function is not called as a property of an Object,
+ therefore when THIS is referenced from inside the cb function, THIS refers to the window/global object
