@@ -36,18 +36,18 @@ let store = {items: [
 *Store Object has 2 keys each of which poinst to an array:
  -one to represent the collection of items
  -one to represent collection of users
- 
+
 -Assign a variable called Store to a JavaScript Object
 -Store object represents all objects initialized and will be used to hold objects
 
 
 LINKING INSTANCES TO A STORE
-Need to assign each item object an ID and the ID should increment each time new item is made
+1. Need to assign each item object an ID and the ID should increment each time new item is made
 
 let itemId = 0
 class Item {
   constructor(name, price) {
-    this.id = ++itemId //increment itemId
+    this.id = ++itemId //increment itemId, then assign itemId as instance's ID
     this.name = name
     this.price = price
   }
@@ -57,7 +57,7 @@ let item = new Item('dress', 56) => Item {id: 1, name: 'dress', price: 56}
 let item2 = new Item('skirt', 48) => Item {id: 2, name: 'skirt', price: 48}
 
 
-Now we need to insert new objects to the store
+2. Now we need to insert new objects to the store
 let store = {items: []} //initializes store with key of items that point to empty array
 
 let itemId = 0
@@ -79,7 +79,7 @@ let item2 = new Item('skirt', 48) => Item {id: 2, name: 'skirt', price: 48}
 store.items[1] => {id: 2, name: 'skirt', price: 48}
 
 
-And insert the users to the store
+3. And insert the users to the store
 let store = {items: [], users: []} //initializes store with key of items/users pointing to empty arrays
 
 let userId = 0
@@ -94,7 +94,7 @@ class User {
   }
 }
 
-Lastly allow ability to associate user with item
+4. Lastly allow ability to associate user with item
 let itemId = 0
 
 class Item {
