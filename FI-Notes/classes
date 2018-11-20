@@ -3,9 +3,10 @@ Need a way to encase both attributes and functionality in one spot
 
 Class: provides shortcut for organizing our objects
 -Doesn't actually turn JavaScript into a class-based object-oriented paradigm, it's just nice abstraction
-over protoypal object created
+over prototypal object created
 
 CONSTRUCTOR AND PROTOTYPE SEPARATED
+BEFORE: separated constructor function and prototype method
 function Person(name, email) {
   this.name = name
   this.email = email
@@ -19,14 +20,16 @@ var malind = new Person('Malind', 'malind@test.com')
 malind.sayHello(); => "Hi there, my name is Malind!"
 
 CLASS
+AFTER: class combines constructor and method
 class Person {
-  constructor(name, email) { //define function named constructor
+  constructor(name, email) { //define function named constructor, run each time a new obj is initialized
     this.name = name;
     this.email = email;
   }
 
-  sayHello() { //define function  directly in body of class, verify function is defined on the prototype
-  with Person.prototype
+  sayHello() { //define function directly in body of class, verify function is defined on the prototype
+  //with Person.prototype
+  //also no longer need FUNCTION to define JS class methods
     console.log(`Hi there, my name is ${this.name}!`);
   }
 }
