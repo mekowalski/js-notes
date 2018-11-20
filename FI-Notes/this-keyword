@@ -3,6 +3,9 @@
 -THIS inside a standalone function will either default to Global Object or be undefined
 
 JavaScript method: a property on an object that points to a function
+-Just like writing:
+let person = {name: 'malind'} //name property points to value of 'malind'
+
 let person = {
   greet: function() {
     return 'Bonjour!'
@@ -21,7 +24,30 @@ let person = {
 
 typeof person.greet; => 'function'
 person.greet() == person; => true
+*person.greet() returns THIS, referring to the object that received the method call
 
+
+WATCHING THIS CHANGE
+let person = {
+  greet: function() { //set greet() property on Person object to point to same function
+    return this
+  }
+}
+
+person.greet() == person; => true //refers to the Person Object
+
+let greetFunction = person.greet
+//assign local variable greetFunction to refer to the function on the Person Object BUT it doesn't refer to
+  the Person Object at all
+//it has zero knowledge of Person Object, it only points to the function
+//therefore not calling the property of the Person Object but invoking function by calling greetFunction 
+
+greetFunction == person; => false
+
+person.greet() == person; => true
+
+
+FUNCTION WITHIN FUNCTIONS
 let person = {
   greet: function greeting() {//object as a greet property pointing to greeting function
     function otherFunction() {//when greet is called, declares & invokes otherFunction function
