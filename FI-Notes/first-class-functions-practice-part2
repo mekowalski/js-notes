@@ -42,3 +42,20 @@ REDUCE(): remove hard-coding & extract logic out into a callback function
   single value
   -Syntax: arr.reduce(callback[, initialValue])
   -Return value: value result from reduction
+  -Method takes in 2 arguments:
+    1. callback function to reduce each array element into single ultimate value(which accepts 4 arguments)
+      - reduced total as it currently stands
+      - current element that's to be reduced
+      - index of current element in the array
+      - the entire array
+    2. the initial value that the reduction should begin at
+
+eg:
+const reduceProductNames = function(agg, el, i, arr) {
+  //what ever we want to do with the:
+  //agg, el, i and arr
+
+  return [...some stuff]
+}
+
+products.reduce(reduceProductNames, []); => return whatever we wanted this reduce to return on L58
