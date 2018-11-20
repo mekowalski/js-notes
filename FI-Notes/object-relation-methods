@@ -1,7 +1,16 @@
 Example of object relation code
+let store = {users: [], items:
+
+let userId = 0
+class User {
+  constructor(name) {
+    this.id = ++userId
+    this.name = name
+    store.users.push)this
+  }
+}
 
 let itemId = 0
-
 class Item {
   constructor(name, price, user) {
     this.id = ++itemId
