@@ -91,3 +91,7 @@ let person = {
 
 person.greet(); => {greet: f}
 *the arrow function inside greeting uses THIS from class method which refers to the Person Object
+
+-Strict Mode: methods defined within JS classes preventing certain actions from being taken and throws
+ more exceptions
+-'use strict': instructs browser to use Strict Mode, which is a reduced and safer feature set of JS
