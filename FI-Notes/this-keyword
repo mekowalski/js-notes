@@ -72,3 +72,22 @@ Each time callback is invoked, THIS is global
 Function is invoked by filter() method
 -Can invoke property of the array however the callback function is not called as a property of an Object,
  therefore when THIS is referenced from inside the cb function, THIS refers to the window/global object
+
+
+ARROW FUNCTIONS
+-Arrow functions do not have their own THIS rather uses whatever THIS is defined in its enclosing scope
+eg:
+let person = {
+  greet: function() {
+    //this == person
+    const otherFn = () => {
+      //this == window
+      return this
+    }
+    //otherFn() is invoked returning the function's value of THIS which is window
+    return otherFn()
+  }
+}
+
+person.greet(); => {greet: f}
+*the arrow function inside greeting uses THIS from class method which refers to the Person Object
