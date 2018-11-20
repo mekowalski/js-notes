@@ -15,16 +15,37 @@ caroga.barkBark = function(){
 }
 caroga.barkBark() => woof, bork, BARK!
 
-Move this new attribute of a function onto the constructor function'
+Move this new attribute of a function onto the constructor function
 We use THIS keyword within constructor function to point to the specific function
 Have a constructor function that returns object with data and behavior
 function Dog(name, breed) {
   this.name = name
   this.breed = breed
-  this.barkBark = function(){
+  this.barkBark = function(){ //this assigns a new object with a barkBark attribute that points to a function
     console.log('woof, bork, BARK!')
   }
 }
-let titan = new Dog('Titan', 'Pitbull Mutt')
+let titan = new Dog('Titan', 'Black Mouth Curr/Mutt')
 
 titan.barkBark() => woof, bork, BARK!
+
+
+REFERENCING DATA FROM METHOD CALL
+-Invoke function to reference an attribute of the object being called
+eg:
+caroga.barkBark(); => woof, bork, BARK!
+titan.barkBark(); => woof, bork, BARK!
+
+OR UTILIZE AN ATTRIBUTE AS DATA BEING CALLED
+eg:
+function Dog(name, breed) {
+  this.name = name
+  this.breed = breed
+  this.barkBark = function(){
+    console.log(`i'm ${this.name}.  woof, bork, BARK!` )
+  }
+}
+caroga.barkBark(); => i'm caroga. woof, bork, BARK!
+
+*THIS refers to that newly created object
+*references data specific to its object with use of THIS
