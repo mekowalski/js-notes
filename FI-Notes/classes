@@ -38,9 +38,9 @@ var malind = new Person('Malind', 'malind@test.com')
 malind.sayHello(); => "Hi there, my name is Malind!"
 
 CLASS INHERITANCE WITH EXTENDS
-Used when we wold like to reuse same functionality from a previously defined class, but extent that class's
+Used when we would like to reuse same functionality from a previously defined class, but extend that class's
 functionality
-
+eg:
 class Employer extends Person {
 
 }
@@ -48,8 +48,9 @@ class Employer extends Person {
 let fephen = new Employer('Fephen', 'fephen@test.com')
 fephen.sayHello(); => 'Hi there, my name is Fephen!'
 
-Employer class has no defined properties but we can still assign a name, email and call sayHello method
-Can also add new methods to Employer class not declared on Person
+-Employer class has no defined properties but we can still assign a name, email and call sayHello method due
+ to extended inheritance
+-Can also add new methods to Employer class not declared on Person
 
 class Employer extends Person {
   givePayCheck() {
@@ -69,8 +70,11 @@ class Employer extends Person {
 }
 fephen.sayHello(); => Well howdy to you
 
+*Employer class method will not be accessible to Person class
+*Employer class methods may override Person class methods also with same method name
+
 SUPER
-Allows preservationof behavior already there and add to it, rather then repeat code, SUPER gives access to
+Allows preservation of behavior already there and add to it, rather then repeat code, SUPER gives access to
 it programmatically
 
 class Employer extends Person {
