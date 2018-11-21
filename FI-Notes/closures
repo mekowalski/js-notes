@@ -50,9 +50,15 @@ function makeFn() {
     }
     return displayName
 }
+*try logging 'name' and it will return undefined
+*however calling makeFn() which returns the displayName() function and store that result in a variable
 
 var myFn = makeFn()
+*stores the result of 'Kaleidoscope'
+
 myFn() => window alert statement of 'developer.mozilla.org says Kaleidoscope'
+*calling this newly defined variable then displays the value within makeFn()
+
 
 Closures are also used for privacy in JavaScript, impossible to change attribute, it is only readable
 We can always change data of an object but attributes are made truly private when using a closure
