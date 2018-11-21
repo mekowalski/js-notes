@@ -34,6 +34,7 @@ All arrow functions are anonymous, they do not take names for identifiers
 Can set pointer to an arrow function or pass arrow function through as an argument to another function
 
 let square = (n) => n * n
+*function is still anonymous but is assigned to variable square
 [3, 6, 9].map((n) => n*n)
 => (3) [9, 36, 81]
 
@@ -53,7 +54,7 @@ let person = {
 person.greet()() => "hello! i'm !"
 THIS becomes global from inner function because that inner function is not a method of PERSON
 
-We could use old BIND method to fix\
+We could use old BIND method to fix
 let person = {
   name: 'malind kowalski',
   greet: function(){
@@ -63,6 +64,9 @@ let person = {
   }
 }
 person.greet()() => "hello! i'm malind kowalski!"
+*() returns greet() which returns reallyGreet() and binds context to person
+*arrow functions don't have their own THIS, instead when THIS is invoked, the arrow function uses whatever
+ context it was already in
 
 
 Another way to achieve same results of setting inner functions context to PERSON is with an arrow function
