@@ -1,5 +1,5 @@
 Example of object relation code
-let store = {users: [], items:
+let store = {users: [], items: []}
 
 let userId = 0
 class User {
@@ -59,7 +59,7 @@ class User {
     //uses .filter() method to sift store and
       return item.userId === this.id
       //return each item that have a userId equal to User receiving method call
-    }.bind(this)
+    }
   }
 }
 
@@ -82,7 +82,7 @@ class Item {
     return store.users.find(function(user) {
     //use .find() method only to return the first matching element from the array
       return user.id === this.userId
-    }.bind(this))
+    }
   }
 }
 
