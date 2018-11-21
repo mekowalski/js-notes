@@ -7,9 +7,28 @@ Arrow function standard:
 -body of function is still declared inside {}
 -arguments to function go inside () before arrow
 -arrow => goes between () and {}
-let arrowFunction = () => {
+const arrowFunction = () => {
   return 'this is a new arrow function standard!'
 }
+
+-when using a {} you MUST use an explicit 'return' statement as normal functions require
+-but with arrow functions, omitting {} is permitted and will work if method is written on one line
+eg:
+const oldSquare = function(n) {
+  return n * n
+}
+
+const newSquare = n => n* n
+
+
+-and neither ways can be mixed
+eg:
+const newSquare = n = > {
+  n * n
+}
+ newSquare(3); => undefined
+
+*arrow functions allow ways to remove some noise around the signal and help focus on the expression
 
 All arrow functions are anonymous, they do not take names for identifiers
 Can set pointer to an arrow function or pass arrow function through as an argument to another function
