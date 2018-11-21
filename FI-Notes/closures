@@ -1,7 +1,8 @@
 JavaScript gives mechanisms to construct objects with specific state, with such behavior shared and some data
 is different
 
--Use class constructor to create different objects
+-Previously class constructors were used to create different objects
+-With the objects sharing behavior but varying in data
 Each shoe has a different factoryPrice
 The marketMultiplier represents varying prices in different markets
 
@@ -9,6 +10,7 @@ class Shoe {
   constructor(name, color, factoryPrice) {
     this.name = name
     this.color = color
+    this.factoryPrice = factoryPrice
   }
   retailPrice(marketMultiplier) {
     return marketMultiplier * this.factoryPrice
@@ -21,11 +23,17 @@ shoe1.retailPrice(3.2) => 102.4
 
 In JavaScript you can also create functions that share specific capabilities but change others
 To create a function, return a function from another function
+
 function retailPriceMaker(factoryPrice) { //declared function
   return function(marketMultiplier) { //return value is a function itself, takes in an argument
     return marketMultiplier * factoryPrice  //references factoryPrice, in its scope & returns retail price
   }
 }
+
+*by invoking the parent function, another function is returned that has its own unique attribute of a
+ factoryPrice which is then passes in an argument to retailPriceMaker
+*inner function takes in a second argument, marketMultiplier, which examples can be seen from invoking a
+ different factoryPrice
 
 typeof retailPriceMaker => "function"
 
