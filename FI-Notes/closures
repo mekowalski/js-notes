@@ -37,7 +37,22 @@ function retailPriceMaker(factoryPrice) { //declared function
 
 typeof retailPriceMaker => "function"
 
+
 CLOSURE: the attribute that all JavaScript functions have, hold onto the scope that they had when they were
 declared
+-JS functions can hold onto state the same way objects can because they are first class objects
+-Closures make it possible for a function to have "private" variables
+eg:
+function makeFn() {
+    var name = 'Kaleidoscope'
+    function displayName() {
+        alert(name)
+    }
+    return displayName
+}
+
+var myFn = makeFn()
+myFn() => window alert statement of 'developer.mozilla.org says Kaleidoscope'
+
 Closures are also used for privacy in JavaScript, impossible to change attribute, it is only readable
 We can always change data of an object but attributes are made truly private when using a closure
