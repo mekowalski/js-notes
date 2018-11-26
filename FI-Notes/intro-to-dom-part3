@@ -1,12 +1,23 @@
 HTML is a markup language for webpages
+DOM Nodes represent all components that make up a web page
 Nodes are elements that have a starting and ending tag
-Some only have a starting tag called self-closing elements which don't have content nested inside of then,
+Some only have a starting tag called self-closing elements which don't have content nested inside of them,
 more so they're void elements
 
-normal tag:
+NORMAL TAG:
 <p>I'm a paragraph.</p>
 
-self-closing tag, trailing optional:
+NESTED TAG:
+<body>
+  <main>
+    <p>I am a Paragraph tag, nested inside a Main element, nested inside the Body!</p>
+  </main>
+</body>
+
+SELF-CLOSING TAG, TRAILING OPTIONAL
+-These elements don't have any content inside of them (more technically called VOID elements), therefore they
+ can't be parent nodes
+eg:
 <img src="https://media.giphy.com/media/3o6MbkZSYy4mI3gLYc/giphy.gif" alt="A policeman">
 <img src="https://media.giphy.com/media/3o6MbkZSYy4mI3gLYc/giphy.gif" alt="A policeman" />
 
