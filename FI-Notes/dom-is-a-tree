@@ -15,6 +15,16 @@ subtrees
   </div>
 </body>
 
+Would have a tree that looks like
+            body
+            / \
+          div div
+          /     \
+         p       p
+        /         \
+    'Hello'     'Laters!'
+    
+
 FINDING A NODE
 Courtesy of DOCUMENT JavaScript exposes a few ways to finding DOM nodes more/less directly
 
