@@ -23,13 +23,16 @@ Would have a tree that looks like
          p       p
         /         \
     'Hello'     'Laters!'
-    
+
 
 FINDING A NODE
 Courtesy of DOCUMENT JavaScript exposes a few ways to finding DOM nodes more/less directly
 
 document.getElementById(): quickest access to a node but requires its ID, this method only returns one
 element since IDs are unique, keep ID's unique
+-Requires something very specific about the element
+-If 2 elements have the same ID, this method returns the first one
+*KEEP ID'S UNIQUE*
 <div>
   <h5 id="greeting">Hello!</h5>
 </div>
