@@ -44,6 +44,9 @@ click on div containing 5, return => 5bubbled
                                      2bubbled
                                      1bubbled
 *the event begins at div 5 and bubbles up to the topmost node*
+//making use of all the fancy DOM node properties in each div here
+//THIS is a bit confusing but for now it refers to the DIV that triggers the current event handler
+//which is 'div containing 5' at the time
 
 Capturing: starts at the target node's parents elements and propagates down the tree until it reaches the
 target
