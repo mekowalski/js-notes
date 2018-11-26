@@ -72,6 +72,10 @@ person.greet()() => "hello! i'm malind kowalski!"
 Another way to achieve same results of setting inner functions context to PERSON is with an arrow function
 This inner arrow functions retains scope of outer GREET method
 Because outer GREET is method context is PERSON, inner function's context is also PERSON
+-Arrow functions do not have their own THIS
+-Instead the arrow function uses whatever context it was already in
+-THIS inside an arrow function will be the same as THIS inside the outer, containing function
+-Same as calling BIND manually
 let person = {
   name: 'malind kowalski',
   greet: function() {
@@ -85,6 +89,6 @@ person.greet()() => "hello! i'm malind kowalski!"
 
 When using arrow functions, consider if the function should be anonymous
 Prime candidates for anon functions are out callbacks to iterators: callbacks that we pass into the MAP,
-FILTER and FOREACH functions can be anonymous, espicially when wrestling with THIS
+FILTER and FOREACH functions can be anonymous, especially when wrestling with THIS
 
 *is more an art than a science*
