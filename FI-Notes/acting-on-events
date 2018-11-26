@@ -14,7 +14,7 @@ dodger.style.backgroundColor = '#FF69B4'
 Accessing style property of dodger element, can change height, width, backgroundColor etc
 
 To change positions of element we begin with bottom left of black box coordinates (0, 0)
-dodger current postion:
+dodger current position:
 dodger.style.left //180px
 dodger.style.bottom //0px
 
