@@ -69,9 +69,20 @@ ID's are used to specifically target one element and an id can only be used once
 
 SELECTORS
 Selectors are identifiers to select the element needed to style
--tag: <p>, <div> tec
+-tag: <p>, <div> etc
+div {
+  font-size: 15px
+}
+
 -class: .red
+.red {
+  color: red
+}
+
 -id: #exact-id
+#id {
+  display: block
+}
 
 
 SELECTOR SPECIFICITY
