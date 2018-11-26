@@ -28,15 +28,17 @@ FORMS[]             ANCHORS             IMAGES[]
 WINDOW:
 -highest level of DOM tree, is a browser window, contains entire DOM document, all components of HTML file
 will be accessible from WINDOW
--has large number of properties that return info about the object, some examples:
+-has large number of properties that return info about the OBJECT
+eg:
   window.document; returns entire HTML document
   window.innerWidth; returns inner width of browser window, can change with expansion/shrinkage
   window.innerHeight; returns inner height of browser window
 
 DOCUMENT:
 -represents any web page loaded in browser, contains all nodes the represent the HTML elements of page
--used to traverse through HTML and manipulate elements
--many properties that allow access of info about document programmatically:
+-used to traverse through HTML and manipulate ELEMENTS
+-many properties that allow access of info about document programmatically
+eg:
   document.all; returns all nodes inside document object
   document.contentType; returns the type of content contained
   document.URL; returns URL of document object
@@ -58,6 +60,7 @@ Add/Remove/Change CSS styles
 
 Listen for key or mouse presses on elements
   add multiple types of event listeners with addEventListener
+  eg: hovering over a link and it turns from black to yellow
 
 Create events in the page
 
@@ -68,6 +71,7 @@ JavaScript
 document.getElementsByTagName("p"); OR
 document.querySelectorAll('p');
 returns all 'p' tags on page
+-both queries return the same tag BUT they have different uses
 
 JQuery: a library developers use for interacting with DOM, provides function aliased as $, wrapping
 document.querySelectorAll() and adds a bit more
