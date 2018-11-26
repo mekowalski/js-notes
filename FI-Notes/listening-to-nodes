@@ -90,3 +90,4 @@ for (let i = 0; i < divs.length; i++) {
   divs[i].addEventListener('click', bubble)
 }
 click on any, single node returns only that node bubbled
+*i clicked on the 3rd node which returned: 3bubbled*
