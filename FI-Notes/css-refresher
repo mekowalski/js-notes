@@ -103,8 +103,9 @@ p { //generic, nothing specific
 
 USING JS TO SELECT DOM NODES
 JS example to select 'red' class:
-const redElements = document.querySelectorAll('.red')  //returns all 'red' class listed
-const redElements = document.querySelector('.red')  //returns first matching 'red' class
+const redElements = document.querySelectorAll('.red')  //returns ALL 'red' class listed
+const redElements = document.querySelector('.red')  //returns FIRST matching 'red' class
+*difference between .querySelectorAll() and .querySelector()*
 
 JQuery example:
 const redElements = $('.red')  //returns an array of 'red' class
