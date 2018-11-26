@@ -11,11 +11,16 @@ p {
 *this tells browser that in the <p> tags, the font should 15pixels and color yellow*
 
 CSS framework allows us to have custom styling without writing any, or a lot, CSS ourselves
-99% of CSS in any application is usually declared in external sheets, referenced by <link> tag in the <head>
-of document
+-Not too concerned with writing much CSS but UNDERSTANDING how CSS  and its selectors work is important
+-Utilize classes the framework provides
+-99% of CSS in any application is usually declared in external sheets, referenced by <link> tag in the
+ <head> of document
 <head>
   <link rel="stylesheet" href="styles.css">
 </head>
+*Sometimes, if not declared in an external stylesheet, CSS can be declared in the <head> or inline on a
+ specific DOM element.  This way of styling should be avoided though, stylesheets should be responsible
+ for STYLE not .js files*
 
 An element can match several selectors and the properties of the selectors can overwrite each other
 body {
