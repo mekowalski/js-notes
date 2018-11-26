@@ -40,6 +40,8 @@ document.getElementById('greeting') //id is identical to <h5 id='greeting'>
 
 document.getElementsByClassName(): className doesn't need to be unique, will return a collection of all
 elements with the given class, you can iterate over collection with FOR loop
+-This is not an array but a Collection
+-className attribute s called 'class' in HTML unfortunately
 <div>
   <div class="banner">
     <h1>Hello!</h1>
@@ -57,6 +59,8 @@ document.getElementsByClassName('banner') //find all elements with className ===
 
 document.getElementsByTagName(): returns a collection of 0 to many nodes with given tag, tag names aren't
 unique
+-Tag names are the main title between <>
+eg: div, span, h1, etc
 
 
 FINDING A NODE WITHOUT KNOWING ABOUT IT
