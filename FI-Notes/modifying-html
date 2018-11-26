@@ -18,3 +18,9 @@ Script tag links HTML file to the JQuery library
     //although text after append appears on webpage, it wasn't explicitly added to the 'p' tag
   </script>
 </body>
+
+L13: Script tag needs to be a bottom of page because written code is dependent on a specific tag(in this case
+     it's the p tag)
+L14: $ is a function(equivalent to jQuery) that can be called. It can also be a fancy alias to
+     document.querySelectorAll()
+L14: although the appended text appeared on the screen, it was not explicitly added between the p tags
