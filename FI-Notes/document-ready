@@ -2,8 +2,13 @@ Don't ever want to write JavaScript and JQuery inside HTML files, want separatio
 
 SEPARATING AND LINKING
 Want to remove JQuery out of HTML file and into script.js file
-When browser encounters <script> tags, it needs to evaluate the script or make a request to the location
-specified in the <script> tag's src attribute
+
+-Want to load script.js in the index.html file
+-JS files grow larger with more interactive apps and pages take longer to load
+-This is due to browser loading EVERYTHING in between <head> before attempting to render the page
+-Then the browser gets to the <body> and loads synchronously
+-When browser encounters <script> tags, it needs to evaluate the script or make a request to the location
+ specified in the <script> tag's src attribute
 
 In HTML file include <script> tag for script.js file
 <!doctype html>
@@ -25,4 +30,4 @@ $(document).ready(function() {
   //code to be executed here
 })
 
-Once 'load' event fires the rest of the code will fire.
+Once 'load' event fires(tell jQuery to listen for with $(document).ready()) the rest of the code will fire.
