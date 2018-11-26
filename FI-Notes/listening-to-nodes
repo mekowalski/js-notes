@@ -12,6 +12,12 @@ main.addEventListener('click', function(event) { //click is event to listen for,
 })
 *pops alert window when clicked on id='main'*
 
+1. First argument 'click' is name of event that's being listened for(click events make up majority of events
+   listened to)
+   -common events: keydown, load, mouseover, change, etc
+2. Second argument is a function that accepts the event as its argument(property that tells which event
+   listener is needed and what to do on that event listener)
+
 event.which: tells us which key was pressed
 
 
