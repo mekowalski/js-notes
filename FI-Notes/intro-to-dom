@@ -7,10 +7,17 @@ DOM is a representation of current view of the browser and can be manipulated wi
 The HTML is the test in a file first used to display the page
 
 With JavaScript we can view a current rep of the DOM & we can select specific portions of DOM to manipulate
+-view-source:https://thewebsitehere.fake/pagenine/somerestful-routes
+-Browser reads this HTML, along with CSS and JS to create the DOM
+-view-source tab looks very similar to HTML
+-The browser seems to display the HTML layout but it is actually displaying Document Object Model of
+ respective page
 
 MANIPULATE INSTRUCTIONS IN README
 -remove header with JavaScript
 document.querySelector('header')
+
+-Changes in DevTool Console display what changes are made in the DOM but not in the HTML
 
 returns
 <header class="site-header flex-grid flex-grid--center-y">...</header>
