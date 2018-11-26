@@ -1,3 +1,9 @@
+Manipulating the DOM example with GMAIL
+-Favorite and email and the star turns yellow w/o page loading
+-Add a tag to an email and tag appears w/o page loading
+-Opening a New Email compose just displays the text editor on top of the email index w/o page loading
+*ALL DONE WITH JAVASCRIPT WITHOUT MANIPULATING HTML BY USING, MANIPULATING AND TRAVERSING THE DOM*
+
 DOM provides way to manipulate HTML/XML documents
 This is known as Application Programming Interface(API)
 Dom gives structural representation of the document in tree form

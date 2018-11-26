@@ -17,13 +17,13 @@ MANIPULATE INSTRUCTIONS IN README
 -remove header with JavaScript
 document.querySelector('header')
 
--Changes in DevTool Console display what changes are made in the DOM but not in the HTML
-
 returns
 <header class="site-header flex-grid flex-grid--center-y">...</header>
 
 document.querySelector('header').remove
 returns f remove() { [native code] }
+
+-Changes in DevTool Console display what changes are made in the DOM but not in the HTML
 
 -HTML is a markup language used to display content in a browser
 -When changing the appearance of webpage we're really changing the DOM with directly determines display of
