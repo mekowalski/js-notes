@@ -1,6 +1,6 @@
 CSS has frameworks with styling already taken care of, both curse and blessing:
-  -save a lot of time by following framework conventions and styling
-  -giving up customization
+  -blessing: save a lot of time by following framework conventions and styling
+  -curse: giving up customization
 
 Frameworks provide a slew of classes that can be used to style the application
 -classes allow reuse of styling across several components.
@@ -24,3 +24,24 @@ can't be achieved with traditional layout techniques
 -BASSCSS provides layout classes that can create any kind of layout necessary
 -elements can align themselves with flexbox shrink/stretch
 -considered close to Golden Age of web layout
+
+Utilizing BASSCSS in a project
+1. include <link> tag directly to source between <head></head>
+   <link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
+
+2. add div to the body with whatever styling needed(width, font-size, color)
+   <body>
+     <div style='width: 300px'>
+     </div>
+   </body>
+
+3. provide a container(if necessary that holds all other components)
+   <body>
+     <div style='width: 300px'>
+       <div class='flex'> //yay flexbox!
+
+       </div>
+     </div>
+   </body>
+
+4. next anything goes, provide an image, h1, small, different classes for each tag, etc
