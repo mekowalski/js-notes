@@ -75,6 +75,7 @@ A few things to do for every comment:
 *implement this by moving them into a .js file to keep tidy and clean*
 
 Broken up the tasks into 4 functions that can:
+(refer to js-templates-intro-to-templates-readme-v-000: index.js)
   -pass any comment text and commenter to them and build out a fully-formed well-formatted comment div
   -ability to modify structure of the HTML we use for comments without affecting how we collect and insert
   data of comments
