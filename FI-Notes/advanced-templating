@@ -24,7 +24,7 @@ Similar to other template engines, can define Handlebars template inside <script
     <main id="main">
       <a href="#" onclick="loadIssue();">Load GitHub Issue</a>
     </main>
-    //scritp tag with id and type of 'text/x-handlebars-template'
+    //script tag with id and type of 'text/x-handlebars-template'
     <script id="issue-template" type="text/x-handlebars-template">
       <article>
       //double curly brace delimiter renders this template & have variable called 'state' that want on the
@@ -39,7 +39,9 @@ Similar to other template engines, can define Handlebars template inside <script
 
 In .js file, include 'loadIssue' function to render template
 function loadIssue() {
-  //create simple 'issue' object to hold Github issua data
+  //create simple 'issue' object to hold Github issue data
+  //property names match names of template variables
+  //if context object properties don't match the template variables, results will be unexpected
   var issue = {
     state: "closed",
     number: 5,
@@ -52,6 +54,7 @@ function loadIssue() {
   document.getElementsByTagName("main")[0].innerHTML += result;
 }
 Both .html and .js render template and put it back into our page to see it
+*Start with simple 'issue' object to hold Github issue
 
 
 HANDLEBARS HELPER
