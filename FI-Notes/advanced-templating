@@ -63,7 +63,7 @@ function loadIssue() {
   var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
   for(var i=0;i<issues.length;i++) {
     //this is slow though, allocating result variable every time then querying DOM every time & adding
-    it every time through loop
+    //it every time through loop
     //also heavy-lifting is being done through iteration of collection instead of template doing this
     var result = template(issues[i]);
     document.getElementsByTagName("main")[0].innerHTML += result;
@@ -84,6 +84,10 @@ AND CHANGE template to handle collection
 </main>
 <script id="issue-template" type="text/x-handlebars-template">
   {{#each this}}
+  //each is a block-level helper so start with # and end with / to open/close braces for JS
+  //each needs iterator therefore use of THIS is set to whatever context object is in when template
+  //function is called
+  //eg: 'THIS is an array, apply template to EACH item.'
   <article>
     <header><h3>Issue #{{number}} ({{state}})</h3></header>
     <p>{{body}}</p>
