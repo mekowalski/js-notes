@@ -129,6 +129,7 @@ Handlebars.registerHelper('comment_body', function() {//telling Handlebars to re
     return new Handlebars.SafeString(this.body)
   } else {
     return new Handlebars.SafeString("<strong>" + this.body + "</strong>")
+    //user Handlebars.SafeString to return string containing HTML so that HTML won't get escaped
   }
 })
 
