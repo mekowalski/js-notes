@@ -1,3 +1,15 @@
+-Data is often needed more than it can or should load at one time which takes memory & bandwidth to store
+eg:
+  -Imagine walking into a library where all the books drop in front of you
+  -You couldn't process all those books immediately
+  -The likelihood of all the books fitting in a single stack is near impossible
+  -Also imagine this library has access to every book in every library in the world
+  -TOO MAY BOOKS TOO MANY BOOKS TOO MANY BOOKS
+
+  -In reality, going to a library is due to checking out a few resources at a time, while the remaining
+   collection is safely stored out of everyone's way
+  -This is how working with data should be, request data when it's needed
+
 XMLHTTPREQUEST: XHR is a JavaScript API allowing transfer of data between client and server
 -Helps write dynamic programs by allowing to fethc data from a server based on user events and update parts
 of the page without refresh
