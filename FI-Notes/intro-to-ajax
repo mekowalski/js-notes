@@ -42,7 +42,7 @@ function getRepositories() {
   req.open("GET", 'https://api.github.com/users/octocat/repos')
   req.send()
 }
-Both successfully fetch data fro remote source without XHR reloading page
+Both successfully fetch data from remote source without XHR reloading page
 
 
 HANDLING XHR RESPONSE
