@@ -11,13 +11,15 @@ eg:
   -This is how working with data should be, request data when it's needed
 
 XMLHTTPREQUEST: XHR is a JavaScript API allowing transfer of data between client and server
--Helps write dynamic programs by allowing to fethc data from a server based on user events and update parts
-of the page without refresh
+-Helps write dynamic programs by allowing to fetch data from a server based on user events and update
+parts of the page without refresh
 *code along: index.html and index.js files*
 
 
 CREATING XHR REQUEST
-First add link to HTML to trigger the resquest
+*API Doc often uses colon to precede dynamic value in RESTful URL like :username, hint to supply custom
+ value, eg: https://api.github.com/users/:username/repos*
+First add link to HTML to trigger the request
 *index.html*
 <body>
   <div class="flexbox-container">
