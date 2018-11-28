@@ -1,7 +1,12 @@
-Templates are a powerful way to dynamically create HTML content without having to hand build and concatenate
-strings of HTML and data values within JavaScript code
+Templates are a powerful way to dynamically create HTML content without having to hand build and
+concatenate strings of HTML and data values within JavaScript code
+-Good template engine allows HTML creation and placeholder insertions for dynamic data in least obtrusive
+ way possible
+-Separation of template definition from consumption of it makes code readable, maintainable and well
+ organized
 
-Basic Handlebars
+
+BASIC HANDLEBARS
 Similar to other template engines, can define Handlebars template inside <script> tag
 *advanced templating index.html file*
 <!DOCTYPE html>
