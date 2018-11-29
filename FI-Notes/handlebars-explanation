@@ -1,0 +1,7 @@
+WHY HANDELBARS?
+-Logic-less template engine dynamically generating the HTML page
+-Adds minimal logic due to helpers
+ eg: if, with, unless, each, etc
+
+-Can be loaded into browser like any other JS file
+ eg: <script src='/path/to/handlebars.min.js'></script>
