@@ -28,7 +28,7 @@ First create simple request to list public repositories, trigger the request and
 
 *index.js*
 function getRepositories() {
-  //initializing new XMLHttpRequest() and making GE request to URI for list user repo API
+  //initializing new XMLHttpRequest() and making GET request to URI for list user repo API
   const req = new XMLHttpRequest()
   //defining callback function showRepositories to handle response
   req.addEventListener('load', showRepositories)
@@ -36,7 +36,7 @@ function getRepositories() {
   req.send()
 }
 
-Need to also build showRepositories() function in index.js
+Need to also build showRepositories()(define a callback function) function in index.js
 function showRepositories() {
   //use JSON.parse to parse the response string into proper objects & building an unordered list
   const repos = JSON.parse(this.responseText)
@@ -63,6 +63,7 @@ const repoList = '<ul>' + repos.map(r => {
           )
   }).join('') + "</ul>"
 *a bit more info listed for each repo but still ugly and don't want HTML code in JS functions*
+*this is messy*
 
 
 HANDLEBARS TEMPLATES
