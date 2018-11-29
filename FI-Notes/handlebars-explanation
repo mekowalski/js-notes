@@ -23,3 +23,8 @@ Name : {{name}}           |        Argument/Data/Context
                   |
                 HTML
          Name: Malind Kowalski
+
+1. The variable {{name}} declared in the template is compiled with Handlebars into a function
+2. This function executes by passing JSON obj as argument which contains the value of the variable {{name}}
+   used in template
+3. The function then returns the HTML after replacing the variable {{name}} with its value 'Malind Kowalski'
