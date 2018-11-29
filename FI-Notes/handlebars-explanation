@@ -55,3 +55,7 @@ var html = templateScript(context)
 
 //insert the HTML code into the page
 $(document.body).append.html
+
+
+EXPRESSIONS
+-Variables inside templates are surrounded by double curly braces {{}} known as expressions (L37)
