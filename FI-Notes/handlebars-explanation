@@ -5,3 +5,9 @@ WHY HANDELBARS?
 
 -Can be loaded into browser like any other JS file
  eg: <script src='/path/to/handlebars.min.js'></script>
+
+PROS OF USING HANDLEBARS
+-Keeps HTML page clean while separating logic-less templates from actual logic in JS files which improves
+ structure of application along with its maintainability and scalability
+-Simplifies task of manually updating data on the view
+-Uses popular frameworks and platforms such as Ember.js, Meteor.js and Ghost
