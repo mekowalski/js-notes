@@ -1,6 +1,17 @@
 When using XHR to make dynamic web apps, often times DOM needs to be manipulated in repeatable, reusable
 chunks
 
+eg:
+  -A bookstore to buy books mostly(some bookstores sell a few other things too)
+  -Basic unit of display is a bay of shelves
+  -Each bay as holds a certain number of books
+  -Some shelves have books with the cover facing outward while other books are spine-displayed
+  -The bay represents a presentation of the books and and defines how the books are displayed
+    -Every bay is the same, it's just the books that change
+    -Bay is Structure and Books are Data
+
+-Output new data within an already defined structure
+
 
 ADDING DATA FROM XHR RESPONSE TO THE DOM
 *advanced ajax lab index.html*
