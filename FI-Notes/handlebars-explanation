@@ -34,10 +34,24 @@ TEMPLATES
 -With HTML they appear in <script>
  eg: <script id='handlebars-demo' type='text/x-handlebars-template'>
         <div>
-          //code stuff in here
+          My name is {{name}}.  My favorite color is {{fave_color}}.
         </div>
      </script>
 
 -First in JS file, template needs to be retrieved from the HTML document
 -Once it is retrieved the it can be compiled by Handlebars.compile() which returns a function
  (steps 1-3 from How It Works)
+
+//grab template data from HTML (jQuery used)
+var template = $('#handlebars-demo').html()
+
+//compile template data into a function
+var templateScript = Handlebars.compile(template)
+
+var context = {'name' : 'Malind Kowalski', 'fave_color' : 'yellow'}
+
+//html = 'My name is Malind Kowalski.  My favorite color is yellow.'
+var html = templateScript(context)
+
+//insert the HTML code into the page
+$(document.body).append.html
