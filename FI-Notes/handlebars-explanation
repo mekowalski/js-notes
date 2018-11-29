@@ -11,3 +11,15 @@ PROS OF USING HANDLEBARS
  structure of application along with its maintainability and scalability
 -Simplifies task of manually updating data on the view
 -Uses popular frameworks and platforms such as Ember.js, Meteor.js and Ghost
+
+HOW IT WORKS
+           Handlebars
+            compiler            {'name': 'Malind Kowalski'}
+  TEMPLATE  ------>   FUNCTION()      <------------>
+Name : {{name}}           |        Argument/Data/Context
+                          |
+                  ---------
+                  |
+                  |
+                HTML
+         Name: Malind Kowalski
