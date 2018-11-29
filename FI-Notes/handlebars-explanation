@@ -28,3 +28,16 @@ Name : {{name}}           |        Argument/Data/Context
 2. This function executes by passing JSON obj as argument which contains the value of the variable {{name}}
    used in template
 3. The function then returns the HTML after replacing the variable {{name}} with its value 'Malind Kowalski'
+
+TEMPLATES
+-Can be written both in an HTML file or separately
+-With HTML they appear in <script>
+ eg: <script id='handlebars-demo' type='text/x-handlebars-template'>
+        <div>
+          //code stuff in here
+        </div>
+     </script>
+
+-First in JS file, template needs to be retrieved from the HTML document
+-Once it is retrieved the it can be compiled by Handlebars.compile() which returns a function
+ (steps 1-3 from How It Works)
