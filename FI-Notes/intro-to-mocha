@@ -38,3 +38,11 @@ describe('faveIceCream', () => {
 -EXPECT block calls the function behind tests and uses matcher(.toBe) to test the return value of function
 -EXPECT calls faveIceCream function and passes param of "Ben & Jerry's Americone Dream" as if running a real
  application
+
+
+THE DEBUGGER
+-Invokes any available debugging functionality such as setting a breakpoint(MDN)
+eg: see what an argument looks like
+  function faveIceCream(flavor {
+    debugger
+  })
