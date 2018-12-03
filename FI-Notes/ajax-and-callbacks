@@ -31,7 +31,7 @@ We used power of AJAX to load data from 'sentence.html' file to display in brows
 
 CALLBACKS
 Using callbacks allows code to make request and continue doing other things until request is completed
-AJAX is an asynchronous pattern which is non-blocking, meaning it doesn't sit around and wait fr request to
+AJAX is an asynchronous pattern which is non-blocking, meaning it doesn't sit around and wait for request to
 finish before running all the code
 Real world example:
   -Put food in oven
@@ -40,8 +40,16 @@ Real world example:
   wine or browse the internet or take a power nap
   -When food is done the timer beeps and you remove food and eat it
   ^^this final step is how callbacks work
+  -Checking meal every 5 seconds is called polling and much less efficient
 
 HANDLING PROBLEMS
 What happens if an API used doesn't respond or doesn't exist?
 A good developer will make sure to handle these unexpected events gracefully when using AJAX
+-Add error handling function within Document.ready function
+-In error handling function DATA and ERROR aren't a matter of being called BUT in the order of arguments
+-GET() takes a:
+  -1st argument of data that the server sent back, making sense that it's called DATA but is could be called
+   response
+  -Same with 1st argument of FAIL(), should probably give descriptive name as ERROR
+  -Keep naming in mind for the purpose of the function
 Can provide multiple callbacks with jQuery: 1 for successful response and 1 for errors
