@@ -5,3 +5,20 @@
 AJAX keeps users engaged
   1. Deliver and initial engaging page using HTML/CSS
   2. Use JS to add more to the DOM behind the scenes
+
+AJAX relies on:
+  -Promises
+  -XMLHttpRequestObject(s)
+  -Serialization format JSON
+  -Asynchromous Input/Output
+  -Event Loop
+
+
+FETCH DATA WITH FETCH()
+-FETCH() function retrieves data globally on the WINDOW object
+eg:
+  fetch('string representing URL to data resource')
+    .then(response => response.json)
+    .then(json => etcetera)
+-First argument is a STRING that represents the URL providing some data
+-Chain a call to .THEN() at the end of FETCH()
