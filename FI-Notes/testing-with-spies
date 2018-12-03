@@ -1,5 +1,5 @@
 Spying is to test program to see if functions are being called and passed around properly
-Use 'Sinon.js' to help
+Use SINON.JS to help
 To verify that a callback gets called every time data changes
 Pass in 'spy' to the tested function provided
 Using spies is relatively straight forward and makes writing tests more pleasant
