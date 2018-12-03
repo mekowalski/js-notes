@@ -24,3 +24,17 @@ jsdom.env() is a function called and receives 4 arguments:
 -Test will have a function named and the 'it' block will declare in plain English the expectation to test
 -The 'expect' block calls the function behind the tests and uses a matcher(.toBe) to test what return value
 of the function should be
+
+TEST WALKTHROUGH
+describe('faveIceCream', () => {
+  it ('should return the correct sentence when passed an icecream flavor', () => {
+    const result = faveIceCream("Ben & Jerry's Americone Dream")
+    const expectedResult = "I love Ben & Jerry's Americone Dream"
+    expect(result).toBe(expectedResult)
+  })
+})
+-Tests a function name faveIceCream
+-IT block declares in plain english the expectation being tested
+-EXPECT block calls the function behind tests and uses matcher(.toBe) to test the return value of function
+-EXPECT calls faveIceCream function and passes param of "Ben & Jerry's Americone Dream" as if running a real
+ application
