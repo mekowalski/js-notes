@@ -34,3 +34,23 @@ eg:
   >Promise {<pending>}
   >{number: 6, message: "success", people: Array(6)}
   >Fetch finished loading GET "http://api.open-notify.org/astros.json"
+
+WORKING AROUND BACKWARDS COMPATIBILITY ISSUES
+-FETCH() provides short way to retrieve and work with resources
+-HOWEVER it only recently arrived in browsers
+-Older code versions may be:
+  -jquery.ajax
+  -$.ajax
+  -XMLHttpRequestObject
+
+
+AJAX TECHNIQUES ON POPULAR SITES
+-AJAX techniques provides uses of:
+  1. Allowing pull of dynamic content
+    -Same framing HTML page remains on screen while updates/behaviors occur
+    eg: Gmail Inbox remains present while clicking Compose and creating a new email
+  2. Allows data from ultiple sources
+    -Could display a site with current weather and word of the day side by side
+
+-AJAX provides users fast and engaging sites although not required on all sites
+-FETCH() includes requests for data in code and it modern format
