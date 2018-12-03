@@ -5,11 +5,17 @@ POSTMAN AND GITHUB API(DONE)
 -Postman is an easy to use Chrome extension that allows making of different web requests
 -Working with Github API to retrieve information about jQuery Github repository
 -Postman displays JSON list of the URL entered in the textbox
+eg: enter in URL textbox - https://api.github.com/repos/jquery/jquery/commits
+    Postman will display JSON formatted results
+    -Can ask Github API to returm only commits made by a certain author(or ask any API to return anything)
 
 DEFINING APIs
 -An application programming interface(API) is a set of routines, protocols and tools for building software
 and applications
 -In relation to OOP, an API is a class and the list of methods defined for that class
+-List or URLs provided on Github Developer site acts as public methods into their system
+-Developers creating the API control which resources shared and who has access
+-Github(specifically) API forgoes HTML/CSS/JS to serve up pure data
 
 AJAX
 -Asynchronous JavaScript & XML(AJAX) is a technique that is used in web applications
