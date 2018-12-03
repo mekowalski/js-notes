@@ -1,3 +1,11 @@
+-Web Users expect sites to load quickly and stay updated
+-Research shows 40% of site visitors will leave if site takes longer than 3 seconds to load
+-Mobile users are even less patient
+
+AJAX keeps users engaged
+  1. Deliver and initial engaging page using HTML/CSS
+  2. Use JS to add more to the DOM behind the scenes
+
 XHR can handle more protocols than HTTP and more formats than XML but it wasn't designed with the level of
 incorrectedness of today's programming in mind
 let xhr = new XMLHttpRequest();
