@@ -9,21 +9,23 @@ eg:
 
 
 RESTful systens are centered on the idea of a resource
+(resource in a same way as object in code. most times RESTful resource represents a domain object in your
+ system, like PRODUCT or USER)
 Real world example
   -You open a page with a blank form you use to make a new account
-    In terms of REST this represents a 'new resource'
+    In terms of REST this represents a 'NEW resource'
   -You fill out the form and click submit, any information is sent to the application server and is saved in
   the database, creating your new account
-    In terms of REST this represents a 'create resource'
+    In terms of REST this represents a 'CREATE resource'
   -After the server saves your account it redirects you the the page to view your account
-    In terms of REST this represents 'show resource'
+    In terms of REST this represents 'SHOW resource'
   -You decide to add a photo to your account or change your username/password
-    In terms of REST this represents 'edit resource'
+    In terms of REST this represents 'EDIT resource'
   -You change the info wanted to change and submit the form, on the server side, the new info is applied to
   your account
-    In terms of REST this represents 'update resource'
+    In terms of REST this represents 'UPDATE resource'
   -Finally you want to browse other accounts and ask for a list of those accounts
-    In terms of REST this represents 'index pf resource'
+    In terms of REST this represents 'INDEX of resource'
 
 Most systems follow a standard pattern for routing types of requests made
 Four key actions the system has: CRUD
