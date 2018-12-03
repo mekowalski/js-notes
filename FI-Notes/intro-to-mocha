@@ -11,6 +11,9 @@ To run certain code before or after the test runs, we use:
 
   -any of these^^ functions can have an optional 1st argument, a function usually called 'done' by convention
 
+jsdom: simulates a browser in testing environment which mocks out objects and behaviors as if browser was
+ present
+
 jsdom.env() is a function called and receives 4 arguments:
   -an HTML string to set up DOM
   -an array of paths to source files
