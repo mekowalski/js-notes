@@ -22,3 +22,15 @@ eg:
     .then(json => etcetera)
 -First argument is a STRING that represents the URL providing some data
 -Chain a call to .THEN() at the end of FETCH()
+
+-THEN() First: takes a function telling JS to ask network response to be turned into JSON
+-THEN() Final: actually get JSON passed in and do something with it, console.log or hand the JSON off to
+        another function
+eg:
+  fetch('http://api.open-notify.org/astros.json')
+    .then(response => response.json())
+    .then(json => console.log(json))
+-In the DevTools console, the chain will return a method called Promise
+  >Promise {<pending>}
+  >{number: 6, message: "success", people: Array(6)}
+  >Fetch finished loading GET "http://api.open-notify.org/astros.json"
