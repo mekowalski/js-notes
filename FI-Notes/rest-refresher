@@ -1,5 +1,12 @@
 Roy Thomas Fielding came up with REST, REpresentational State Transfer as a standard way web applications
 should structure their URLs
+eg:
+  -Logging into a social media account
+  -Getting repository data from Github
+  -Having something in app post to Twitter
+  -Pulling a feed of images from Instagram
+  -Even calling list of locations from Google Maps
+
 
 RESTful systens are centered on the idea of a resource
 Real world example
