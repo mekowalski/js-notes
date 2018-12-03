@@ -74,3 +74,13 @@ DELETE /accounts/:id
 
 
 NESTED ROUTES
+-Often access resources as they relate to parent resources
+eg: /parent/:id/children/:child_id/:action
+    /companies/6/beers/3/edit
+    -L79: provides child Beer with ID:3 that belongs to a parent Company with ID:6, that needs to be edited
+
+
+-REST is architectural design pattern(NOT FRAMEWORK OR CODE ITSELF) providing clear and standardized naming
+ structure for routes and actions
+-RESTful routes have clear mapping between URL resource and corresponding controller actions
+-Appropriate HTTP verb used helps differentiate purpose of routes with same URI
