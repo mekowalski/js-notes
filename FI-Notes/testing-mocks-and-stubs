@@ -12,8 +12,8 @@ method so that is doesn't make any external requests for the purposes of testing
 describe('getNames()', function() {
   it('should get the names from an external API', function() {
     const spy = sinon.spy()
-    const facedGet = sinon.stub($, 'get')
-    faceGet.yields()
+    const fakedGet = sinon.stub($, 'get')
+    fakedGet.yields()
 
     getNames(spy)
     expect(spy.calledOnce).toBeTruthy()
@@ -32,7 +32,9 @@ const userStorage = {
   saveRemainLoggedInPreference(remainLoggedIn) {
     //save remainLoggedIn in some way
   },
-  saveLanguagePreference: (language) => {//save language preference in some way}
+  saveLanguagePreference: (language) => {
+    //save language preference in some way
+  }
 }
 
 to save options on UI to the storage:
